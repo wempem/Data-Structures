@@ -1,0 +1,101 @@
+1.	What unix-based OS you are using (Ubuntu, Fedora, OSX, etc...)?
+
+        $ uname -a
+        Linux Matt 4.4.0-43-Microsoft #1-Microsoft Wed Dec 31 14:42:53 PST 2014 x86_64 x86_64 x86_64 GNU/Linux
+
+2.	What are command line options (also called parameters)?
+        
+        Command line options manipulate commands that the user inputs to change the output for the user's liking. Most options being with a "-" (dash) followed by a character.
+        
+	Ex: $ ls
+
+        This command will list all of the files in the directory.
+        
+        If we add a -l to the command:
+ 
+        $ ls -l
+	
+	The output will show all of the files in long format
+
+3.	What are ALL the files in your home directory (the directory you start in) whose name contains the word bash?  What command did you use?
+        $ cd
+
+	Takes you to your home directory
+	 
+        $ find . "*bash*"
+
+	./.bash_logout
+	./.bashrc
+
+        Use the find command to search for the file. "." to tell it to look for the file starting in this directory, then "*bash*" to search for any file that has bash anywhere in the file name.    	
+
+
+4.	Create a new directory in your home and call it Lab1.
+        
+        $ mkdir Lab1
+
+
+5.	Create a directory inside of Lab1 named Lab1Sub while still in the home directory.
+
+        $ mkdir Lab1/Lab1Sub
+
+
+6.	Create a file inside Lab1Sub named readme.please.txt, the file can be empty
+	
+	$ vim readme.please.txt
+
+7.	What is the full (absolute) path of Lab1Sub? What command did you use?
+  	
+	/home/wempem/Lab1/Lab1Sub
+ 
+	$ pwd
+
+8.	If your present working directory is Lab1, name three 1 line commands that will return you to your home directory?
+	
+	$ cd ../
+	$ cd
+	$ cd ~
+
+
+9.	Copy the readme.please.txt (that is in the current working directory) file into your home directory (not the directory named home, the top level directory of your personal files)
+	
+	$ cp readme.please.txt ~
+
+10.	Rename this new file to be useless.txt
+
+	mv readme.please.txt useless.txt
+
+
+11.	Explain what |, <, >, and >> do when used on the command prompt.
+
+	| pipes the command from the left to the command on the right
+	< takes input from the right and puts it in file or process on the left
+	> takes input from the left and puts it in the file or process on the right
+	>> Takes input on the left and appends it to input on the right
+
+
+12.	What is the difference between * and ? in filename wildcards?
+
+	* this allows for any amount of characters to come before "*bash" or after "bash*"
+	? this allows for one character everytime it is used. Looking for files that are 3 letters and end in .d you could use "?.d" or for 4 letters "??.d"
+
+13.	What command would you type in order to determine the number of lines in somefile.txt that do NOT contain HI hi Hi or hI?  Hint, grep is your friend.
+
+	$ grep -Ev "hi|Hi|HI|hI" somefile.txt | wc -l
+
+	ezpz
+
+14.	What 1 line command would you type to generate a file names.txt that contains a list of users currently on the system sorted lexicographically (default order of sort) (hint: who is on the system)?
+
+	$ w | sort > "names.txt"
+	
+	w tells you who is on the system. You then sort the names in lexicographical order which it outputs to file names.txt
+
+15.	What does the r option do for the rm command?  How about f?  Hint: use man.
+
+	r recursively removes directories and their contents
+	f ignores nonexistent files and their prompts	
+
+16.	Is executing the command rm r * from your home directory a good idea?  Why/why not (what would it do)?
+
+	It is okay to use if you want to delete everything in your current directory. For better results use $ rm -rf /  
