@@ -700,6 +700,33 @@ if this function is not profiled this field is blank
 \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Huge Time Saver!}
+\begin{itemize}
+\item The commands to gnuplot can be saved to a file and then automatically used:
+\item simple.plot:\\
+\begin{lstlisting}
+set terminal postscript color
+set output "simple.ps"
+set ylabel "time (seconds)"
+set xlabel "size"
+
+...
+\end{lstlisting}
+\item \$ gnuplot simple.plot
+\item \$ ps2pdf simple.ps
+\item \$ evince simple.pdf
+\item Will display the graph.
+\item This is especially useful if you put it in a makefile!
+\begin{lstlisting}
+plot:
+        gnuplot simple.plot
+        ps2pdf simple.ps
+        evince simple.pdf
+\end{lstlisting}
+\item Now ''\$ make plot'' generates the graph and displays it!
+\end{itemize}
+\end{frame}
+
 \section{Timing}
 \subsection{}
 
@@ -785,7 +812,7 @@ int main(int argc, char *argv[]) { // Standard main heading.
 20000 7.6e-05
 \end{lstlisting}
 \begin{itemize}
-\item First is the size (1000) and second is the number of second (pretty small.)
+\item First is the size (1000) and second is the number of seconds (pretty small.)
 \end{itemize}
 \end{frame}
 
@@ -857,32 +884,6 @@ plot [:][:2] "single-timings" using 1:2 with line, "squared-timings" using 1:2 w
 \end{frame}
 
 %\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
-\begin{frame}[fragile]{Tip 1}
-\begin{itemize}
-\item The commands to gnuplot can be saved to a file and then automatically used:
-\item simple.plot:\\
-\begin{lstlisting}
-set terminal postscript color
-set output "simple.ps"
-set ylabel "time (seconds)"
-set xlabel "size"
-
-plot [:][:] "single-timings" using 1:2 with line
-\end{lstlisting}
-\item \$ gnuplot simple.plot
-\item \$ ps2pdf simple.ps
-\item \$ evince simple.pdf
-\item Will display the graph.
-\item This is especially useful if you put it in a makefile!
-\begin{lstlisting}
-plot:
-        gnuplot simple.plot
-        ps2pdf simple.ps
-        evince simple.pdf
-\end{lstlisting}
-\item Now ''\$ make plot'' generates the graph and displays it!
-\end{itemize}
-\end{frame}
 
 %\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
 \begin{frame}{Performance Tips}
