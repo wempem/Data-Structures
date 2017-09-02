@@ -1,0 +1,115 @@
+\documentclass[12pt]{article}
+\usepackage{listings}
+\usepackage{color}
+\textwidth=7in
+\textheight=9.5in
+\topmargin=-1in
+\headheight=0in
+\headsep=.5in
+\hoffset  -.85in
+
+\definecolor{mygray}{rgb}{0.4,0.4,0.4}
+\definecolor{mygreen}{rgb}{0,0.8,0.6}
+\definecolor{myorange}{rgb}{1.0,0.4,0}
+
+\lstset{
+basicstyle = \ttfamily,columns=fullflexible,
+commentstyle=\color{mygray},
+frame=single,
+numbers=left,
+numbersep=5pt,
+numberstyle=\tiny\color{mygray},
+keywordstyle=\color{mygreen},
+showspaces=false,
+showstringspaces=false,
+stringstyle=\color{myorange},
+tabsize=2
+}
+
+\pagestyle{empty}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{document}
+
+\begin{center}
+{\bf lab 06: C++ Arrays as an Object
+}
+\end{center}
+
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{6pt} % General space between cols (6pt standard)
+\renewcommand{\arraystretch}{.5} % General space between rows (1 standard)
+
+\vskip.15in
+\noindent\textbf{Instructions:} This lab will continue your review of arrays in C++, but now as a class.
+
+Implement the following class
+\begin{lstlisting}[language=C++]{Name=test2}
+class IntArray {
+    private:
+    /* You fill out the private contents. */
+
+    public:
+    /* Copy array's contents to an internal array, (length = size). */
+    IntArray(int *array, int size);
+
+    /* Return the current length of the array */
+    int getLength();
+
+    /* Returns the index in the array where value is found.  
+     * Return -1 if value is not present in the array.
+     */
+    int indexOf(int value);
+
+    /* Removes an item at position index by shifting later elements left.
+     * Returns true iff 0 <= index < size.
+     */
+    bool remove(int index);
+
+    /* Returns an Array of all integers that are in common with self and ary.
+     * Return an empty Array if there are no intersections.
+     */
+    IntArray* findIntersections(IntArray &ary);
+
+    /* Return true if the array ary is contained sequentually in self. */
+    bool isSubsequence(IntArray &ary);
+
+    /* Delete any used memory when this variable goes out of scope. */
+    ~IntArray();
+}
+
+\end{lstlisting}
+
+\vskip.15in
+\noindent\textbf{How to turn in:} \\
+Turn in via GitHub.  Ensure the file(s) are in your directory and then:
+\begin{itemize}
+\item \$ git add $<$files$>$
+\item \$ git commit 
+\item \$ git push
+\end{itemize}
+
+\vskip.15in
+\noindent\textbf{Due Date:}
+February 1, 2017 2359
+
+\vskip.15in
+\noindent\textbf{Webhook:}
+The webhook is: \\
+http://coins.csuniv.edu:2234/github/build-csci-315-spring-2017.php \\
+Remember, after the first push, please wait 5-10 minutes for the auto-grader to get your repository.  Then subsequent pushes should receive a grade.
+
+\vskip.15in
+\noindent\textbf{Testing:} You are in charge of testing.
+
+\vskip.15in
+\noindent\textbf{Teamwork:} No teamwork, your work must be your own.
+
+\end{document}

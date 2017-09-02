@@ -1,0 +1,1097 @@
+%Paul E. West
+
+%\documentclass[xcolor=svgnames]{beamer}
+\documentclass{beamer}
+\usepackage[boxed,vlined,figure]{algorithm2e}
+
+%\usecolortheme[named=FireBrick]{structure}
+%\usecolortheme[named=black]{structure}
+%\usecolortheme{beetle}
+%\usecolortheme{beaver}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\setbeamercolor{background canvas}{bg=Gold!25}
+%\setbeamercolor{background canvas}{bg=Black!100}
+%\setbeamercolor{foreground}{bg=Gold!25}
+%\setbeamercolor{normal text}{fg=green,bg=black}
+%\setbeamercolor*{palette primary}{use=structure,fg=green,bg=black}
+
+\mode<presentation>{
+    \usetheme{Darmstadt}
+    \setbeamercovered{invisible}
+    %\setbeamercovered{transparent}
+    \setbeamercolor*{palette primary}{use=structure,fg=white,bg=blue}
+    \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=blue}
+    \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=blue}
+}
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+%\usepackage{epsfig}
+\usepackage{ulem}
+\usepackage{color,soul}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{url,hyperref}
+\definecolor{beamer@blendedblue}{rgb}{1,.6,.2}
+%\usepackage{tikz}
+%\usetikzlibrary{shapes}
+%\usetikzlibrary{arrows}
+%\tikzstyle{block}=[draw opacity=0.7, line width=1.4cm]
+\usepackage{listings}
+\lstset{language=C++}
+\lstset{showspaces=false}
+\lstset{showstringspaces=false}
+\lstset{tabsize=4}
+\lstset{basicstyle=\tiny}
+
+
+%\usecolortheme[overlystylish]{albatross}
+%\usecolortheme[]{lily}
+%\usecolortheme[]{albatross}
+%\usecolortheme[]{orchid}
+%\setbeamercolor{normal text}{fg=green!10}
+
+\title{CSCI 315: Data Structures \\ Shell Scripting}
+\author{Paul E. West, PhD}
+
+\institute{
+  Department of Computer Science\\
+  Charleston Southern University
+}
+
+\subject{Software Programming}
+%\keywords{Performance Counters, Multicore}
+
+%\pgfdeclareimage[height=1.0cm]{university-logo}{../imgs/csu-logo}
+\pgfdeclareimage[height=0.75cm]{university-logo}{../imgs/csu-logo}
+%\pgfdeclareimage[height=0.50cm]{university-logo}{../imgs/csu-logo}
+\logo{\pgfuseimage{university-logo}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Overview}
+\subsection{}
+
+\begin{frame}{}
+\begin{itemize}
+\item Shell script is just like batch file in MS-DOS
+\item Useful to create our own commands
+\item Can save our lots of time
+\item Automate some of daily tasks
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{}
+\begin{itemize}
+\item Before Starting Linux Shell Script Programming you must know:
+\begin{itemize}
+\item Kernel
+\item Shell   
+\item Process
+\item Redirectors, Pipes, Filters etc
+\end{itemize}
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\section{Architecture}
+\subsection{}
+
+\begin{frame}{Kernel}
+\begin{itemize}
+\item Kernel is the heart of Linux OS
+\begin{itemize}
+\item It manages resource of Linux OS
+\item print data on printer
+\item memory, file management
+\end{itemize}
+\item Kernel decides who will use this resource, for how long and when.
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Linux Shell}
+\begin{itemize}
+\item Computer understands the language of 0's and 1's called binary language
+\begin{itemize}
+\item Difficult for us to read and write
+\end{itemize}
+\item In the OS there is a special program called Shell
+\item Shell accepts your instruction or commands in English and translate it into computers native binary language
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Linux Shell}
+\begin{itemize}
+\item This is what the shell does for us \\
+\includegraphics[width=1.0\textwidth]{../imgs/shell1.png}
+\item You type the command and shell converts it \\
+\includegraphics[width=1.0\textwidth]{../imgs/shell2.png}
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{}
+\begin{itemize}
+\item Shell is a command language interpreter
+\item Popular shells
+\begin{itemize}
+\item SH : Original shell
+\item BSH : Bourne SHell
+\item BASH : Bourne Again SHell (Ha!)
+\item CSH : Similar to C programming language.
+\item TCSH : Turbo C Shell
+\item KSH : Korn SHell
+\end{itemize}
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{}
+\begin{itemize}
+\item To find your shell type following command
+\begin{itemize}
+\item echo \$SHELL
+\end{itemize}
+\item Known shells on your system
+\begin{itemize}
+\item cat /etc/shells
+\end{itemize}
+\item Your default shell is defined in /etc/passwd
+\begin{itemize}
+\item How do you display the content of passwd?
+\end{itemize}
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Process}
+\begin{itemize}
+\item Process is any kind of program or task carried out by your PC.
+\item A process is a program to perform some job.
+\item In Linux when you start process, it gets a number, called PID or process-id
+\item In Linux, the PID is in range 0 to 65535.
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Why Processes?}
+\begin{itemize}
+\item Linux is a multi-user, multitasking OS
+\item You can run more than two processes simultaneously if you wish.
+\item An instance of running command is called a process
+\item Each process has a process-id (PID)
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Login Procedure}
+\begin{columns}
+\column{0.50\textwidth}
+\begin{itemize}
+\item The first process to run is called init, PID \#1 
+\item It spawns a getty process
+\item The /bin/login program is then executed 
+\item After user inputs login/password, your shell (bash) is loaded
+\end{itemize}
+\column{0.50\textwidth}
+\includegraphics[width=1.0\textwidth]{../imgs/login.png}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Login Procedure}
+\begin{itemize}
+\item The bash process looks for the system file, /etc/profile, and executes its commands 
+\item It then looks in the user's home directory for an initialization file called .bash\_profile
+\item Then it will execute a command for the user's ENV file, usually called .bashrc
+\item Finally the default prompt, dollar sign (\$) (unless you have changed the default), appears on your screen and the shell waits for commands.   
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{The Environment}
+\begin{itemize}
+\item The environment of a process consists of 
+\begin{itemize}
+\item variables
+\item open files
+\item working directory
+\item functions
+\item resource limits
+\item ... 
+\end{itemize}
+\item The configuration for the user's shell is defined in the shell initialization files 
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Initialization Files}
+\begin{itemize}
+\item The bash shell has a number of startup files that are sourced
+\item Sourcing a file causes all settings in the file to become part of the current shell 
+\item The initialization files are sourced depending on whether the shell is a login shell, an interactive shell, or a non-interactive shell (a shell script)
+\item Some files may be empty
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Initlization Files}
+\begin{itemize}
+\item When you log on, before the shell prompt appears, /etc/profile is sourced 
+\item It is a system wide initialization file
+\item Next, if it exists, the .bash\_profile in the user's home directory is sourced
+\end{itemize}
+\includegraphics[width=1.0\textwidth]{../imgs/init1.png}
+\end{frame}
+
+\begin{frame}{Variables}
+\begin{itemize}
+\item In Linux, there are two types of variables
+\begin{itemize}
+\item System variables
+\begin{itemize}
+\item Created and controlled by system
+\item Defined in CAPITAL LETTERS
+\end{itemize}
+\item User defined variables (UDV)
+\begin{itemize}
+\item Created and maintained by user.
+\item Defined in lower case letters
+\end{itemize}
+\end{itemize}
+\item The capitalization isn't really enforced, just good practice
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\section{Basics}
+\subsection{}
+
+\begin{frame}{System Variables}
+\begin{itemize}
+\item To see system variables, type \\
+env
+\item BASH - Shell name
+\item BASH\_VERSION - shell version name
+\item COLUMNS - No. of columns for screen
+\item HOME - home directory
+\item LINES - No. of lines for screen
+\item PS1 - Prompt setting 1
+\item PWD - Current working directory
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{User Variables}
+\begin{itemize}
+\item To define UDV use following syntax
+\begin{itemize}
+\item Syntax: variablename=value
+\item no=10
+\item 10=no
+\item To define variable called 'vech' having value Bus
+\begin{itemize}
+\item vech=Bus
+\end{itemize}
+\item To define variable called n having value 10
+\begin{itemize}
+\item n=10
+\end{itemize}
+\end{itemize}
+\item This is all very shell specific
+\item sh,csh, etc. have their own syntax
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Variable Naming Rules}
+\begin{itemize}
+\item Variable name must begin with Alphanumeric character or underscore character (\_), followed by one or more Alphanumeric character (same as C++ variable names)
+\item Don't put spaces on either side of the equal sign when assigning value to variable.
+\item no=10
+\item no    =10
+\item no=    10
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Variable Naming Rules}
+\begin{itemize}
+\item Variables are case-sensitive, just like filename in Linux.
+\begin{itemize}
+\item no=10
+\item No=11
+\item NO=20
+\item nO=2
+\item Type echo \$variablename to see the differences
+\end{itemize}
+\item \$ is used to get the value of a variable
+\begin{itemize}
+\item No is just a word, \$No is the value of the variable No
+\end{itemize}
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Variable Naming Rules}
+\begin{itemize}
+\item You can define NULL variable as follows
+\item vech=
+\item vech=""
+\item NULL is basically the empty string
+\item vech with value NULL is different from not having variable vech defined at all
+\item Type echo \$vech to print it's value
+\item Do not use ?,* etc, in your variable names.
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Arithmetic Operations}
+\begin{itemize}
+\item Syntax: expr op1 operator op2
+\item op1 and op2 are any Integer Number
+\item operator
+\begin{itemize}
+\item +, -, /, \%(modular), \textbackslash * Multiplication
+\end{itemize}
+\item expr 6 + 3 will work
+\item expr 6+3 will not work!!
+\begin{itemize}
+\item Space between number and OP is required!!
+\end{itemize}
+\item Why? Think about filenames
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Permissions}
+\begin{itemize}
+\item Files have permissions in Unix
+\begin{itemize}
+\item First 10 chars in ls -l output
+\end{itemize}
+\item 3 Types of perms: Read, Write, eXecute
+\item 3 types affected: User, Group, Other
+\item chmod (change mode) used to change permissions
+\item Two ways of using chmod: absolute and relative
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{chmod}
+\begin{itemize}
+\item Relative: chmod changes files
+\begin{itemize}
+\item chmod u+r files add read perms for users
+\item chmod go-wx files	remove write and execute perms from group and other (no error if group and other didn't have w and x before)
+\end{itemize}
+\item Absolute: chmod 3-digit-code files
+\begin{itemize}
+\item Consider read, write, execute as bits in binary number.  3 digits total for user, group, and other.
+\item chmod 751 files \\
+7 = 4 + 2 + 1 r \& w \& x for user
+5 = 4 + 1 which means r \& x for group, \\
+1 = x for other
+\item I prefer absolute, no question as to result
+\item Either is acceptable for HW/exams
+\end{itemize}
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\section{Scripting}
+\subsection{}
+
+\begin{frame}{How To Write a Shell Script}
+\begin{itemize}
+\item The First Line
+\item The first column of the first line of the script will indicate the program that will be executing the code in the script.\\
+\#!/bin/bash 
+\item The \#! is called a magic number and is used by the kernel to identify the program that should be interpreting the code in the script.
+\item The \#! is pronounced shebang.
+\item Etymology: 
+\begin{itemize}
+\item ! has always been shorten to bang.
+\item Probably came from SHarp Bang, haSH Bang, or SHEll Bang
+\end{itemize}
+\item This line must be line 1 of your script.
+\item No spaces before \#
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Write a Shell Script}
+\begin{itemize}
+\item \$ cat > first \\
+\#!/bin/bash \\
+\# My first shell script \\
+\# \\
+clear \\
+echo "Knowledge is Power" \\
+Press Ctrl + D to finish typing and save.
+\item \# indicates a comment, like // in C/C++ 
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Executing A Script}
+\begin{itemize}
+\item Try first
+\item Didn't work? Why? Path
+\item OK, now try
+\item ./first
+\item But that didn't work, why? Permissions (90+\% of problem in Linux.)
+\item Type
+\item chmod +x first
+\item ./first
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}[fragile]{Qoutes}
+\begin{lstlisting}
+Double Quotes " - Anything enclosed in double quotes removed meaning of 
+                  those characters (except \ and $).
+'Single quotes' - Enclosed in single quotes remains unchanged.
+`Back quote` - To execute command.
+` allows commands within strings
+Remember: $ is how you access the value of a variable!
+\end{lstlisting}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}[fragile]{Practice}
+\begin{lstlisting}
+date="August 31, 1976"
+echo "Today is date"
+echo "Today is $date"
+echo `Today is $date'
+echo "Today is `date`'
+echo "expr 6 + 3"
+echo 'expr 6 + 3'
+\end{lstlisting}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Command Line Arguments}
+\includegraphics[width=1.0\textwidth]{../imgs/command-line-args.png}
+\end{frame}
+
+\begin{frame}{Command Line Arguments}
+\begin{itemize}
+\item In the shell, if we want to refer to the command line arguments
+\item myshell is \$0
+\item f00 is \$1
+\item bar is \$2 (etc.)
+\item Number of arguments in a command line
+\item \$\# (useful for loops and error checks)
+\item All of command line arguments
+\item \$* (useful for passing on to other commands)
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Practice}
+\$ cat > demo \\
+\#!/bin/bash \\
+\# \\
+\# Script that demos, command line args \\
+\# \\
+echo "Total number of command line argument are \$\#" \\
+echo "\$0 is script name" \\
+echo "\$1 is first argument" \\
+echo "\$2 is second argument" \\
+echo "All of them are :- \$*"
+
+\end{frame}
+
+\begin{frame}{Now Run}
+./demo Hello World
+\end{frame}
+
+\begin{frame}{Exit Status}
+\begin{itemize}
+\item In Linux when a command is executed, it returns a value called the exit status
+\item return value is zero (0), command was successful,
+\item return value is nonzero (>0), command was not successful
+\item To determine this exit status we use the \$? variable of shell (? For what just happened).
+\item (Windows has a similar concept called error levels)
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Exit Status Practice}
+\begin{itemize}
+\item expr 1 + 3
+\item echo \$?
+\item echo Welcome
+\item echo \$?
+\item wildwest canwork?
+\item echo \$?
+\item date
+\item echo \$?
+\item echon \$?
+\item echo \$?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The read Statement}
+\begin{itemize}
+\item Use to get input from keyboard and store them to variable.
+\item Syntax: read varible1 varible2 varibleN
+\item Create the following script \\
+cat > sayH \\
+\#!/bin/bash  \\
+\#Script to read your name from key-board \\
+\# \\
+echo "Your first name please:" \\
+read fname \\
+echo "Hello \$fname, Lets be friend!"
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Parameters for read}
+\begin{itemize}
+\item read answer
+\begin{itemize}
+\item Reads a line from standard input and assigns it to the variable answer. 
+\end{itemize}
+\item read first last 
+\begin{itemize}
+\item Reads a line from standard input to the first whitespace or newline, putting the first word typed into the variable first and the rest of the line into the variable last. 
+\end{itemize}
+\item read 
+\begin{itemize}
+\item Reads a line from standard input and assigns it to the built-in variable, REPLY.
+\end{itemize}
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Parameters for read}
+\begin{itemize}
+\item read -a arrayname 
+\begin{itemize}
+\item Reads a list of words into an array called arrayname (just FYI).
+\end{itemize}
+\item read -e 
+\begin{itemize}
+\item Used in interactive shells with command line editing in effect; e.g., if editor is vi, vi commands can be used on the input line.
+\end{itemize}
+\item read -p prompt 
+\begin{itemize}
+\item Prints a prompt, waits for input, and stores input in REPLY variable.
+\end{itemize}
+\item read -r line 
+\begin{itemize}
+\item Allows the input to contain a backslash.
+\end{itemize}
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{read Example}
+\#!/bin/bash \\
+\# Scriptname: nosy\\
+echo -e "Are you happy?"\\
+read answer\\
+echo "\$answer is the right response."\\
+echo -e "What is your full name?"\\
+read first middle last\\
+echo "Hello \$first"\\
+echo -n "Where do you work?"\\
+read \\
+echo "I guess \$REPLY keeps you busy!" \\
+read -p "Enter your job title: " \\
+echo "I thought you might be an \$REPLY."  \\
+echo -n "Who are your best friends? "  \\
+read -a friends \\
+echo "Say hi to \$\{friends$[$2$]$\}." 
+\end{frame}
+
+\section{Boolean}
+\subsection{}
+
+\begin{frame}{If Then}
+\begin{itemize}
+\item Syntax: \\
+if condition \\
+then \\
+command1 if condition is true or if exit status \\
+of condition is 0 (zero) \\
+... \\
+... \\
+fi
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Practice}
+\begin{itemize}
+\item cat > showfile
+\#!/bin/bash \\
+\# \\
+\#Script to print file \\
+\# \\
+if cat \$1 \\
+then \\
+echo -e "File \$1, found and successfully echoed" \\
+fi \\
+./showfile foo
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{test Command}
+\begin{itemize}
+\item test command is used to see if an expression is true \\
+if it is true it return zero(0) \\
+returns nonzero(>0) for false. \\
+Syntax: test expression $[$OR expression $]$
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Practice}
+\begin{itemize}
+\item \#!/bin/bash \\
+\# \\
+\# Script to see whether argument is positive \\
+\# \\
+if test \$1 -gt 0 \\
+then \\
+	echo "\$1 is positive" \\
+fi
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Practice}
+\begin{itemize}
+\item ispostive 5
+\item ispostive -45
+\item ispostive
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{test Command}
+\begin{itemize}
+\item For Mathematical comparisons use following operators in Shell Scripts
+\begin{itemize}
+\item -eq : is equal to
+\item -ne : not equal to
+\item -lt : less than
+\item -le : less than or equal to
+\item -gt : greater than
+\item -ge : greater than or equal to
+\end{itemize}
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{test Command}
+\begin{itemize}
+\item string1 = string2
+\item string1 != string2
+\item string1 
+\begin{itemize}
+\item string1 is NOT NULL or not defined
+\end{itemize}
+\item -n string1 
+\begin{itemize}
+\item string1 is NOT NULL and does exist
+\end{itemize}
+\item -z string1
+\begin{itemize}
+\item string1 is NULL and does exist
+\end{itemize}
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{test Command}
+\begin{itemize}
+\item -s file : Non empty file
+\item -f file : Is File exist or normal file and not a directory
+\item -d dir : Is Directory exist and not a file
+\item -w file : Is writeable file
+\item -r file : Is read-only file
+\item -x file : Is file is executable
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Logical Operators}
+\begin{itemize}
+\item ! expression
+\begin{itemize}
+\item Logical NOT
+\end{itemize}
+\item expression1 -a expression2
+\begin{itemize}
+\item Logical AND
+\end{itemize}
+\item expression1 -o expression2
+\begin{itemize}
+\item Logical OR
+\end{itemize}
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{if else fi}
+if condition \\
+then \\
+command1 if condition is true or if exit status \\
+of condition is 0(zero) \\
+... \\
+... \\
+else \\
+command2 if condition is false or if exit status \\
+of condition is >0 (nonzero) \\
+... \\
+... \\
+fi
+\end{frame}
+
+\begin{frame}{Practice}
+cat > isnump\_n \\
+\#!/bin/bash \\
+\# \\
+\# Script to see whether argument is positive or negative \\
+\# \\
+if test \$\# -ne 1 \\
+then \\
+echo "\$0 : You must supply one integer" \\
+exit 1 \\
+fi \\
+if test \$1 -gt 0 \\
+then \\
+echo "\$1 is positive" \\
+else \\
+echo "\$1 is negative" \\
+fi 
+\end{frame}
+
+\begin{frame}{Practice}
+\begin{itemize}
+\item isnump\_n 5
+\item isnump\_n -45
+\item isnump\_n
+\item isnump\_n 0
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Multilevel if else fi}
+if condition \\
+then \\
+condition is zero (true - 0) \\
+execute all commands up to elif statement \\
+elif condition1 \\
+condition1 is zero (true - 0) \\
+execute all commands up to elif statement \\
+elif condition2 \\
+condition2 is zero (true - 0) \\
+execute all commands up to elif statement \\
+else \\
+None of the above condtion,condtion1,condtion2 are true (i.e. all of the above nonzero or false) \\
+execute all commands up to fi \\
+fi \\
+\end{frame}
+
+\begin{frame}{Multilevel if else fi}
+\$ cat > elf  \\
+\#!/bin/bash  \\
+\#  \\
+\# Script to test if..elif...else  \\
+\#  \\
+if $[$ \$1 -gt 0 $]$  \# note space around $[$ and $]$ \\
+then  \\
+echo "\$1 is positive"  \\
+elif $[$ \$1 -lt 0 $]$  \\
+then \\
+echo "\$1 is negative"  \\
+elif $[$ \$1 -eq 0 $]$ \\
+then  \\
+echo "\$1 is zero"  \\
+else  \\
+echo "Oops! \$1 is not number, give number"  \\
+fi
+\end{frame}
+
+\begin{frame}{Practice}
+\begin{itemize}
+\item ./elf 1
+\item ./elf -2
+\item ./elf 0
+\item ./elf a
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\section{Loops}
+\subsection{}
+
+\begin{frame}{For loop}
+\begin{itemize}
+\item More like a for-each loop
+\item Syntax: \\
+for \{ variable name \} in \{ list \} \\
+do \\
+execute one for each item in the list until the list is \\
+not finished (And repeat all statement between do and done) \\
+done \\
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}{Practice}
+cat > testfor \\
+for i in 1 2 3 4 5 \\
+do \\
+echo "Welcome \$i times" \\
+done
+\begin{itemize}
+\item More useful then you think for file management
+\item Variable could be part of a filename or a command (e.g. hw\$i.ys)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{}
+\begin{lstlisting}
+cat > mtable
+#!/bin/bash
+#
+#Script to test for loop
+##
+if [ $# -eq 0 ]
+then
+echo "Error - Number missing form command line argument"
+echo "Syntax : $0 number"
+echo "Use to print multiplication table for given number"
+exit 1
+fi
+n=$1
+for i in 1 2 3 4 5 6 7 8 9 10
+do
+echo "$n * $i = `expr $i \* $n`"
+done
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Practice}
+\begin{itemize}
+\item ./mtable 7
+\item ./mtable
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}[fragile]{C-style Loop}
+\begin{lstlisting}
+for (( c=1; c<=5; c++ )); do
+        loop body
+   done
+can use  { } instead of do done on modern Bash, but undocumented
+More on (( )) in a few slides
+FYI: break and continue are supported by all Bash loops
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{While Loop}
+\begin{itemize}
+\item Syntax: \\
+while $[$ condition $]$ \\
+do \\
+command1 \\
+command2 \\
+command3 \\
+.. \\
+.... \\
+done \\
+There is also an until loop that is the same as while not. \\
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}[fragile]{}
+\begin{lstlisting}
+cat > nt1
+#!/bin/bash
+#
+#Script to test while statement
+##
+if [ $# -eq 0 ]
+then
+echo "Error - Number missing form command line argument"
+echo "Syntax : $0 number"
+echo " Use to print multiplication table for given number"
+exit 1
+fi
+n=$1
+i=1
+while [ $i -le 10 ]
+do
+echo "$n * $i = `expr $i \* $n`"
+i=`expr $i + 1`
+done
+\end{lstlisting}
+\begin{itemize}
+\item Execute the following
+./nt1 7
+\end{itemize}
+\end{frame}
+
+\section{Case}
+\subsection{}
+
+\begin{frame}[fragile]{case statement}
+\begin{itemize}
+\item Syntax: \\
+\begin{lstlisting}
+case $variable-name in 
+pattern1) command 
+... 
+.. 
+command;; 
+pattern2) command 
+... 
+.. 
+command;; 
+patternN) command 
+... 
+.. 
+command;; 
+*) command 
+... 
+... 
+command;; 
+esac
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Practice}
+\begin{lstlisting}
+cat > car
+#!/bin/bash 
+# if no vehicle name is given
+# i.e. -z $1 is defined and it is NULL
+#
+# if no command line arg
+if [ -z $1 ]
+then
+	rental="*** Unknown vehicle ***"
+elif [ -n $1 ]
+then
+	# otherwise make first arg as rental
+	rental=$1
+fi
+case $rental in
+	"car") echo "For $rental Rs.20 per k/m";;
+	"van") echo "For $rental Rs.10 per k/m";;
+	"jeep") echo "For $rental Rs.5 per k/m";;
+	"bicycle") echo "For $rental 20 paisa per k/m";;
+	*) echo "Sorry, I can not get a $rental for you";;
+esac
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Practice}
+\begin{itemize}
+\item car van
+\item car car
+\item car Maruti-800
+\end{itemize}
+%\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\begin{frame}[fragile]{let using (( )) }
+\begin{itemize}
+\item Though the command is let, the usual use is with (( )). The goal is to simplify some basic math and variable usage. 
+\item while $[$ \$a -lt \$LIMIT $]$ \#spacing is required
+\item becomes
+\item while (( a <= LIMIT )) \#spacing is optional
+\item -o becomes || and aa becomes \&\&
+\item a=
+\begin{lstlisting}
+`expr \$a + 1` 
+\end{lstlisting}
+becomes ((a += 1))
+\item z = \$(( a + b )) is the more general form
+\end{itemize}
+\end{frame}
+
+\begin{frame}{declare}
+\begin{itemize}
+\item With declare variables can be given a type: \\
+\item declare -i n \\
+\item n=6/3 \# n will now be 2, no expr or let \\
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{seq}
+\begin{itemize}
+\item seq is an older command, but useful:
+\item seq $[$OPTION$]$... LAST
+\item seq $[$OPTION$]$... FIRST LAST
+\item seq $[$OPTION$]$... FIRST INCREMENT LAST
+\item FIRST and INCREMENT default to 1, options for formatting and padding
+\begin{lstlisting}
+for i in `seq 1 10`; do
+    loop body
+done
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{\{\} expansion}
+\begin{itemize}
+\item or i in \{1..10..2\}  \# 1 to 10 increment by 2
+\item No spaces, no variables allowed
+\item Unless you use eval, but that is weird
+\item \{f..k\}  becomes f g h i j k
+\item 1.\{0..9\} becomes 1.0 1.1 1.2 ... 1.9
+\item \{A..Z\}\{0..9\} generates: A0 A1 ... A9 B0 B1 .. Z9
+\item \{\{A..Z\},\{a..z\}\} generates: A B .. Z a b .. Z
+\item Can have something before or after \{ \}
+\end{itemize}
+\end{frame}
+
+\section{Conclusion}
+\subsection{}
+
+\begin{frame}{}
+\begin{itemize}
+\item There is a lot.
+\item I do not expect you to know everything on a test.
+\item It is best to understand how much power shell scripting is giving you:
+\begin{itemize}
+\item program chaining/redirection
+\item program argument manipulation
+\item can interact with anything
+\end{itemize}
+\item When you don't know something, Google!
+\end{itemize}
+\end{frame}
+
+\end{document}
