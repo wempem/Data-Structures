@@ -60,7 +60,7 @@
 %\usecolortheme[]{orchid}
 %\setbeamercolor{normal text}{fg=green!10}
 
-\title{CSCI 315: Data Structures \\ C++ OOP}
+\title{CSCI 315: Data Structures \\ C++ Testing, Pointers, and OOP}
 \author{Paul E. West, PhD}
 
 \institute{
@@ -99,6 +99,158 @@
 \item Remember, C++ is compiled to machine code, Java compiles to byte code!
 \end{itemize}
 %\includegraphics[width=1.0\textwidth]{../imgs/simple-directories.png}
+\end{frame}
+
+\section{Testing}
+\subsection{}
+
+\begin{frame}{Testing}
+\underline{\textbf{\textit{Testing will make you more productive.}}} \\
+This means you will spend less time working on problems because you will increase you chances of getting it right the first time AND virtually never make the same mistake twice.
+\end{frame}
+
+\begin{frame}{Warning}
+\begin{itemize}
+\item Proven Fact: A computer program cannot sufficient generate test cases for you code.
+\item When I say proven, I mean Turing wrote a proof that shows beyond the shadow of a doubt that it is impossible for a computer to determine if a program halts.
+\item If we don't know if it halts how can we test?
+\item This is your job, and an advantage you have over the machines.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Unit Test}
+\begin{itemize}
+\item For this class Unit testing is sufficient.
+\item There are many other forms of testing, but this class focuses on (relatively) small units of code.
+\item There are numerous Unit Testing tools, but no de facto for C++
+\begin{itemize}
+\item Unlike Java's JUnit
+\end{itemize}
+\item I have chosen CXXTestGen for this class.
+\begin{itemize}
+\item It is the simplest which still providing sufficient robustness.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{CXX Test Gen}
+\begin{itemize}
+\item Make sure you have it installed:
+\begin{itemize}
+\item \# apt install cxxtestgen
+\end{itemize}
+\item Simple test case:
+\end{itemize}
+\begin{lstlisting}
+#include <cxxtest/TestSuite.h>
+#include <limits.h>
+#include <stdio.h>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+class MyTestSuite1 : public CxxTest::TestSuite {
+    public:
+        void test1(void) {
+            /* Fill in some test cases here for cxx test gen */
+            TS_ASSERT(add(1, 2) == 3);
+        }
+};
+
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Running The Test}
+\begin{enumerate}
+\item First we generate the test code using cxxtestgen: \\
+\$ cxxtestgen --runner=ErrorPrinter -o test-runner.cpp simple-test.cpp 
+\item Then we compile the code: \\
+\$ g++ test-runner.cpp -o test-runner
+\item Then we run! \\
+\$ ./test-runner
+\end{enumerate}
+\begin{itemize}
+\item Keep in mind that we will want to test code in other files.
+\item So, we need to include that file in \#2, for example if we had a sum.cpp, then \#2 would be:\\ 
+\$ g++ sum.cpp test-runner.cpp -o test-runner
+\item You make add optimization and profiling if desired.
+\end{itemize}
+\end{frame}
+
+
+\section{Pointers}
+\subsection{}
+
+\begin{frame}{Overview}
+\begin{itemize}
+\item As I said, in C++ a pointer can point to anything (well anything that is pointable!)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Stack Pointer}
+\begin{itemize}
+\item int *a;
+\begin{itemize}
+\item declare a variable 'a' that stores the memory address of where an integer resides.
+\end{itemize}
+\item int b = 32; \\
+a = \&b;
+\item the \& symbol calculates the memory address of the following variable.
+\item So the above declares 'b' on the stack, sets 'b' to 32, then stores the memory address of 'b' in 'a'.
+\item *a = 64;
+\item In this instance the *, mean go to where 'a' is pointing and store 32 there.
+\item Since 'a' is pointing to 'b', b now has 64.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Heap Pointer}
+\begin{itemize}
+\item int *a = new int;
+\item This reads, create a variable 'a' on the stack that will store the memory address of an integer.  Next allocate an int in memory and store the memory address of that int in 'a'.
+\item You can manipulate the new int just like before.
+\item Although, since the integer is on the heap, you must deallocate!
+\begin{itemize}
+\item delete a;
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Arrays/Pointer Arithmetic}
+\begin{itemize}
+\item int ary[100];\\
+int *a = ary;
+\item first line creates an array of 100 integers on the stack.
+\item second line creates a pointer to the array.  Notice we didn't need the \&!
+\item *(a+10) = 50; Is the same as:\\
+ary[10] = 50!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Casting}
+\begin{itemize}
+\item C++ is incredibly powerful, because of casting.\\
+int b = 300; \\
+int *a = \&b; \\
+double *d = (double*)a; \\
+*d = 3.14159;
+\item Yes, that is legal. 
+\item What is the value of b?
+\item <2-> Undefined!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{There is more}
+\begin{itemize}
+\item Pointers can point to other things:
+\begin{itemize}
+\item functions
+\item other pointers
+\item Arrays
+\item objects
+\end{itemize}
+Lastly, void * means I'm creating a pointer to something.
+\end{itemize}
 \end{frame}
 
 \section{C++ vs Java OOP}
@@ -326,84 +478,11 @@ c = a + b;  // equiv to c = a.operator+(b);
 \end{itemize}
 \end{frame}
 
-\section{Pointers}
-\subsection{}
-
-\begin{frame}{Overview}
-\begin{itemize}
-\item As I said, in C++ a pointer can point to anything (well anything that is pointable!)
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Stack Pointer}
-\begin{itemize}
-\item int *a;
-\begin{itemize}
-\item declare a variable 'a' that stores the memory address of where an integer resides.
-\end{itemize}
-\item int b = 32; \\
-a = \&b;
-\item the \& symbol calculates the memory address of the following variable.
-\item So the above declares 'b' on the stack, sets 'b' to 32, then stores the memory address of 'b' in 'a'.
-\item *a = 64;
-\item In this instance the *, mean go to where 'a' is pointing and store 32 there.
-\item Since 'a' is pointing to 'b', b now has 64.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Heap Pointer}
-\begin{itemize}
-\item int *a = new int;
-\item This reads, create a variable 'a' on the stack that will store the memory address of an integer.  Next allocate an int in memory and store the memory address of that int in 'a'.
-\item You can manipulate the new int just like before.
-\item Although, since the integer is on the heap, you must deallocate!
-\begin{itemize}
-\item delete a;
-\end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Arrays/Pointer Arithmetic}
-\begin{itemize}
-\item int ary[100];\\
-int *a = ary;
-\item first line creates an array of 100 integers on the stack.
-\item second line creates a pointer to the array.  Notice we didn't need the \&!
-\item *(a+10) = 50; Is the same as:\\
-ary[10] = 50!
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Casting}
-\begin{itemize}
-\item C++ is incredibly powerful, because of casting.\\
-int b = 300; \\
-int *a = \&b; \\
-double *d = (double*)a; \\
-*d = 3.14159;
-\item Yes, that is legal. 
-\item What is the value of b?
-\item <2-> Undefined!
-\end{itemize}
-\end{frame}
-
-\begin{frame}{There is more}
-\begin{itemize}
-\item Pointers can point to other things:
-\begin{itemize}
-\item functions
-\item other pointers
-\item Arrays
-\item objects
-\end{itemize}
-Lastly, void * means I'm creating a pointer to something.
-\end{itemize}
-\end{frame}
 
 \begin{frame}{labs}
 \begin{itemize}
 \item There are 2 labs assigned today!
-\item I recommend completing lab05 before lab06...
+\item I recommend completing lab04 before lab06...
 \end{itemize}
 \end{frame}
 
