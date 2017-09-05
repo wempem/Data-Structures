@@ -1,0 +1,49 @@
+1.
+	int *p1 = &x;
+2. 
+	*p1 = 33;
+3.
+	int *p2 = ary;
+4.
+	*p2 =5;
+5.
+	p2[2] = 15;
+6.
+	*(p2 + 3) = 35;
+7.
+	*p2 = p2[2];
+8.
+	p2[2] = 77;
+9.
+	bool pointer;
+	if(*p1 == *p2){
+	pointer = true;
+	}
+10.
+	if(p1 == p2){
+	pointer = true;
+	}
+11.
+	p1 = new int;
+12.
+	delete p1;
+13. 
+	p1 = new int[x];
+14.
+	delete p1;
+15.
+	Problem 1) The first problem is at line 2. You are trying to assign a the value 5 to a memory 
+			location. To fix this you could initalize value int b and assign p = &b;
+	Problem 2) If you are actually wanting to store these numbers, they are going to keep being 
+			overwritten by the next *p = 7 or *p = 9. 
+
+16.
+	Part 1: Stack: Functions, classes are stored here. Items deallocate when program ends. 
+		Heap: Objects, where new variables are created. Items deallocate whenever they are no
+			longer in use.
+	Part 2: C++ allows you both types of memory for:
+				a) Better performance on heavier applications.
+				b) Because C++ wants you to have more customization with your product.
+				c) C++ WILL LET YOU DO ANYTHING FOR ANY REASON SO WHY NOT PUT ANYTHING 
+					ANYWHERE!!!!
+		
