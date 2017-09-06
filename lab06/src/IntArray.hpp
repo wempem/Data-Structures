@@ -4,6 +4,8 @@
 class IntArray {
     private:
         /* You fill out the private contents. */
+        int *mArray;
+        int mSize;
 
     public:
         /* Copy array’s contents to an internal array, (length = size). */
@@ -29,6 +31,9 @@ class IntArray {
 
         /* Return true if the array ary is contained sequentually in self. */
         bool isSubsequence(IntArray &ary);
+
+        // Testing function
+        int get(int index);
 
         /* Delete any used memory when this variable goes out of scope. */
         ~IntArray();
