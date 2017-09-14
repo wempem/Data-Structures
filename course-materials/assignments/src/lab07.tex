@@ -1,0 +1,141 @@
+\documentclass[12pt]{article}
+\usepackage{listings}
+\usepackage{color}
+\textwidth=7in
+\textheight=9.5in
+\topmargin=-1in
+\headheight=0in
+\headsep=.5in
+\hoffset  -.85in
+
+\definecolor{mygray}{rgb}{0.4,0.4,0.4}
+\definecolor{mygreen}{rgb}{0,0.8,0.6}
+\definecolor{myorange}{rgb}{1.0,0.4,0}
+
+\lstset{
+basicstyle = \ttfamily,columns=fullflexible,
+commentstyle=\color{mygray},
+frame=single,
+numbers=left,
+numbersep=5pt,
+numberstyle=\tiny\color{mygray},
+keywordstyle=\color{mygreen},
+showspaces=false,
+showstringspaces=false,
+stringstyle=\color{myorange},
+tabsize=2
+}
+
+\pagestyle{empty}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{document}
+
+\begin{center}
+{\bf lab 07: Virtual Classes and Deep Copying
+}
+\end{center}
+
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{6pt} % General space between cols (6pt standard)
+\renewcommand{\arraystretch}{.5} % General space between rows (1 standard)
+
+\vskip.15in
+\noindent\textbf{Instructions:} In this lab, utilize a List interface to implement our Array class.  List.hpp has been provided:
+
+\begin{lstlisting}[language=C++]{Name=test2}
+#ifndef LIST_HPP
+#define LIST_HPP
+
+class List {
+public:
+    /* Returns the index in the array where value is found.  
+     * Return -1 if value is not present in the array.
+     */
+    virtual int indexOf(const int value) = 0;
+
+    /* Removes an item at position index by shifting later elements left.
+     * Returns true iff 0 <= index < size.
+     */
+    virtual bool remove(const int index) = 0;
+
+    /* Insert the integer val at position pos.
+     * Shift all values after pos up ("to the right") by one.
+     * This means the last element will be shifted out of the array 
+     *    (that is fine.)
+     * If pos is beyond the size of the array, increase the size of the array
+     *    so val can be inserted.
+     */
+    virtual void insert(const int pos, const int val) = 0;
+
+    /* Retrieves the element at position pos 
+       Returns -1 if pos is invalid.*/
+    virtual int get(const int pos) const = 0;
+
+    /* Sets the element at position pos to the value val.
+       Returns -1 if pos < 0.*/
+    virtual int set(const int pos, const int val) = 0;
+
+    /* Returns if the two lists contain the same elements in the
+     * same order.
+     */
+    virtual bool equals(const List &list) = 0;
+};
+
+#endif
+\end{lstlisting}
+
+Now provide an IntArray class that implements List and utilizes deep copy constructors.  Consider the following code:
+
+\begin{lstlisting}[language=C++]{Name=test2}
+    const int ary[] = {10, 50, 34, 20};
+    IntArray *ary1 = new IntArray(ary, 5);
+    IntArray *ary2 = new IntArray(*ary1);
+    std::cout << "(ary1 == ary2)?" << (ary1 == ary2) << "\n";
+    std::cout << "ary1->equals(*ary2)?" << ary1->equals(*ary2) << "\n";
+    ary2.set(2, 10);
+    std::cout << "ary1->equals(*ary2)?" << ary1->equals(*ary2) << "\n";
+    ary2.set(2, 34);
+    std::cout << "ary1->equals(*ary2)?" << ary1->equals(*ary2) << "\n";
+};
+\end{lstlisting}
+
+\vskip.15in
+\noindent\textbf{Write some test cases:} \\
+Create some test cases, using cxxtestgen, that you believe would cover all aspects of your code.
+
+\vskip.15in
+\noindent\textbf{Memory Management:} \\
+Now that we are using new, we must ensure that there is a corresponding delete to free the memory.  Ensure there are no memory leaks in your code!
+
+\vskip.15in
+\noindent\textbf{How to turn in:} \\
+Turn in via GitHub.  Ensure the file(s) are in your directory and then:
+\begin{itemize}
+\item \$ git add $<$files$>$
+\item \$ git commit 
+\item \$ git push
+\end{itemize}
+
+\vskip.15in
+\noindent\textbf{Webhook:}
+The webhook is: \\
+http://coins.csuniv.edu:2234/github/build-csci-315-fall-2017.php \\
+Remember, after the first push, please wait 5-10 minutes for the auto-grader to get your repository.  Then subsequent pushes should receive a grade.
+
+\vskip.15in
+\vskip.15in
+\noindent\textbf{Due Date:}
+September 18, 2017 2359
+
+\vskip.15in
+\noindent\textbf{Teamwork:} No teamwork, your work must be your own.
+
+\end{document}
