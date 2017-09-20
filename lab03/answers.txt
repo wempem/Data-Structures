@@ -1,5 +1,9 @@
 1. (N-1).
 2. O(N).
 3. O(n log n)
+DPW: O(n^2)
 4. O(N)
+DPW: O(log(n))
 5. O(nlog2n)
+
+The graphs look good! 
