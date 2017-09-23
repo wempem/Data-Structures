@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
 	//std::cout << (DUT.remove(3));
 	std::cout << "hi" << "\n";
 	std::cout << (DUT2 -> findIntersections(*(ary)));
-	
+	std::cout << (*(ary->indexOf(1235)));
     delete DUT2;
 	delete ary;
 }
