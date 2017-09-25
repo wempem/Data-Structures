@@ -1,6 +1,5 @@
 #ifndef LIST_HPP
 #define LIST_HPP
-
 class List {
 public:
     /* Returns the index in the array where value is found.
@@ -26,6 +25,8 @@ public:
      * same order.
      */
     virtual bool equals(const List &list) = 0;
+
+    virtual int getLength() const = 0; 	
 };
 
 #endif
