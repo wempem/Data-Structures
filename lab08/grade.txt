@@ -1,0 +1,19 @@
+******************* Equal Test *********************
+g++ -o array-test -O2 -I src/ --std=c++14 src/array.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/array.cpp:77:21: error: invalid use of member function 'int Array<T>::getLength() const [with T = int]' (did you forget the '()' ?)
+src/array.cpp:81:24: error: 'class Array<int>' has no member named 'get'
++ 0 pts of 33.333
+Total grade so far: 0
+******************* Index Of Test *********************
+g++ -o array-test -O2 -I src/ --std=c++14 src/array.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
++ 33.333 pts of 33.333
+Total grade so far: 33.333
+******************* Remove Test *********************
+g++ -o array-test -O2 -I src/ --std=c++14 src/array.cpp src/main.cpp
+Failures = 1
+MAKE_ERROR = 
++ 16.667 pts of 33.334
+Total grade so far: 50.000
