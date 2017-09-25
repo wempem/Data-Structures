@@ -14,5 +14,7 @@ int main(int argc, char *argv[]) {
     }
     cout << stack.getLength() << "\n";
     cout << stack.top() << "\n";
+
+    Stack<int> s2(stack);
 }
 

@@ -1,10 +1,13 @@
 #ifndef STACK_H
 #define STACK_H
 
+#include "sllist.hpp"
+
 template<class T>
 class Stack {
     private:
         /* Class to implement.*/
+        SLList<T> *mLinkedStack;
     public:
         /* Empty constructor shall create an empty Stack! */
         Stack();
