@@ -2,11 +2,12 @@
 #define MAP_HPP
 
 class Map{
-
     private:
-
+	int mSize;
+	int *idArray;
+	char *strArray[];
     public:
-        Map();
+        Map(int size);
 
         /* Adds (inserts) val with the associated key.
          * Returns if successful or not. (It is not successful if we are out
@@ -21,7 +22,7 @@ class Map{
 
         /*returns the size (memory consumed) by this data structure.*/
         int size();
-
+	int length(const char *key);
         /* Removes the current value from the Map AND frees up any memory 
          * that it can.
          * Returns true if there was something to remove, false otherwise.
@@ -34,6 +35,11 @@ class Map{
          */
         int howMany(const char *prefix);
 
+	void decrementId(int val);
+
+	void increaseId();
+	
+	void increaseStr();
         void print();
 
         /*Frees all memory*/
