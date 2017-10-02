@@ -5,15 +5,15 @@
 template<class T>
 class SLList {
     private:
+        class SLLNode {
+            public:
+                T mVal; // Stores the value at the node.
+                SLLNode *mNext; // Stores a pointer to the next node.
+        };
         /* Class exercise to fill in. */
-	class SLLNode{
-		public:
-			T mVal;
-			SLLNode *mNext, *mPrev;
-	};
-    	int mSize;
-	SLLNode *mHead, *mTail;
-	public:
+        int mSize;
+        SLLNode *mHead, *mTail;
+    public:
 
         /* Empty constructor shall create an empty Linked List! */
         SLList();
@@ -46,6 +46,8 @@ class SLList {
          * Otherwise return false.
          */
         bool remove(const T &val);
+
+        bool removeFirst();
 
         /* Retrieves the element at position pos */
         T& operator[](const int pos) const;
