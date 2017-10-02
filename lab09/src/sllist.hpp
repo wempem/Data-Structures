@@ -5,7 +5,14 @@
 template<class T>
 class SLList {
     private:
+        class SLLNode {
+            public:
+                T mVal; // Stores the value at the node.
+                SLLNode *mNext; // Stores a pointer to the next node.
+        };
         /* Class exercise to fill in. */
+        int mSize;
+        SLLNode *mHead, *mTail;
     public:
 
         /* Empty constructor shall create an empty Linked List! */
