@@ -23,7 +23,7 @@ template <class T>
 bool SLList<T>::operator==(const SLList<T> &list) const {
 	SLLNode *rover = this->mHead;
 	SLLNode *dover = list.mHead;
-	while(rover != NULL && dover != NULL && rover->mVal == dover.mVal){
+	while(rover != NULL && dover != NULL && rover->mVal == dover->mVal){
 		rover = rover->mNext;
 		dover = dover->mNext;
 	}
