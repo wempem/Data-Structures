@@ -147,5 +147,4 @@ void Map::increaseStr(){
 Map::~Map(){
 	delete[] *strArray;
 	delete[] idArray;
-	delete[] *temp;
 }
