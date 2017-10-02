@@ -1,24 +1,76 @@
+I am run number 000330.
+Pulling source code...
 ------------------------------------------------
-Changes found in lab08
+Changes found in course-materials
+Changes found in create
+Changes found in lab09
+Changes found in lab10
+Changes found in lab11
+Changes found in lab12
 ------------------------------------------------
-*****************Examining lab08****************
-******************* Equal Test *********************
-g++ -o array-test -O2 -I src/ --std=c++14 src/array.cpp src/main.cpp
-Failures = 
-MAKE_ERROR = src/array.cpp:77:21: error: invalid use of member function 'int Array<T>::getLength() const [with T = int]' (did you forget the '()' ?)
-src/array.cpp:81:24: error: 'class Array<int>' has no member named 'get'
-+ 0 pts of 33.333
-Total grade so far: 0
-******************* Index Of Test *********************
-g++ -o array-test -O2 -I src/ --std=c++14 src/array.cpp src/main.cpp
+*****************Examining course-materials****************
+*****************Finished course-materials****************
+*****************Examining create****************
+*****************Finished create****************
+*****************Examining lab09****************
+******************* Append Test *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/sllist.cpp src/main.cpp
 Failures = 
 MAKE_ERROR = 
-+ 33.333 pts of 33.333
-Total grade so far: 33.333
-******************* Remove Test *********************
-g++ -o array-test -O2 -I src/ --std=c++14 src/array.cpp src/main.cpp
++ 25.000 pts of 25.000
+Total grade so far: 25.000
+******************* Equal Test *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/sllist.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/sllist.cpp:26:63: error: request for member 'mVal' in 'dover', which is of pointer type 'SLList<int>::SLLNode*' (maybe you meant to use '->' ?)
++ 0 pts of 25.000
+Total grade so far: 25.000
+******************* Insert Test *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/sllist.cpp src/main.cpp
 Failures = 1
 MAKE_ERROR = 
-+ 16.667 pts of 33.334
-Total grade so far: 50.000
-*****************Finished lab08****************
++ 18.750 pts of 25.000
+Total grade so far: 43.750
+******************* Remove Test *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/sllist.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
++ 25.000 pts of 25.000
+Total grade so far: 68.750
+WARNING: this lab requires an inspection from the Professor.
+The given grade is not final.
+*****************Finished lab09****************
+*****************Examining lab10****************
+******************* Stack PART *********************
+g++ -o bt-test -g -I src/ --std=c++14 src/stack.cpp src/queue.cpp src/sllist.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = collect2: error: ld returned 1 exit status
++ 0 pts of 50.000
+Total grade so far: 0
+******************* Queue PART *********************
+g++ -o bt-test -g -I src/ --std=c++14 src/stack.cpp src/queue.cpp src/sllist.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = collect2: error: ld returned 1 exit status
++ 0 pts of 50.000
+Total grade so far: 0
+*****************Finished lab10****************
+*****************Examining lab11****************
+******************* Bubble Sort PART *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = collect2: error: ld returned 1 exit status
++ 0 pts of 50.000
+Total grade so far: 0
+******************* Binary Search PART *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = collect2: error: ld returned 1 exit status
++ 0 pts of 50.000
+Total grade so far: 0
+*****************Finished lab11****************
+*****************Examining lab12****************
+******************* Selection Sort PART *********************
+******************* Insertion Sort PART *********************
+******************* Sort PART *********************
+******************* SLList Sort PART *********************
+*****************Finished lab12****************
