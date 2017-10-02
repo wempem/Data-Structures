@@ -6,7 +6,14 @@ template<class T>
 class SLList {
     private:
         /* Class exercise to fill in. */
-    public:
+	class SLLNode{
+		public:
+			T mVal;
+			SLLNode *mNext, *mPrev;
+	};
+    	int mSize;
+	SLLNode *mHead, *mTail;
+	public:
 
         /* Empty constructor shall create an empty Linked List! */
         SLList();
