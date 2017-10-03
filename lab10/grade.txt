@@ -10,3 +10,4 @@ Failures =
 MAKE_ERROR = src/queue.cpp:48:52: error: no matching function for call to 'SLList<int>::operator==(SLList<int>* const&)'
 + 0 pts of 50.000
 Total grade so far: 0
+*****************Finished lab10****************
