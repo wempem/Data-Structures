@@ -45,7 +45,7 @@ void Queue<T>::pop(){
 template <class T>
 bool Queue<T>::operator==(const Queue<T> &queue) const{
 	
-	return mLinkedQueue->operator==(queue.mLinkedQueue);
+	return mLinkedQueue == queue.mLinkedQueue;
 }
 
 #endif
