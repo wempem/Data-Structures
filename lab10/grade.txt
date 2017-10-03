@@ -7,7 +7,6 @@ Total grade so far: 0
 ******************* Queue PART *********************
 g++ -o bt-test -g -I src/ --std=c++14 src/stack.cpp src/queue.cpp src/sllist.cpp src/main.cpp
 Failures = 
-MAKE_ERROR = collect2: error: ld returned 1 exit status
+MAKE_ERROR = src/queue.cpp:47:39: error: no matching function for call to 'SLList<int>::operator==(const Queue<int>&)'
 + 0 pts of 50.000
 Total grade so far: 0
-*****************Finished lab10****************
