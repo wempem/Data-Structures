@@ -1,10 +1,13 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#include "sllist.hpp"
+
 template<class T>
 class Queue {
     private:
         /* Class to implement.*/
+	SLList<T> *mLinkedQueue;
     public:
         /* Empty constructor shall create an empty Queue! */
         Queue();
