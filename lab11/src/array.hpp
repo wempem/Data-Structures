@@ -5,7 +5,8 @@ template <class T>
 class Array {
     private:
     /* You fill out the private contents. */
-
+	int mSize;
+	int *mArray;
     public:
     /* Do a deep copy of the array into the list.
      * Note: This one uses a pointer!
@@ -41,6 +42,7 @@ class Array {
      * The array shall be ordered from least to greatest
      */
     void bubbleSort();
+    int recursiveSearch(const T &value, int pos);
 
     /* Searches for an element with value value and returns the index of that
      * data.
@@ -48,7 +50,8 @@ class Array {
      * Return -1 if the value is not found.
      */
     int binarySearch(const T &value);
-
+	
+    void print();
     /* Free any memory used! */
     ~Array();
 };
