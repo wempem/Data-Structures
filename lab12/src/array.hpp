@@ -5,7 +5,8 @@ template <class T>
 class Array {
     private:
     /* You fill out the private contents. */
-
+	int *mArray;
+	int mSize;
     public:
     /* Do a deep copy of the array into the list.
      * Note: This one uses a pointer!
@@ -51,7 +52,7 @@ class Array {
      * The array shall be ordered from least to greatest
      */
     void insertionSort();
-
+    void print();
     /* Runs the sort routing you believe is the best. */
     void sort();
 
