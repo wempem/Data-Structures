@@ -1,19 +1,23 @@
-I am run number 000517.
+I am run number 000590.
 Pulling source code...
 ------------------------------------------------
-Changes found in lab11
+Changes found in lab12
 ------------------------------------------------
-*****************Examining lab11****************
-******************* Bubble Sort PART *********************
-g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/main.cpp
-Failures = 
+*****************Examining lab12****************
+******************* Selection Sort PART *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
+Failures = 4
 MAKE_ERROR = 
-+ 50.000 pts of 50.000
-Total grade so far: 50.000
-******************* Binary Search PART *********************
-g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/main.cpp
++ 0 pts of 30.000
+Total grade so far: 0
+******************* Insertion Sort PART *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
+******************* Sort PART *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
+******************* SLList Sort PART *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
 Failures = 
-MAKE_ERROR = 
-+ 50.000 pts of 50.000
-Total grade so far: 100.000
-*****************Finished lab11****************
+MAKE_ERROR = collect2: error: ld returned 1 exit status
++ 0 pts of 30.000
+Total grade so far: 0
+*****************Finished lab12****************
