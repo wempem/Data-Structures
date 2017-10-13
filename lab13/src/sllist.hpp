@@ -5,26 +5,16 @@
 template<class T>
 class SLList {
     private:
-        class SLLNode {
-            public:
-                T mVal; // Stores the value at the node.
-                SLLNode *mNext; // Stores a pointer to the next node.
-        };
         /* Class exercise to fill in. */
-<<<<<<< HEAD
-	class SLLNode{
-		public:
-			T mVal;
-			SLLNode *mNext, *mPrev;
-	};
-    	int mSize;
-	SLLNode *mHead, *mTail;
-	public:
-=======
+        class Node {
+            public:
+                T mData;
+                Node *mNext;
+        };
+
+        Node *mHead, *mTail;
         int mSize;
-        SLLNode *mHead, *mTail;
     public:
->>>>>>> d885a1120c47a755f6c680233a8c765c25394147
 
         /* Empty constructor shall create an empty Linked List! */
         SLList();
@@ -64,6 +54,9 @@ class SLList {
         /* Returns if the two lists contain the same elements in the
          * same order.*/
         bool operator==(const SLList<T> &list) const;
+
+        /* Sort the linked list.  You may use any O(n*log(n)) sort algorithm you wish */
+        void sort();
 };
 
 /* Since SLList is templated, we include the .cpp

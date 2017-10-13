@@ -6,6 +6,7 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
     /* You may write manual tests here. */
+<<<<<<< HEAD
 	SLList<int> sl;
 	DLList<int> dll;
 	dll.append(18);
@@ -24,5 +25,21 @@ int main(int argc, char *argv[]) {
 //	sl.append(51);
 //	std::cout << "sl.getLength() = " << sl.getLength() << "\n";	
 //	sl.print();
+=======
+    SLList<int> sl;
+    std::cout << "sl.getLength() = " << sl.getLength() << "\n";
+    sl.print();
+    sl.append(17);
+    std::cout << "sl.getLength() = " << sl.getLength() << "\n";
+    sl.print();
+    sl.append(8);
+    sl.append(32);
+    sl.append(78);
+    sl.append(17);
+    sl.append(9001);
+    sl.print();
+    SLList<int> sl2(sl);
+    sl2.print();
+>>>>>>> d885a1120c47a755f6c680233a8c765c25394147
 }
 
