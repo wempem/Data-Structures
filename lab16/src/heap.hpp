@@ -5,6 +5,9 @@ template<class T>
 class Heap {
     private:
         /* Lets fill out in class. */
+        T *mHeap;
+        int mSize; // Number of elements in the Heap.
+        int mCapacity;// How many elements the Heap can currently hold.
     public:
 
         /* Creates an empty heap. */
