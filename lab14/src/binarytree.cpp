@@ -107,7 +107,7 @@ template <class T>
 T& BinaryTree<T>::lca(T& a, T& b){
 	
 	BinaryTreeNode<T> *rover = mRoot;	
-	while (rover!= NULL){
+	while (rover != NULL){
 		if(rover->mVal > a && rover->mVal > b){
 			rover = rover->mLeft;
 		}
@@ -116,7 +116,7 @@ T& BinaryTree<T>::lca(T& a, T& b){
 		}
 		else{break;} 	
 	}
-	return *rover;
+	return rover->mVal;
 }
 
 #endif 
