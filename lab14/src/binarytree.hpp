@@ -7,14 +7,19 @@ template<class T>
 class BinaryTreeNode {
     public:
         BinaryTreeNode<T> () {
-        }
+        mVal = 0;
+	mLeft = mRight = NULL;
+	}
+	BinaryTreeNode *mLeft, *mRight;
+	int mVal;
 };
 
 template<class T>
 class BinaryTree {
     private:
         /* You fill in private member data. */
-
+	BinaryTreeNode<T> *mRoot;
+	int mSize;	
         /* Recommended, but not necessary helper function. */
         void put(BinaryTreeNode<T> *rover, BinaryTreeNode<T> *newNode);
         /* Recommended, but not necessary helper function. */
@@ -35,7 +40,7 @@ class BinaryTree {
 
         /* Returns the height for the binary tree. */
         int getHeight();
-
+	int getHeight(BinaryTreeNode<T> *node);
         /* Returns a string representation of the binary Tree in order. */
         std::string inorderString();
 
@@ -54,6 +59,7 @@ class BinaryTree {
 
         /* Always free memory. */
         ~BinaryTree();
+	T& copyCons(BinaryTreeNode<T> *node);
 };
 
 /* Since BinaryTree is templated, we include the .cpp.
