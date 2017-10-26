@@ -3,6 +3,7 @@
 #include "binarytree.hpp"
 #include <string>
 #include <iostream>
+#include <sstream>
 template<class T>
 BinaryTree<T>::BinaryTree() {
 	mRoot = NULL;
