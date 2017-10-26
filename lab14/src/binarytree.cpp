@@ -18,14 +18,15 @@ BinaryTree<T>::~BinaryTree() {
 template<class T>
 BinaryTree<T>::BinaryTree(const BinaryTree<T> &tree){
 	
-//	BinaryTreeNode<T> *rover = mRoot;
-//	tree->mRoot = rover;
-//	tree->mVal = rover->mVal;
+	BinaryTreeNode<T> *rover = mRoot;
+	tree->mRoot = rover;
+	tree->mVal = rover->mVal;
 //	tree.put(rove);
 }
 
 template <class T>
 void BinaryTree<T>::put(const T &val){
+
 	BinaryTreeNode<T> *newNode = new BinaryTreeNode<T>();
 	newNode->mVal = val;
 
@@ -60,6 +61,7 @@ int BinaryTree<T>::getHeight(){
 
 template <class T>
 int BinaryTree<T>::getHeight(BinaryTreeNode<T> *node){
+	
 	int left, right;
 	if(node == NULL){
 		return -1;
@@ -76,12 +78,13 @@ int BinaryTree<T>::getHeight(BinaryTreeNode<T> *node){
 }
 template<class T>
 std::string BinaryTree<T>::inorderString(BinaryTreeNode<T> *node, std::string &ret){	
+	
 	if(node == NULL){
 		return "";
 	}
 
 	ret.append(inorderString(node->mLeft));
-	ret.append(to_string(node->mVal) + " ");
+	ret.append(str(node->mVal) + " ");
 	ret.append(inorderString(node->mRight));
 
 	return ret;
@@ -113,4 +116,5 @@ T& BinaryTree<T>::lca(T& a, T& b){
 	}
 	return rover;
 }
+
 #endif 
