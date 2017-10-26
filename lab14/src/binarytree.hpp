@@ -7,11 +7,11 @@ template<class T>
 class BinaryTreeNode {
     public:
         BinaryTreeNode<T> () {
-        mVal = 0;
-	mLeft = mRight = NULL;
+        	mVal = 0;
+		mLeft = mRight = NULL;
 	}
-	BinaryTreeNode *mLeft, *mRight;
-	int mVal;
+	BinaryTreeNode<T> *mLeft, *mRight;
+	T mVal;
 };
 
 template<class T>
