@@ -18,9 +18,9 @@ BinaryTree<T>::~BinaryTree() {
 template<class T>
 BinaryTree<T>::BinaryTree(const BinaryTree<T> &tree){
 	
-	BinaryTreeNode<T> *rover = mRoot;
-	tree->mRoot = rover;
-	tree->mVal = rover->mVal;
+//	BinaryTreeNode<T> *rover = mRoot;
+//	tree->mRoot = rover;
+//	tree->mVal = rover->mVal;
 //	tree.put(rove);
 }
 
