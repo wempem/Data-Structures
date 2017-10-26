@@ -27,3 +27,4 @@ MAKE_ERROR = src/binarytree.cpp:117:9: error: invalid conversion from 'BinaryTre
 src/binarytree.cpp:117:9: error: cannot bind rvalue '(int)rover' to 'int&'
 + 0 pts of 35.000
 Total grade so far: 0
+*****************Finished lab14****************
