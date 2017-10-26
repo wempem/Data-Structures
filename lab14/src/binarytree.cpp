@@ -116,7 +116,7 @@ T& BinaryTree<T>::lca(T& a, T& b){
 		}
 		else{break;} 	
 	}
-	return rover;
+	return *rover;
 }
 
 #endif 
