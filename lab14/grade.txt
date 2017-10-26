@@ -20,7 +20,6 @@ Total grade so far: 0
 g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
 Failures = 
 MAKE_ERROR = 
-Memory errors found: ==11439==    definitely lost: 240 bytes in 10 blocks
+Memory errors found: ==11744==    definitely lost: 240 bytes in 10 blocks
 + 31.500 pts of 35.000
 Total grade so far: 31.500
-*****************Finished lab14****************
