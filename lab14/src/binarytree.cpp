@@ -1,6 +1,7 @@
 #ifdef BINARY_TREE_H
+#define BINARY_TREE_H
 
-#include "binarytree.hpp"
+//#include "binarytree.hpp"
 #include <string>
 #include <iostream>
 #include <sstream>
