@@ -73,7 +73,6 @@ void BinaryTree<T>::put(const T &val){
 
 template <class T>
 int BinaryTree<T>::getHeight(){
-	BinaryTreeNode<T> *rover = mRoot;
 	return getHeight(mRoot);	
 }
 
@@ -82,16 +81,16 @@ int BinaryTree<T>::getHeight(BinaryTreeNode<T> *node){
 	
 	int left, right;
 	if(node == NULL){
-		return -1;
+		return 0;
 	}
 	left = getHeight(node->mLeft);
 	right = getHeight(node->mRight);
 	
 	if(left > right){
-		 return left++;
+		 return left += 1;
 	}
 	else{
-		return right++;
+		return right += 1;
 	}
 }
 template<class T>
