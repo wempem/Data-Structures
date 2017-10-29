@@ -95,15 +95,15 @@ int BinaryTree<T>::getHeight(BinaryTreeNode<T> *node){
 	}
 }
 template<class T>
-std::string BinaryTree<T>::inorderString(BinaryTreeNode<T> *node, std::string &ret){	
-	
+std::string BinaryTree<T>::inorderString(BinaryTreeNode<T> *node){	
+	std::string ret = "";
 	if(node == NULL){
 		return "";
 	}
 
-	ret.append(inorderString(node->mLeft, ret));
+	ret.append(inorderString(node->mLeft));
 	ret.append(toString(node->mVal) + " ");
-	ret.append(inorderString(node->mRight, ret));
+	ret.append(inorderString(node->mRight));
 
 	return ret;
 }
@@ -115,8 +115,7 @@ T& BinaryTree<T>::copyCons(BinaryTreeNode<T> *node){
 
 template <class T>
 std::string BinaryTree<T>::inorderString(){
-	std::string ret = "";
-	return inorderString(mRoot, ret);
+	return inorderString(mRoot);
 }
 
 template <class T>

@@ -22,7 +22,7 @@ class BinaryTree {
         /* Recommended, but not necessary helper function. */
         void put(BinaryTreeNode<T> *rover, BinaryTreeNode<T> *newNode);
         /* Recommended, but not necessary helper function. */
-        std::string inorderString(BinaryTreeNode<T> *node, std::string &ret);
+        std::string inorderString(BinaryTreeNode<T> *node);
     public:
 
         /* Creates an empty binary tree. */
