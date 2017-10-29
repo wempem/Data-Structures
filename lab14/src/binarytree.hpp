@@ -27,7 +27,7 @@ class BinaryTree {
 
         /* Creates an empty binary tree. */
         BinaryTree();
-
+	void deleteMe(BinaryTreeNode<T> *node);
         /* Does a deep copy of the tree. */
         BinaryTree(const BinaryTree<T> &tree);
 
