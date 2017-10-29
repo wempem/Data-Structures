@@ -7,7 +7,6 @@ template<class T>
 class BinaryTreeNode {
     public:
         BinaryTreeNode<T> () {
-        	mVal;
 		mLeft = mRight = NULL;
 	}
 	BinaryTreeNode<T> *mLeft, *mRight;
@@ -37,7 +36,7 @@ class BinaryTree {
          * Do NOT do ANY balancing!
          */
         void put(const T &val);
-
+	std::string toString(int x);
         /* Returns the height for the binary tree. */
         int getHeight();
 	int getHeight(BinaryTreeNode<T> *node);

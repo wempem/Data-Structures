@@ -85,9 +85,9 @@ std::string BinaryTree<T>::inorderString(BinaryTreeNode<T> *node, std::string &r
 		return "";
 	}
 
-	ret.append(inorderString(node->mLeft));
-	ret.append(str(node->mVal) + " ");
-	ret.append(inorderString(node->mRight));
+	ret.append(inorderString(node->mLeft, ret));
+	ret.append(toString(node->mVal) + " ");
+	ret.append(inorderString(node->mRight, ret));
 
 	return ret;
 }
@@ -118,5 +118,11 @@ T& BinaryTree<T>::lca(T& a, T& b){
 	}
 	return rover->mVal;
 }
+template <class T>
+std::string BinaryTree<T>::toString(int x){
 
+    std::ostringstream temp;
+    temp  << x;
+    return temp.str();
+}
 #endif 
