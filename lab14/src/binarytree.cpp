@@ -119,7 +119,7 @@ T& BinaryTree<T>::lca(T& a, T& b){
 	return rover->mVal;
 }
 template <class T>
-std::string BinaryTree<T>::toString(int x){
+std::string BinaryTree<T>::toString(T x){
 
     std::ostringstream temp;
     temp  << x;
