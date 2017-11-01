@@ -2,28 +2,22 @@
 #define HASH_TABLE_H
 
 #include <string>
+#include <vector>
+#include <list>
 
 /* HashTable via open addressing */
 template<class K, class V>
 class HashTable {
-    struct Pair {
-        K mKey;
-        V mValue;
-        Pair(const K key, const V value) {
-            mKey = key;
-            mValue = value;
-        }
-        bool operator==(const Pair &pair) {
-            return mKey == pair.mKey;
-        }
-    };
     private:
-        /* Class to begin filling out...*/
-        int mLen;
-        V mInvalid;
+        class Pair {
+            public:
+                K mKey;
+                V mVal;
+        };
+        std::vector<std::vector<Pair> > mTable;
     public:
         /* Initialize the Hash Table with size size. */
-        HashTable(const int size, const float loadFactor);
+        HashTable(const int size);
 
         /* Deconstructor shall free up memory */
         ~HashTable();
@@ -46,7 +40,6 @@ class HashTable {
         /* Retrieves the V val that key maps to. */
         V& operator[](const K &key);
 
-        int loadFactor();
 };
 
 int hashcode(int key);
