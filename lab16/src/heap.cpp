@@ -7,6 +7,11 @@ Heap<T>::Heap(const int len) {
     mSize = 0;
 }
 
+template <class T>
+Heap<T>::Heap(const T *array, const int size){
+
+}
+
 template<class T>
 void Heap<T>::insert(const T& element) {
     // 1) Check if we have capacity.
@@ -33,6 +38,21 @@ void Heap<T>::insert(const T& element) {
 }
 
 template<class T>
+int Heap<T>::getHeight(){
+
+}
+
+template<class T>
+int Heap<T>::getSize(){
+
+}
+
+template <class T>
+int Heap<T>::contains(const T &val) const{
+
+}
+
+template<class T>
 T& Heap<T>::operator[](const int pos) {
     return mHeap[pos];
 }
@@ -56,6 +76,13 @@ T* Heap<T>::heapSort() {
 /* Removes and returns the first element */
 template<class T>
 T& Heap<T>::removeFirst() {
+	T temp = 0;
+	T first = mHeap[0];
+	temp = mHeap[mSize - 1];
+	mHeap[mSize - 1] = first;
+	mSize--;
+	heapSort();
+	return mHeap[mSize];
     // 1) Swap the first and last element
     // 2) Decrement mSize
     // 3) Reheap
@@ -64,5 +91,6 @@ T& Heap<T>::removeFirst() {
 
 template<class T>
 Heap<T>::~Heap() {
+
 }
 #endif
