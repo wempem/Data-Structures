@@ -2,20 +2,20 @@
 g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
 Failures = 
 MAKE_ERROR = 
-Memory errors found: ==23293==    definitely lost: 120 bytes in 4 blocks
+Memory errors found: ==23557==    definitely lost: 120 bytes in 4 blocks
 + 31.500 pts of 35.000
 Total grade so far: 31.500
 ******************* get Height PART *********************
 g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
-Failures = 3
+Failures = 
 MAKE_ERROR = 
-Memory errors found: ==23349==    definitely lost: 96 bytes in 3 blocks
-+ 0 pts of 30.000
-Total grade so far: 31.500
+Memory errors found: ==23612==    definitely lost: 96 bytes in 3 blocks
++ 27.000 pts of 30.000
+Total grade so far: 58.500
 ******************* lca test PART *********************
 g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
 Failures = 
 MAKE_ERROR = 
-Memory errors found: ==23404==    definitely lost: 72 bytes in 3 blocks
+Memory errors found: ==23667==    definitely lost: 72 bytes in 3 blocks
 + 31.500 pts of 35.000
-Total grade so far: 63.000
+Total grade so far: 90.000
