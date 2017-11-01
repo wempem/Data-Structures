@@ -1,5 +1,5 @@
 #ifdef HEAP_H
-
+#include <cmath>
 template<class T>
 Heap<T>::Heap(const int len) {
     mCapacity = len;
@@ -9,13 +9,20 @@ Heap<T>::Heap(const int len) {
 
 template <class T>
 Heap<T>::Heap(const T *array, const int size){
-
+	mSize = size;
+	mHeap = new T[mSize];
+	for(int i = 0; i < mSize; i++){
+		mHeap[i] = array[i];
+	}
 }
 
 template<class T>
 void Heap<T>::insert(const T& element) {
     // 1) Check if we have capacity.
     if (mSize >= mCapacity) {
+	while(mSize > mCapacity){
+		mCapacity++;
+	}
         //TODO: increase capacity!
     }
 
@@ -39,17 +46,28 @@ void Heap<T>::insert(const T& element) {
 
 template<class T>
 int Heap<T>::getHeight(){
-
+	int temp = mSize + 1;
+	int fin = 0;
+	fin = log(temp) / log(2);
+	if(fmod(log(temp),log(2)) == 1){
+		return fin += 1;
+	}
+	return fin;
 }
 
 template<class T>
 int Heap<T>::getSize(){
-
+	return mSize;
 }
 
 template <class T>
 int Heap<T>::contains(const T &val) const{
-
+	for(int i = 0; i < mSize; i++){
+		if(val == mHeap[i]){
+			return i;
+		}
+	}
+	return -1;
 }
 
 template<class T>
@@ -91,6 +109,6 @@ T& Heap<T>::removeFirst() {
 
 template<class T>
 Heap<T>::~Heap() {
-
+	delete[] mHeap; 
 }
 #endif
