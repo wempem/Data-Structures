@@ -1,8 +1,7 @@
 #ifdef HASH_TABLE_H
 
 template<class K, class V>
-HashTable<K, V>::HashTable(const int size) {
-    mTable.reserve(size);
+HashTable<K, V>::HashTable(const int size):mTable(size){
 }
 
 template<class K, class V>

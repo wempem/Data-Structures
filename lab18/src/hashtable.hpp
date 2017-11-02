@@ -14,7 +14,7 @@ class HashTable {
                 K mKey;
                 V mVal;
         };
-        std::vector<std::vector<Pair> > mTable;
+        std::vector<std::list<Pair> > mTable;
     public:
         /* Initialize the Hash Table with size size. */
         HashTable(const int size);
