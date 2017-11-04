@@ -20,6 +20,7 @@ class Student {
 
 	static bool idSort(const Student &a, const Student &b){return a.mSid < b.mSid;}
 	static bool pSort(const Student *a, const Student *b){return a->mSid < b->mSid;}
+	static bool azSort(const Student *a, const Student *b){return a->mName > b->mName;}
 };
 
 int main (int argc, char *argv[]) {
@@ -86,7 +87,6 @@ int main (int argc, char *argv[]) {
     /* TODO: Declare an array of pointers to Students, name it psarray.
      * initialize the elements so that they point to the contents of sarray
      */
-
 	sort(psarray, psarray+10, psarray[0]->pSort);
     /* TODO: use STL to sort the students pointed at by psarray, hint: you need
      * a new predicate
@@ -97,11 +97,8 @@ int main (int argc, char *argv[]) {
             psarray[i]->print();
         }
         cout << "\n\n";
-	
-//	sarray[i].idSort(*psarray[i], *psarray[i+1]);
-	
-  //   	sort(sarray[0], sarray[10], psarray[0]->idSort);
-
+			
+    	//sort(psarray, psarray+10, psarray[0]->pSort();
     /* TODO: Now figure out how to sort sarray based on the results of sorting
      * psarray notice this is printing sarray, so after sorting psarray, you 
      * need to use that info to sort sarray in O(N) time
@@ -111,18 +108,24 @@ int main (int argc, char *argv[]) {
         sarray[i].print();
     }
     cout << "\n\n";
+	Student *psarrayN[10];
+	for(int i = 0; i < 10; i++){
+		psarrayN[i] = &sarray[i];
+	}
+	sort(psarrayN, psarrayN + 10, psarrayN[0]->azSort);
 
     /* TODO: create another array of pointers to students that again point to
      * the students in sarray name the array psarrayN.  Then sort just the
      * pointers in DESCENDING (z to a) alphabetical order of Student's names.
      */
 
-    /*  //This will print the students from psarrayN after you have correctly set it up.
+     //This will print the students from psarrayN after you have correctly set it up.
     cout <<"sort pointer: ";
     for (int i = 0; i < 10; i++) {
         psarrayN[i]->print();
     }
     cout << "\n\n";
-    */
+	
     return 0;
 }
+
