@@ -17,7 +17,10 @@ class Student {
                                                   * this method
                                                   */
         string getName() const { return mName; }
-};  
+
+	static bool idSort(const Student &a, const Student &b){return a.mSid < b.mSid;}
+	static bool pSort(const Student *a, const Student *b){return a->mSid < b->mSid;}
+};
 
 int main (int argc, char *argv[]) {
     const int backup[10] =
@@ -27,6 +30,9 @@ int main (int argc, char *argv[]) {
     int n = 10;
 
     vector<int> vec;
+	for(int i = 0; i < 10; i++){
+		vec.push_back(backup[i]);
+	}	
     /* TODO: use an insert out of the vector class to get the integers from 
      * backup copied into vec should be done in 1 specific insert call, but 
      * make a loop if you have to.
@@ -38,7 +44,7 @@ int main (int argc, char *argv[]) {
     }
  
     /* TODO: sort the vector using STL's sort */
-
+	sort(vec.begin(), vec.end());
     cout << "\n\tsorted vec print: ";
     for (int i = 0; i < 10; i++) {
         cout << vec[i] << ", ";
@@ -57,8 +63,8 @@ int main (int argc, char *argv[]) {
     }
 
     /* TODO: sort sarray using STL's sort, hint: you will need a predicate function */
-
-    cout << "\nSort Studs ";
+	sort(sarray, sarray + 10, sarray[0].idSort); 
+       	cout << "\nSort Studs ";
     for (int i = 0; i < 10; i++) {
         sarray[i].print();
     }
@@ -73,30 +79,34 @@ int main (int argc, char *argv[]) {
      * if they were big.  (Due to the time it takes to swap large data structs).
      * The solution is use pointers instead.
      */
-
+	Student *psarray[10];
+	for(int i = 0; i < 10; i++){
+		psarray[i] = &sarray[i];
+	}
     /* TODO: Declare an array of pointers to Students, name it psarray.
      * initialize the elements so that they point to the contents of sarray
      */
 
-
+	sort(psarray, psarray+10, psarray[0]->pSort);
     /* TODO: use STL to sort the students pointed at by psarray, hint: you need
      * a new predicate
      */
 
-    /*//This will print the students from psarray after you have correctly set it up.
-        cout <<"sort pointer: ";
+           cout <<"sort pointer: ";
         for (int i = 0; i < 10; i++) {
             psarray[i]->print();
         }
         cout << "\n\n";
-     */
+	
+//	sarray[i].idSort(*psarray[i], *psarray[i+1]);
+	
+  //   	sort(sarray[0], sarray[10], psarray[0]->idSort);
 
     /* TODO: Now figure out how to sort sarray based on the results of sorting
      * psarray notice this is printing sarray, so after sorting psarray, you 
      * need to use that info to sort sarray in O(N) time
      */
-
-    cout << "sort Studs: ";
+	    cout << "sort Studs: ";
     for (int i = 0; i < 10; i++) {
         sarray[i].print();
     }
