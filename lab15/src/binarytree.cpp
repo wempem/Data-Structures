@@ -8,10 +8,25 @@ BinaryTree<T>::BinaryTree() {
 
 template<class T>
 BinaryTree<T>::~BinaryTree() {
-	
-	BinaryTreeNode<T> *rover = mRoot;
-	delete rover->mLeft;
-	delete rover->mRight;
+	deleteMe(mRoot);
+	mRoot = NULL;
+}
+
+template<class T>
+void BinaryTree<T>::deleteMe(BinaryTreeNode<T> *node){
+        if(node == NULL){
+                return;
+        }
+        if(node->mLeft != NULL){
+                deleteMe(node->mLeft);
+        }
+        else if(node->mRight != NULL){
+                deleteMe(node->mRight);
+        }
+        else{
+                delete node;
+                return;
+        }
 }
 
 template<class T>
