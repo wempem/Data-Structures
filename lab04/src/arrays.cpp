@@ -1,4 +1,5 @@
 #include <iostream>
+//pushing again for grade
 int countNegatives(const int array[], int size) {
     int sum = 0;
 	for (int i = 0; i < size; i++){
