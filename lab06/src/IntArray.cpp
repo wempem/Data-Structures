@@ -1,9 +1,6 @@
 #include "IntArray.hpp"
-<<<<<<< HEAD
 #include <iostream>
-=======
 
->>>>>>> 6496dea5d51dc379abad9c5429ca9b43c4ae124d
 /* Copy array’s contents to an internal array, (length = size). 
  * Do a deep copy!
  */
@@ -28,7 +25,6 @@ IntArray::~IntArray() {
 int IntArray::getLength() {
     return mSize;
 }
-<<<<<<< HEAD
 int IntArray::indexOf(int value){
 	for(int i = 0; i < mSize; i++){
 		if(mArray[i] == value)
@@ -124,5 +120,4 @@ bool IntArray::isSubsequence(IntArray &ary){
 	}
 	return false;
 }	
-=======
->>>>>>> 6496dea5d51dc379abad9c5429ca9b43c4ae124d
+
