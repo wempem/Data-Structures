@@ -95,18 +95,19 @@ bool BinaryTree<T>::contains(const T &val) const{
 
 template<class T>
 bool BinaryTree<T>::contain(const T &val, BinaryTreeNode<T> *node) const{
-		if(node == NULL){
-			return false;
-		}
 
-		else if(node->mVal == val){
+		if(node->mVal == val){
 			return true;
 		}
-		else{
+		if(node->mLeft != NULL){
 			contain(val, node->mLeft);
+		}
+		else if(node->mRight != NULL){
 			contain(val, node->mRight);
 		}
-}
+		else if(node->mRight == NULL && node->mLeft == NULL){
+			return false;
+		}
 
 template <class T>
 bool BinaryTree<T>::remove(const T &val){
