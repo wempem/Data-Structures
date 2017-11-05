@@ -79,7 +79,7 @@ bool BinaryTree<T>::contains(const T &val) const{
 }
 
 template<class T>
-bool BinaryTree<T>::contain(const T &val, BinaryTreeNode<T> *node){
+bool BinaryTree<T>::contain(const T &val, BinaryTreeNode<T> *node) const{
 		if(node == NULL){
 			return false;
 		}
