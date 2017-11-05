@@ -7,14 +7,18 @@ template<class T>
 class BinaryTreeNode {
     public:
         BinaryTreeNode<T> () {
-        }
+	mLeft = mRight = NULL;
+	}
+	BinaryTreeNode *mLeft, *mRight;
+	T mVal;
 };
 
 template<class T>
 class BinaryTree {
     private:
         /* You fill in private member data. */
-
+	BinaryTreeNode<T> *mRoot;
+	int mSize;
         /* Recommended, but not necessary helper function. */
         void put(BinaryTreeNode<T> *rover, BinaryTreeNode<T> *newNode);
         /* Recommended, but not necessary helper function. */
@@ -35,7 +39,7 @@ class BinaryTree {
 
         /* Returns the height for the binary tree. */
         int getHeight();
-
+	int getHeight(BinaryTreeNode<T> *node);
         /* Returns true if an item exists in the Binary Tree */
         bool contains(const T &val) const;
 
@@ -64,7 +68,7 @@ class BinaryTree {
          * visit on each node.
          */
         void inorderTraversal(void (*visit) (T &item)) const;
-
+	bool contain(const T&, BinaryTreeNode<T> *node);
         /* Always free memory. */
         ~BinaryTree();
 };
