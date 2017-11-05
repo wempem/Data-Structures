@@ -36,7 +36,7 @@ class BinaryTree {
          * Do NOT do ANY balancing!
          */
         void put(const T &val);
-
+	void deleteMe(BinaryTreeNode<T> *node);
         /* Returns the height for the binary tree. */
         int getHeight();
 	int getHeight(BinaryTreeNode<T> *node);
