@@ -1,5 +1,6 @@
 #include "IntArray.hpp"
 #include <iostream>
+//adding this for grade
 IntArray::IntArray(int *array, int size){
 	mSize = size;
 	mArray = new int[mSize];
@@ -35,8 +36,7 @@ bool IntArray::remove(const int index){
                 	}
         	}
         return false;
-}
-	return 0;
+	}
 }
 void IntArray::insert(const int pos, const int val){
 	if(pos < 0){

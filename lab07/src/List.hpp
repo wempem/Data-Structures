@@ -1,5 +1,6 @@
 #ifndef LIST_HPP
 #define LIST_HPP
+//adding this for grade
 class List {
 public:
     /* Returns the index in the array where value is found.
