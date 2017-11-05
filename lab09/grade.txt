@@ -20,4 +20,3 @@ makefile:7: recipe for target 'all' failed
 Compilation errors, please fix...
 WARNING: this lab requires an inspection from the Professor.
 The given grade is not final.
-*****************Finished lab09****************
