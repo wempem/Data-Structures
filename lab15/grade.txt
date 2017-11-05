@@ -1,5 +1,32 @@
 ******************* inRange Test *********************
+g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
+Failures = 4
+MAKE_ERROR = 
+Memory errors found: ==30145==    definitely lost: 312 bytes in 10 blocks
++ 0 pts of 25.000
+Total grade so far: 0
 ******************* contains test *********************
+g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/binarytree.cpp:78:9: error: passing 'const BinaryTree<int>' as 'this' argument discards qualifiers [-fpermissive]
+src/binarytree.cpp:78:9: error: passing 'const BinaryTree<std::__cxx11::basic_string<char> >' as 'this' argument discards qualifiers [-fpermissive]
++ 0 pts of 25.000
+Total grade so far: 0
 ******************* count in range test *********************
+g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = /srv/auto-grader/csci-315-fall-2017/run/001049/lab15/tests/count-in-range-test.cpp:11:30: error: 'class BinaryTree<int>' has no member named 'countInRange'; did you mean 'existsInRange'?
+/srv/auto-grader/csci-315-fall-2017/run/001049/lab15/tests/count-in-range-test.cpp:15:26: error: 'class BinaryTree<int>' has no member named 'countInRange'; did you mean 'existsInRange'?
+/srv/auto-grader/csci-315-fall-2017/run/001049/lab15/tests/count-in-range-test.cpp:28:26: error: 'class BinaryTree<int>' has no member named 'countInRange'; did you mean 'existsInRange'?
+/srv/auto-grader/csci-315-fall-2017/run/001049/lab15/tests/count-in-range-test.cpp:29:26: error: 'class BinaryTree<int>' has no member named 'countInRange'; did you mean 'existsInRange'?
+/srv/auto-grader/csci-315-fall-2017/run/001049/lab15/tests/count-in-range-test.cpp:35:30: error: 'class BinaryTree<int>' has no member named 'countInRange'; did you mean 'existsInRange'?
+/srv/auto-grader/csci-315-fall-2017/run/001049/lab15/tests/count-in-range-test.cpp:49:26: error: 'class BinaryTree<std::__cxx11::basic_string<char> >' has no member named 'countInRange'; did you mean 'existsInRange'?
+/srv/auto-grader/csci-315-fall-2017/run/001049/lab15/tests/count-in-range-test.cpp:50:26: error: 'class BinaryTree<std::__cxx11::basic_string<char> >' has no member named 'countInRange'; did you mean 'existsInRange'?
++ 0 pts of 25.000
+Total grade so far: 0
 ******************* traversal test *********************
-*****************Finished lab15****************
+g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = collect2: error: ld returned 1 exit status
++ 0 pts of 25.000
+Total grade so far: 0
