@@ -108,7 +108,7 @@ bool BinaryTree<T>::contain(const T &val, BinaryTreeNode<T> *node) const{
 		else if(node->mRight == NULL && node->mLeft == NULL){
 			return false;
 		}
-
+}
 template <class T>
 bool BinaryTree<T>::remove(const T &val){
 
