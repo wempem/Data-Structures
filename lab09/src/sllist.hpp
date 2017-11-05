@@ -11,20 +11,10 @@ class SLList {
                 SLLNode *mNext; // Stores a pointer to the next node.
         };
         /* Class exercise to fill in. */
-<<<<<<< HEAD
-	class SLLNode{
-		public:
-			T mVal;
-			SLLNode *mNext, *mPrev;
-	};
-    	int mSize;
-	SLLNode *mHead, *mTail;
-	public:
-=======
         int mSize;
         SLLNode *mHead, *mTail;
     public:
->>>>>>> d885a1120c47a755f6c680233a8c765c25394147
+
 
         /* Empty constructor shall create an empty Linked List! */
         SLList();
