@@ -68,7 +68,7 @@ class BinaryTree {
          * visit on each node.
          */
         void inorderTraversal(void (*visit) (T &item)) const;
-	bool contain(const T&, BinaryTreeNode<T> *node);
+	bool contain(const T&, BinaryTreeNode<T> *node) const;
         /* Always free memory. */
         ~BinaryTree();
 };
