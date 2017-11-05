@@ -1,9 +1,3 @@
-I am run number 001043.
-Pulling source code...
-------------------------------------------------
-Changes found in lab07
-------------------------------------------------
-*****************Examining lab07****************
 ******************* Get Test *********************
 g++ -o intarray-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
 Failures = 
@@ -34,4 +28,3 @@ Failures = 3
 MAKE_ERROR = 
 + 0 pts of 20.000
 Total grade so far: 80.000
-*****************Finished lab07****************
