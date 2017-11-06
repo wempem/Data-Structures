@@ -64,7 +64,7 @@ int hashcode(int key) {
     return key;
 }
 
-int hashcode(std::string key) {
+int hashcode(const std::string &key) {
     // You need to do something else.
     return 0;
 }
