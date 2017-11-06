@@ -54,7 +54,8 @@ class BinaryTree {
          * is an item in the tree in the range [min, max]
          */
         bool existsInRange(T min, T max) const;
-
+	bool removed(const T& val, BinaryTreeNode<T> *node);
+	bool exchangeRemove(const T& val, BinaryTreeNode<T> *node);
         /* Returns a string representation of the binary Tree in order. */
         std::string inorderString();
 

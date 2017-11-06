@@ -90,12 +90,14 @@ int BinaryTree<T>::getHeight(BinaryTreeNode<T> *node){
 
 template <class T>
 bool BinaryTree<T>::contains(const T &val) const{
-	contain(val, mRoot);
+	if(val == NULL){
+		return false;
+	}
+	 return contain(val, mRoot);
 }
 
 template<class T>
 bool BinaryTree<T>::contain(const T &val, BinaryTreeNode<T> *node) const{
-
 		if(node->mVal == val){
 			return true;
 		}
@@ -111,13 +113,65 @@ bool BinaryTree<T>::contain(const T &val, BinaryTreeNode<T> *node) const{
 }
 template <class T>
 bool BinaryTree<T>::remove(const T &val){
-
+	if(mRoot == val){
+		exchangeRemove(mRoot);
+		return true;
+	}
+	else
+		return removed(val, mRoot);
 }
 
+template <class T>
+bool BinaryTree<T>::removed(const T &val, BinaryTreeNode<T> *node) {
+	BinaryTreeNode<T> *Left, *Right;
+	Left = node->mLeft;
+	Right = node->mRight;
+	
+	if(Left->mVal == val || Right->mVal == val){
+		return exchangeRemove(node);
+		
+	}
+	else if(node->mRight != NULL){
+		removed(val, node->mRight);
+	}
+	else if(node->mLeft != NULL){
+		removed(val, node->mLeft);
+	}
+	else if(node->mLeft == NULL && node->mRight == NULL){
+		return false;
+	}
+}
+
+template <class T>
+bool BinaryTree<T>::exchangeRemove(const T &val, BinaryTreeNode<T> *node){
+	BinaryTreeNode<T> *right = node->mRight;
+	BinaryTreeNode<T> *left = node->mLeft;
+	
+	if(node == mRoot){
+		while(right != NULL){
+			right = right->mLeft;
+		}
+		if(right == NULL){
+			left = right;
+			delete node; 
+			return true;	
+		}		
+	}
+	else if(right->mVal == val){
+		node->mRight = right->mRight;
+		delete right;
+		return true; 
+	}
+	else
+		node->mLeft = left->mLeft;
+		delete left;
+		return true;
+}
 template <class T>
 bool BinaryTree<T>::existsInRange(T min, T max) const{
 
 }
+
 
 template <class T>
 std::string BinaryTree<T>::inorderString(){
