@@ -93,7 +93,7 @@ bool BinaryTree<T>::contains(const T &val) const{
 	if(val == NULL){
 		return false;
 	}
-	 return contain(val, mRoot);
+	 contain(val, mRoot);
 }
 
 template<class T>
@@ -118,7 +118,7 @@ bool BinaryTree<T>::remove(const T &val){
 		return true;
 	}
 	else
-		return removed(val, mRoot);
+		removed(val, mRoot);
 }
 
 template <class T>
@@ -128,7 +128,7 @@ bool BinaryTree<T>::removed(const T &val, BinaryTreeNode<T> *node) {
 	Right = node->mRight;
 	
 	if(Left->mVal == val || Right->mVal == val){
-		return exchangeRemove(node);
+		exchangeRemove(node);
 		
 	}
 	else if(node->mRight != NULL){
