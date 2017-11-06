@@ -196,17 +196,29 @@ std::string BinaryTree<T>::inorderString(){
 
 template <class T>
 std::string BinaryTree<T>::preorderString(){
-
+	std::string ret = "";
+	return preorderString(mRoot, ret);
 }
 
 template <class T>
 std::string BinaryTree<T>::postorderString(){
-
+	std::string ret = "";
+	return postorderString();
 }
 
 template <class T>
 void inorderTraversal(void (*visit) (T &item)){
 
+}
+
+template<class T>
+std::string BinaryTree<T>::preorderString(BinaryTreeNode<T> *node, std::string &ret){
+	if(node == NULL){
+		return "";
+	}
+	ret.append(to_string(node->mVal) + " ");
+	ret.append(preorderString(node->mLeft));
+	ret.append(preorderString(node->mRight));
 }
 
 template<class T>
