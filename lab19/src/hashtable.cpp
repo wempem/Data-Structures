@@ -51,7 +51,7 @@ float HashTable<K, V>::percentFull() {
     float pFull = 0.0;
 
     pFull = mSize; // Ensures mSize is converted to a float.
-    pFull /= mTable->size();
+    pFull /= mTable->capacity();
 
     return pFull;
 }
