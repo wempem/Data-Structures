@@ -90,9 +90,6 @@ int BinaryTree<T>::getHeight(BinaryTreeNode<T> *node){
 
 template <class T>
 bool BinaryTree<T>::contains(const T &val) const{
-	if(val == NULL){
-		return false;
-	}
 	contain(val, mRoot);
 }
 
