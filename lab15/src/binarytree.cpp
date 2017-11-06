@@ -174,7 +174,7 @@ bool BinaryTree<T>::existsInRange(T min, T max) const{
 
 template <class T>
 bool BinaryTree<T>::exists(T min, T max, BinaryTreeNode<T> *node) const{
-	if(node >= min && node <= max){
+	if(node->mVal >= min && node->mVal <= max){
 		return true;
 	}
 	else if(node->mRight != NULL){
