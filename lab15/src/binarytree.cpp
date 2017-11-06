@@ -166,7 +166,7 @@ bool BinaryTree<T>::exchangeRemove(const T &val, BinaryTreeNode<T> *node){
 }
 template <class T>
 bool BinaryTree<T>::existsInRange(T min, T max) const{
-	if(mRoot >= min && mRoot <= max){
+	if(mRoot->mVal >= min && mRoot->mVal <= max){
 		return true;
 	}
 	exists(min, max, mRoot); 
