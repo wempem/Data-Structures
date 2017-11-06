@@ -56,6 +56,7 @@ class BinaryTree {
          * is an item in the tree in the range [min, max]
          */
         bool existsInRange(T min, T max) const;
+	int countInRange(T min, T max) const;
 	bool removed(const T& val, BinaryTreeNode<T> *node);
 	bool exchangeRemove(const T& val, BinaryTreeNode<T> *node);
         /* Returns a string representation of the binary Tree in order. */
@@ -73,7 +74,8 @@ class BinaryTree {
         void inorderTraversal(void (*visit) (T &item)) const;
 	bool contain(const T&, BinaryTreeNode<T> *node) const;
 	bool exists(T min, T max, BinaryTreeNode<T> *node) const;
-        /* Always free memory. */
+        int count(T min, T max, BinaryTreeNode<T> *node) const;
+	/* Always free memory. */
         ~BinaryTree();
 };
 
