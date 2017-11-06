@@ -22,9 +22,9 @@ class BinaryTree {
         /* Recommended, but not necessary helper function. */
         void put(BinaryTreeNode<T> *rover, BinaryTreeNode<T> *newNode);
         /* Recommended, but not necessary helper function. */
-        std::string inorderString(BinaryTreeNode<T> *node, std::string &ret);
-    	std::string postorderString(BinaryTreeNode<T> *node, std::string &ret);
-	std::string preorderString(BinaryTreeNode<T> *node, std::string &ret);
+        std::string inorderString(BinaryTreeNode<T> *node);
+    	std::string postorderString(BinaryTreeNode<T> *node);
+	std::string preorderString(BinaryTreeNode<T> *node);
 	public:
 
         /* Creates an empty binary tree. */
@@ -44,7 +44,7 @@ class BinaryTree {
 	int getHeight(BinaryTreeNode<T> *node);
         /* Returns true if an item exists in the Binary Tree */
         bool contains(const T &val) const;
-
+	std::string toString(T x);
         /* Removes a specific val from the Binary Tree.
          * Returns true if the value exists (and was removed.)
          * Otherwise, returns false.

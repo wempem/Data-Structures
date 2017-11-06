@@ -1,6 +1,8 @@
 #ifdef BINARY_TREE_H
 #define BINARY_TREE_H
-
+#include <string>
+#include <iostream>
+#include <sstream>
 template<class T>
 BinaryTree<T>::BinaryTree() {
 	mRoot = NULL;
@@ -190,20 +192,17 @@ bool BinaryTree<T>::exists(T min, T max, BinaryTreeNode<T> *node) const{
 
 template <class T>
 std::string BinaryTree<T>::inorderString(){
-	std::string ret = "";
-	return inorderString(mRoot, ret);
+	return inorderString(mRoot);
 }
 
 template <class T>
 std::string BinaryTree<T>::preorderString(){
-	std::string ret = "";
-	return preorderString(mRoot, ret);
+	return preorderString(mRoot);
 }
 
 template <class T>
 std::string BinaryTree<T>::postorderString(){
-	std::string ret = "";
-	return postorderString();
+	return postorderString(mRoot);
 }
 
 template <class T>
@@ -212,26 +211,46 @@ void inorderTraversal(void (*visit) (T &item)){
 }
 
 template<class T>
-std::string BinaryTree<T>::preorderString(BinaryTreeNode<T> *node, std::string &ret){
+std::string BinaryTree<T>::postorderString(BinaryTreeNode<T> *node){
+	std::string ret = "";
 	if(node == NULL){
 		return "";
 	}
-	ret.append(to_string(node->mVal) + " ");
-	ret.append(preorderString(node->mLeft));
-	ret.append(preorderString(node->mRight));
+	ret.append(postorderString(node->mLeft));
+	ret.append(postorderString(node->mRight));
+	ret.append(toString(node->mVal)+ " ");
+	return ret;
 }
 
 template<class T>
-std::string BinaryTree<T>::inorderString(BinaryTreeNode<T> *node, std::string &ret){
-        if(node == NULL){
+std::string BinaryTree<T>::preorderString(BinaryTreeNode<T> *node){
+	std::string ret = "";
+	if(node == NULL){
+		return "";
+	}
+	ret.append(toString(node->mVal) + " ");
+	ret.append(preorderString(node->mLeft));
+	ret.append(preorderString(node->mRight));
+	return ret;
+}
+
+template<class T>
+std::string BinaryTree<T>::inorderString(BinaryTreeNode<T> *node){
+        std::string ret = "";
+	if(node == NULL){
                 return "";
         }
 
         ret.append(inorderString(node->mLeft));
-        ret.append(to_string(node->mVal) + " ");
+        ret.append(toString(node->mVal) + " ");
         ret.append(inorderString(node->mRight));
 
         return ret;
 }
-
+template <class T>
+std::string BinaryTree<T>::toString(T x){
+	std::ostringstream temp;
+	temp << x;
+	return temp.str();
+}
 #endif
