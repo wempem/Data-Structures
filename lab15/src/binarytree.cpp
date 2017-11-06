@@ -210,6 +210,27 @@ void inorderTraversal(void (*visit) (T &item)){
 
 }
 
+template <class T>
+int BinaryTree<T>::countInRange(T min, T max) const{
+	int counter = 0;
+	counter = count(min, max, mRoot);
+	return counter;
+}
+
+template <class T>
+int BinaryTree<T>::count(T min, T max, BinaryTreeNode<T> *node) const{
+	int counter;
+	if(node->mLeft == NULL && node->mRight == NULL){
+		return 0;
+	}
+	if(node->mVal >= min && node->mVal <= max){
+        	counter++;
+ 	}
+        counter += exists(min, max, node->mRight);
+        counter += exists(min, max, node->mLeft);	
+	return counter;
+
+}	 
 template<class T>
 std::string BinaryTree<T>::postorderString(BinaryTreeNode<T> *node){
 	std::string ret = "";
