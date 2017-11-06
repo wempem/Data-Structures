@@ -70,6 +70,7 @@ class BinaryTree {
          */
         void inorderTraversal(void (*visit) (T &item)) const;
 	bool contain(const T&, BinaryTreeNode<T> *node) const;
+	bool exists(T min, T max, BinaryTreeNode<T> *node) const;
         /* Always free memory. */
         ~BinaryTree();
 };
