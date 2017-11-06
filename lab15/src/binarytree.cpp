@@ -207,7 +207,7 @@ std::string BinaryTree<T>::postorderString(){
 
 template <class T>
 void inorderTraversal(void (*visit) (T &item)){
-
+	(*visit);	
 }
 
 template <class T>
