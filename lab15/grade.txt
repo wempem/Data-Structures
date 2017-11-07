@@ -27,3 +27,4 @@ src/binarytree.cpp:210:28: error: cannot bind rvalue '(int)((BinaryTreeNode<int>
 src/binarytree.cpp:210:28: error: invalid initialization of reference of type 'std::__cxx11::basic_string<char>&' from expression of type 'BinaryTreeNode<std::__cxx11::basic_string<char> >* const'
 + 0 pts of 25.000
 Total grade so far: 61.875
+*****************Finished lab15****************
