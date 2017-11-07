@@ -2,21 +2,21 @@
 g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
 Failures = 1
 MAKE_ERROR = 
-Memory errors found: ==18041==    definitely lost: 120 bytes in 4 blocks
+Memory errors found: ==21356==    definitely lost: 120 bytes in 4 blocks
 + 16.875 pts of 25.000
 Total grade so far: 16.875
 ******************* contains test *********************
 g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
 Failures = 
 MAKE_ERROR = 
-Memory errors found: ==18096==    definitely lost: 0 bytes in 0 blocks
+Memory errors found: ==21411==    definitely lost: 0 bytes in 0 blocks
 + 22.500 pts of 25.000
 Total grade so far: 39.375
 ******************* count in range test *********************
 g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
 Failures = 
 MAKE_ERROR = 
-Memory errors found: ==18151==    definitely lost: 0 bytes in 0 blocks
+Memory errors found: ==21466==    definitely lost: 0 bytes in 0 blocks
 + 22.500 pts of 25.000
 Total grade so far: 61.875
 ******************* traversal test *********************
@@ -27,4 +27,3 @@ src/binarytree.cpp:210:28: error: cannot bind rvalue '(int)((BinaryTreeNode<int>
 src/binarytree.cpp:210:28: error: invalid initialization of reference of type 'std::__cxx11::basic_string<char>&' from expression of type 'BinaryTreeNode<std::__cxx11::basic_string<char> >* const'
 + 0 pts of 25.000
 Total grade so far: 61.875
-*****************Finished lab15****************
