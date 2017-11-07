@@ -79,8 +79,8 @@ int BinaryTree<T>::getHeight(BinaryTreeNode<T> *node){
 	if(node == NULL){
         	return -1;
  	}
-	left = findHeight(node->mLeft);
-	right = findHeight(node->mRight);
+	left = getHeight(node->mLeft);
+	right = getHeight(node->mRight);
 
 	if(left > right){
         return left++;
