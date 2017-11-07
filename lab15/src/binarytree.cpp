@@ -206,8 +206,18 @@ std::string BinaryTree<T>::postorderString(){
 }
 
 template <class T>
-void inorderTraversal(void (*visit) (T &item)){
-	(*visit);	
+void BinaryTree<T>::inorderTraversal(void (*visit) (T &item)) const{
+	inorderTraversal((*visit)(mRoot));	
+}
+
+template <class T>
+void BinaryTree<T>::inorderTraversal(void (*visit) (T &item), BinaryTreeNode<T> *node) const{
+	if(node == NULL){
+		return;
+	}
+	(*visit)(node);
+	inorderTraversal((*visit)(node->mLeft));
+	inorderTraversal((*visit)(node->mRight));	
 }
 
 template <class T>

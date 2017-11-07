@@ -61,7 +61,7 @@ class BinaryTree {
 	bool exchangeRemove(const T& val, BinaryTreeNode<T> *node);
         /* Returns a string representation of the binary Tree in order. */
         std::string inorderString();
-
+	
         /* Returns a string representation of the binary Tree pre order. */
         std::string preorderString();
 
@@ -71,7 +71,8 @@ class BinaryTree {
         /* Does an inorder traversal of the Binary Search Tree calling
          * visit on each node.
          */
-        void inorderTraversal(void (*visit) (T &item)) const;
+        void inorderTraversal(void (*visit) (T &item), BinaryTreeNode<T> *node) const;
+	void inorderTraversal(void (*visit) (T &item)) const;
 	bool contain(const T&, BinaryTreeNode<T> *node) const;
 	bool exists(T min, T max, BinaryTreeNode<T> *node) const;
         int count(T min, T max, BinaryTreeNode<T> *node) const;
