@@ -84,3 +84,4 @@ src/hashtable.cpp:29:20: error: no match for 'operator==' (operand types are '__
 src/hashtable.cpp:30:25: error: '__gnu_cxx::__alloc_traits<std::allocator<std::vector<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair, std::allocator<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair> > > >::value_type {aka class std::vector<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair, std::allocator<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair> >}' has no member named 'mVal'
 + 0 pts of 50.000
 Total grade so far: 0
+*****************Finished lab18****************
