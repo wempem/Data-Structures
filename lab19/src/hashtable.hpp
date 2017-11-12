@@ -3,21 +3,20 @@
 
 #include <string>
 #include <vector>
-#include <list>
 
 /* HashTable via open addressing */
 template<class K, class V>
 class HashTable {
     private:
-        class Pair {
-            public:
-                K mKey;
-                V mVal;
-        };
-        std::vector<std::list<Pair> > mTable;
+        /* Class to begin filling out...*/
+        V mInvalid;
+        int mSize;
+        float mLoadFactor;
+        std::vector<std::pair<K, V>* > *mTable;
+        void doubleCapacity();
     public:
         /* Initialize the Hash Table with size size. */
-        HashTable(const int size);
+        HashTable(const int size, const float loadFactor);
 
         /* Deconstructor shall free up memory */
         ~HashTable();
@@ -40,6 +39,7 @@ class HashTable {
         /* Retrieves the V val that key maps to. */
         V& operator[](const K &key);
 
+        float percentFull();
 };
 
 int hashcode(int key);
