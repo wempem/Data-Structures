@@ -25,10 +25,9 @@ V& HashTable<K, V>::operator[](const K &key) {
     int size = mTable.capacity(); // Gets how many elements can be stored in the array/vector.
     int index = hashcode(key); // convert the key to an integer.
     index %= size; // Size down the 'size' variable so it index into the array/vector.
-	while(mTable[index] != key){
-		if(mTable[index] == key){
-			return mTable[index].mVal;
-		}	
+	int i = 0;	
+	while(mTable[index][i].mKey != key){
+		i++;		
 	}
     // First get the list at mTable[index]
     // Search the list for the key
