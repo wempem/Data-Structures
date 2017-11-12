@@ -1,6 +1,7 @@
 #include <vector>
 #include <string.h>
 #include <fstream>
+#include <algorithm>
 #include "MinimumOverlap.hpp"
 
 bool print = false;
@@ -13,6 +14,7 @@ int main(int argc, char *argv[]) {
     unsigned int count=0;
     clock_t start, end;
     double time, total=0;
+    std::vector<float> timings;
 
     if (!validArguments(argc, argv)) {
         return 1;
@@ -42,7 +44,21 @@ int main(int argc, char *argv[]) {
         time = (end - start) / (float)CLOCKS_PER_SEC;
         total += time;
 
-        printf("  found a minimum of %d sets in %4.4f seconds\n\n", count, time);
+        printf("  found a minimum of %d elements in %4.4f seconds\n\n", count, time);
+        timings.push_back(time);
+    }
+
+    std::sort(timings.begin(), timings.end());
+
+    FILE *file = fopen("data/timings.dat", "w");
+    if (file) {
+        for (int i = 0; i < timings.size(); i++) {
+            fprintf(file, "%d %f\n", i, timings[i]);
+        }
+        fclose(file);
+        printf("Timing information written to 'data/timings.dat'\n");
+    } else {
+        printf("Unable to open 'data/timings.dat' for writting. No timing information written.\n");
     }
 
     return 0;
