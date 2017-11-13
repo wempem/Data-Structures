@@ -1,6 +1,6 @@
 MAIN=src/main.cpp
 SRCS := $(filter-out $(MAIN),$(wildcard src/*.cpp))
-CFLAGS= -O2 -I src/
+CFLAGS= -O2 -g -I src/
 .PHONY: clean test all
 BIN=min-overlap-test
 
