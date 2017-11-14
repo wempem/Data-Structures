@@ -111,7 +111,7 @@ IntArray* IntArray::findIntersections(IntArray &ary){
 }
 bool IntArray::isSubsequence(IntArray &ary){
 	int arySize = ary.getLength();
-	bool isSub = true;
+	bool isSub = false;
 	if(arySize > mSize){
 		return false;
 	}
@@ -125,10 +125,10 @@ bool IntArray::isSubsequence(IntArray &ary){
 					isSub = false;
 					break;
 				}
+			}
+			if(isSub == true){
+				return isSub;
 			} 	
-		}
-		if(isSub == true){
-			return isSub;
 		}
 	}
 	return isSub;
