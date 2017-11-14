@@ -36,7 +36,7 @@ int IntArray::indexOf(int value){
 
 }
 bool IntArray::remove(int index){
-	if(index < 0){
+	if(index < 0 || index == NULL){
         	return false;
 	}
 	else if (index > mSize){
