@@ -1,2 +1,37 @@
 I am run number 001288.
 Pulling source code...
+------------------------------------------------
+Changes found in lab06
+------------------------------------------------
+*****************Examining lab06****************
+******************* Length Test *********************
+g++ -o array-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
++ 20.000 pts of 20.000
+Total grade so far: 20.000
+******************* Index Of Test *********************
+g++ -o array-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
++ 20.000 pts of 20.000
+Total grade so far: 40.000
+******************* Remove Test *********************
+g++ -o array-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
++ 20.000 pts of 20.000
+Total grade so far: 60.000
+******************* Subsequence Test *********************
+g++ -o array-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
+Failures = 4
+MAKE_ERROR = 
++ 0 pts of 20.000
+Total grade so far: 60.000
+******************* Find Intersection Test *********************
+g++ -o array-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
+Failures = 1
+MAKE_ERROR = 
++ 10.000 pts of 20.000
+Total grade so far: 70.000
+*****************Finished lab06****************
