@@ -87,26 +87,20 @@ int IntArray::getLength() const{
 }
 
 bool IntArray::equals(const List &list){
-	bool equal = false;
-	int listValue = 0;
 	int listSize = 0;
 
 	listSize = list.getLength();
 	
 	if(listSize != mSize){
-		return equal;
+		return false;
 	}
 	for(int i = 0; i < mSize; i++){
-			if(mArray[i] == list.get(i))
-			{
-				equal == true;
-			}
-			else{
-				equal = false;
-				return equal;
-			}
+		if(mArray[i] != list.get(i))
+		{
+			return false;
 		}
-	return equal;
+	}
+	return true;
 
 }
 IntArray::~IntArray() {
