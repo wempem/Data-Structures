@@ -1,8 +1,7 @@
 #ifdef HASH_TABLE_H
 
 template<class K, class V>
-HashTable<K, V>::HashTable(const int size) {
-    mTable.reserve(size);
+HashTable<K, V>::HashTable(const int size):mTable(size) {
 }
 
 template<class K, class V>
@@ -38,7 +37,7 @@ int hashcode(int key) {
     return key;
 }
 
-int hashcode(std::string key) {
+int hashcode(const std::string &key) {
     // You need to do something else.
     return 0;
 }
