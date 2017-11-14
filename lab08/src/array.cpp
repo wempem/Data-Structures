@@ -74,7 +74,7 @@ T& Array<T>::operator[](const int pos){
 template <class T>
 bool Array<T>::operator==(Array<T> &list) const{
 	bool equals = false;
-	if((list.getLength != mSize) || (list.mSize == NULL)){
+	if((list.getLength() != mSize) || (list.mSize == NULL)){
 		return equals;
 	}
 	for(int i = 0; i < mSize; i++){
