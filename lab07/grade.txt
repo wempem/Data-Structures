@@ -24,8 +24,7 @@ MAKE_ERROR =
 Total grade so far: 80.000
 ******************* Equal Test *********************
 g++ -o intarray-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
-Failures = 3
+Failures = 
 MAKE_ERROR = 
-+ 0 pts of 20.000
-Total grade so far: 80.000
-*****************Finished lab07****************
++ 20.000 pts of 20.000
+Total grade so far: 100.000

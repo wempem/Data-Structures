@@ -1,2 +1,58 @@
 I am run number 001295.
 Pulling source code...
+------------------------------------------------
+Changes found in lab07
+Changes found in lab08
+------------------------------------------------
+*****************Examining lab07****************
+******************* Get Test *********************
+g++ -o intarray-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
++ 20.000 pts of 20.000
+Total grade so far: 20.000
+******************* Set Test *********************
+g++ -o intarray-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
++ 20.000 pts of 20.000
+Total grade so far: 40.000
+******************* Index Of Test *********************
+g++ -o intarray-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
++ 20.000 pts of 20.000
+Total grade so far: 60.000
+******************* Insert Test *********************
+g++ -o intarray-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
++ 20.000 pts of 20.000
+Total grade so far: 80.000
+******************* Equal Test *********************
+g++ -o intarray-test -O2 -I src/ --std=c++14 src/IntArray.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
++ 20.000 pts of 20.000
+Total grade so far: 100.000
+*****************Finished lab07****************
+*****************Examining lab08****************
+******************* Equal Test *********************
+g++ -o array-test -O2 -I src/ --std=c++14 src/array.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/array.cpp:81:24: error: 'class Array<int>' has no member named 'get'
++ 0 pts of 33.333
+Total grade so far: 0
+******************* Index Of Test *********************
+g++ -o array-test -O2 -I src/ --std=c++14 src/array.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
++ 33.333 pts of 33.333
+Total grade so far: 33.333
+******************* Remove Test *********************
+g++ -o array-test -O2 -I src/ --std=c++14 src/array.cpp src/main.cpp
+Failures = 1
+MAKE_ERROR = 
++ 16.667 pts of 33.334
+Total grade so far: 50.000
+*****************Finished lab08****************
