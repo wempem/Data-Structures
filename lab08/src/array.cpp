@@ -58,6 +58,7 @@ bool Array<T>::Array::remove(const int index){
 					mArray[j] = mArray[j+1];
 				}
 				mArray[mSize - 1] = 0;
+				mSize--;
 				return true;
 			}
 		}
@@ -78,7 +79,7 @@ bool Array<T>::operator==(Array<T> &list) const{
 		return equals;
 	}
 	for(int i = 0; i < mSize; i++){
-		if(mArray[i] == list.get[i]){
+		if(mArray[i] == list[i]){
 			equals == true;
 		}
 		else{
@@ -88,7 +89,6 @@ bool Array<T>::operator==(Array<T> &list) const{
 	}
 	return equals; 
 }
-
 template <class T>
 Array<T>::~Array() {
 	delete[] mArray;
