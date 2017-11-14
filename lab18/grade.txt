@@ -12,3 +12,4 @@ MAKE_ERROR = src/hashtable.cpp:28:21: error: no match for 'operator[]' (operand 
 src/hashtable.cpp:28:21: error: no match for 'operator[]' (operand types are '__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair, std::allocator<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair> > > >::value_type {aka std::__cxx11::list<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair, std::allocator<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair> >}' and 'int')
 + 0 pts of 50.000
 Total grade so far: 0
+*****************Finished lab18****************
