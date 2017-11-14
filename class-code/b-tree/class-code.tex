@@ -1,0 +1,241 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[all]{xy}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+We are going to insert 3, 7, 9, 23, 45, 1, 5, 14, 25, 24, 13, 11, 8, 19, 4, 31, 35, 56 into a 5-way B-Tree.
+
+Insert 3, 7, 9, 23
+
+$$\xymatrix @C=0pt {
+ & 3 & 7 & 9 & 23 \\
+}$$
+
+Insert 45:
+
+$$\xymatrix @C=0pt {
+ & 3 & 7 & 9 & 23  & 45 \\
+}$$
+
+This violates condition 5, so we need to split by promoting 9.
+
+$$\xymatrix @C=0pt {
+&   &  \ar[dl] & 9 \ar[dr] &    &   \\
+& 3 & 7 &   & 23  & 45 \\
+}$$
+
+Insert 1
+$$\xymatrix @C=0pt {
+  &   &  \ar[dll] & 9 \ar[dr] &    &   \\
+1 & 3 & 7 &   & 23  & 45 \\
+}$$
+
+Insert 5
+$$\xymatrix @C=0pt {
+  &   &  \ar[dll] & 9 \ar[drr] &    &   \\
+1 & 3 & 5 & 7 &   & 23  & 45 \\
+}$$
+
+Insert 14
+$$\xymatrix @C=0pt {
+  &   &  \ar[dll] & 9 \ar[drr] &    &   \\
+1 & 3 & 5 & 7 &   & 14 & 23  & 45 \\
+}$$
+
+Insert 25
+$$\xymatrix @C=0pt {
+  &   &  \ar[dll] & 9 \ar[drr] &    &   \\
+1 & 3 & 5 & 7 &   & 14 & 23 & 25 & 45 \\
+}$$
+
+Insert 24
+$$\xymatrix @C=0pt {
+  &   &  \ar[dll] & 9 \ar[drr] &    &   \\
+1 & 3 & 5 & 7 &   & 14 & 23 & 24 & 25 & 45 \\
+}$$
+
+This violates condition 5, so we split and promote the 24
+
+$$\xymatrix @C=0pt {
+  &  &  &   &  \ar[dllll] & 9 \ar[d] &  24 \ar[drr]  &   \\
+1 & 3 & 5 & 7 &   & 14 & 23 &  & 25 & 45 \\
+}$$
+
+Insert 13
+
+$$\xymatrix @C=0pt {
+  &  &  &   &  \ar[dllll] & 9 \ar[d] &  24 \ar[drrr]  &   \\
+1 & 3 & 5 & 7 &   & 13 & 14 & 23 &  & 25 & 45 \\
+}$$
+
+Insert 11
+
+$$\xymatrix @C=0pt {
+  &  &  &   &  \ar[dllll] & 9 \ar[d] &  24 \ar[drrrr]  & \\
+1 & 3 & 5 & 7 &   & 11 & 13 & 14 & 23 &  & 25 & 45 \\
+}$$
+
+Insert 8
+
+$$\xymatrix @C=0pt {
+  &  &  &   &  \ar[dllll] & 9 \ar[dr] &  24 \ar[drrrrr] & \\
+1 & 3 & 5 & 7 & 8 &   & 11 & 13 & 14 & 23 &  & 25 & 45 \\
+}$$
+
+This violates condition 5, so we need to split by promoting the 5.
+
+$$\xymatrix @C=5pt {
+  &  &  &  \ar[dlll] &  5 \ar[dl] & 9 \ar[dr] &  24 \ar[drrrrr] & \\
+1 & 3 &  & 7 & 8 &   & 11 & 13 & 14 & 23 &  & 25 & 45 \\
+}$$
+
+Insert 19
+$$\xymatrix @C=5pt {
+  &  &  &  \ar[dlll] &  5 \ar[dl] & 9 \ar[dr] &  24 \ar[drrrrrr] & \\
+1 & 3 &  & 7 & 8 &   & 11 & 13 & 14 & 19 & 23 &  & 25 & 45 \\
+}$$
+
+Violation of condition 5.  We split by promoting 14.
+$$\xymatrix @C=5pt {
+  &  &  &  \ar[dlll] &  5 \ar[dl] & 9 \ar[dr] & 14 \ar[drrr] &  24 \ar[drrrrr] & \\
+1 & 3 &  & 7 & 8 &   & 11 & 13 &  & 19 & 23 &  & 25 & 45 \\
+}$$
+
+Insert 4
+$$\xymatrix @C=5pt {
+  &  &  &  \ar[dlll] &  5 \ar[d] & 9 \ar[drr] & 14 \ar[drrrr] &  24 \ar[drrrrrr] & \\
+1 & 3 & 4 &    & 7 & 8 &   & 11 & 13 &  & 19 & 23 &  & 25 & 45 \\
+}$$
+
+Insert 31
+$$\xymatrix @C=5pt {
+  &  &  &  \ar[dlll] &  5 \ar[d] & 9 \ar[drr] & 14 \ar[drrrr] &  24 \ar[drrrrrr] & \\
+1 & 3 & 4 &    & 7 & 8 &   & 11 & 13 &  & 19 & 23 &  & 25 & 31 & 45 \\
+}$$
+
+Insert 35
+$$\xymatrix @C=5pt {
+  &  &  &  \ar[dlll] &  5 \ar[d] & 9 \ar[drr] & 14 \ar[drrrr] &  24 \ar[drrrrrr] & \\
+1 & 3 & 4 &    & 7 & 8 &   & 11 & 13 &  & 19 & 23 &  & 25 & 31 & 35 & 45 \\
+}$$
+
+Insert 56
+$$\xymatrix @C=5pt {
+  &  &  &  \ar[dlll] &  5 \ar[d] & 9 \ar[drr] & 14 \ar[drrrr] &  24 \ar[drrrrrr] & \\
+1 & 3 & 4 &    & 7 & 8 &   & 11 & 13 &  & 19 & 23 &  & 25 & 31 & 35 & 45 & 56 \\
+}$$
+
+Violation condition 5.  So, we split and promote the 35:
+
+$$\xymatrix @C=5pt {
+  &  &  &  \ar[dlll] &  5 \ar[d] & 9 \ar[drr] & 14 \ar[drrrr] &  24 \ar[drrrrrr] & 35 \\
+1 & 3 & 4 &    & 7 & 8 &   & 11 & 13 &  & 19 & 23 &  & 25 & 31 &  & 45 & 56 \\
+}$$
+
+This violates the condition that we have at most 5 children, so we will merge the 25, 31 with 45 , 56
+
+$$\xymatrix @C=5pt {
+  &  &  &  \ar[dlll] &  5 \ar[d] & 9 \ar[drr] & 14 \ar[drrrr] &  24 \ar[drrrrrr] & 35 \\
+1 & 3 & 4 &    & 7 & 8 &   & 11 & 13 &  & 19 & 23 &  & 25 & 31 & 45 & 56 \\
+}$$
+
+This violates condition 5.  So, we split and promote 14.
+
+$$\xymatrix @C=5pt {
+  &  & & & & &            &     \ar[dl]      &  14   \ar[dr]       &               &     & \\
+  &  & & & &  \ar[dlllll] &  5 \ar[dll] & 9 \ar[d] &  \ar[drr] &  24 \ar[drrrr] & 35 \ar[drrrrrr] \\
+1 & 3 & 4 &    & 7 & 8 &   & 11 & 13 & & 19 & 23 &  & 25 & 31 &  & 45 & 56 \\
+}$$
+
+Insert 2
+$$\xymatrix @C=5pt {
+  &  & & & & &            &     \ar[dl]      &  14   \ar[dr]       &               &     & \\
+  &  & & & &  \ar[dlllll] &  5 \ar[dl] & 9 \ar[dr] &  \ar[drrr] &  24 \ar[drrrrr] & 35 \ar[drrrrrrr] \\
+1 & 2 & 3 & 4 &    & 7 & 8 &   & 11 & 13 & & 19 & 23 &  & 25 & 31 &  & 45 & 56 \\
+}$$
+
+Insert 6
+$$\xymatrix @C=5pt {
+  &  & & & & &            &     \ar[dl]      &  14   \ar[dr]       &               &     & \\
+  &  & & & &  \ar[dlllll] &  5 \ar[dl] & 9 \ar[drr] &  \ar[drrrr] &  24 \ar[drrrrrr] & 35 \ar[drrrrrrrr] \\
+1 & 2 & 3 & 4 &    & 6 & 7 & 8 &   & 11 & 13 & & 19 & 23 &  & 25 & 31 &  & 45 & 56 \\
+}$$
+
+Insert 6
+$$\xymatrix @C=5pt {
+  &  & & & & &            &     \ar[dl]      &  14   \ar[dr]       &               &     & \\
+  &  & & & &  \ar[dlllll] &  5 \ar[dl] & 9 \ar[drr] &  \ar[drrrrr] &  24 \ar[drrrrrrr] & 35 \ar[drrrrrrrrr] \\
+1 & 2 & 3 & 4 &    & 6 & 7 & 8 &   & 11 & 12 & 13 & & 19 & 23 &  & 25 & 31 &  & 45 & 56 \\
+}$$
+
+Delete 4
+$$\xymatrix @C=5pt {
+  &  & & & & &            &     \ar[dl]      &  14   \ar[dr]       &               &     & \\
+  &  & & & &  \ar[dlllll] &  5 \ar[dl] & 9 \ar[drr] &  \ar[drrrrr] &  24 \ar[drrrrrrr] & 35 \ar[drrrrrrrrr] \\
+1 & 2 & 3 &  &    & 6 & 7 & 8 &   & 11 & 12 & 13 & & 19 & 23 &  & 25 & 31 &  & 45 & 56 \\
+}$$
+
+Delete 5
+$$\xymatrix @C=5pt {
+  &  & & & & &            &     \ar[dl]      &  14   \ar[dr]       &               &     & \\
+  &  & & & &  \ar[dlllll] &  3 \ar[dl] & 9 \ar[drr] &  \ar[drrrrr] &  24 \ar[drrrrrrr] & 35 \ar[drrrrrrrrr] \\
+1 & 2 &  &  &    & 6 & 7 & 8 &   & 11 & 12 & 13 & & 19 & 23 &  & 25 & 31 &  & 45 & 56 \\
+}$$
+
+Delete 7
+$$\xymatrix @C=5pt {
+  &  & & & & &            &     \ar[dl]      &  14   \ar[dr]       &               &     & \\
+  &  & & & &  \ar[dlllll] &  3 \ar[dl] & 9 \ar[drr] &  \ar[drrrrr] &  24 \ar[drrrrrrr] & 35 \ar[drrrrrrrrr] \\
+1 & 2 &  &  &    & 6 & 8 &  &   & 11 & 12 & 13 & & 19 & 23 &  & 25 & 31 &  & 45 & 56 \\
+}$$
+
+Delete 3
+$$\xymatrix @C=5pt {
+  &  & & & & &            &     \ar[dl]      &  14   \ar[dr]       &               &     & \\
+  &  & & & &  \ar[dlllll] &  9 \ar[drrr] &  &  \ar[drrrrr] &  24 \ar[drrrrrrr] & 35 \ar[drrrrrrrrr] \\
+1 & 2 & 6 & 8 &    &  &  &  &   & 11 & 12 & 13 & & 19 & 23 &  & 25 & 31 &  & 45 & 56 \\
+}$$
+
+Violates the condition that each non-leaf node has at least m/2 children
+
+$$\xymatrix @C=5pt {
+  &  & & & &  \ar[dlllll] &  9 \ar[drrr] & 14 &  \ar[drrrrr] &  24 \ar[drrrrrrr] & 35 \ar[drrrrrrrrr] \\
+1 & 2 & 6 & 8 &    &  &  &  &   & 11 & 12 & 13 & & 19 & 23 &  & 25 & 31 &  & 45 & 56 \\
+}$$
+
+Delete 14
+
+$$\xymatrix @C=5pt {
+  &  & & & &  \ar[dlllll] &  9 \ar[drrr] & 13 &  \ar[drrrrr] &  24 \ar[drrrrrrr] & 35 \ar[drrrrrrrrr] \\
+1 & 2 & 6 & 8 &    &  &  &  &   & 11 & 12 &  & & 19 & 23 &  & 25 & 31 &  & 45 & 56 \\
+}$$
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+
+
+\end{document}
