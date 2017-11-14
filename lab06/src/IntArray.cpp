@@ -111,20 +111,23 @@ IntArray* IntArray::findIntersections(IntArray &ary){
 }
 bool IntArray::isSubsequence(IntArray &ary){
 	int arySize = ary.getLength();
-	bool isSub = false;
-	for(int i = 0; i < mSize - (arySize - 1 ); i++){
+	bool isSub = true;
+	if(arySize > mSize){
+		return false;
+	}
+	for(int i = 0; i < mSize - (arySize - 1); i++){
 		if(mArray[i] == ary.mArray[0]){
 			for(int j = 1; j < arySize; j++){
-				if(mArray[i+j] != ary.mArray[j]){
-					return false;
-					break;
+				if(mArray[i+j] == ary.mArray[j]){
+					isSub = true;
 				}
 				else{
-					return true;
+					isSub = false;
+					break;
 				}
 			} 	
 		}
 	}
-	return false;
+	return isSub;
 }	
 
