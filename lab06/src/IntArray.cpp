@@ -115,7 +115,7 @@ bool IntArray::isSubsequence(IntArray &ary){
 	if(arySize > mSize){
 		return false;
 	}
-	for(int i = 0; i < mSize - (arySize - 1); i++){
+	for(int i = 0; i < (mSize - arySize); i++){
 		if(mArray[i] == ary.mArray[0]){
 			for(int j = 1; j < arySize; j++){
 				if(mArray[i+j] == ary.mArray[j]){
@@ -126,6 +126,9 @@ bool IntArray::isSubsequence(IntArray &ary){
 					break;
 				}
 			} 	
+		}
+		if(isSub == true){
+			return isSub;
 		}
 	}
 	return isSub;
