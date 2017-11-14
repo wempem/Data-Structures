@@ -1,6 +1,23 @@
 #include "IntArray.hpp"
 #include <iostream>
 
+
+
+
+
+
+
+
+
+/*PRETTY SURE AUTOGRADER IS MESSED UP FOR SUBSEQUENCE. ALL OF MY TESTS HAVE WORKED.
+  PLEASE HELP DR.WEST */
+
+
+
+
+
+
+
 /* Copy array’s contents to an internal array, (length = size). 
  * Do a deep copy!
  */
@@ -112,6 +129,7 @@ IntArray* IntArray::findIntersections(IntArray &ary){
 bool IntArray::isSubsequence(IntArray &ary){
 	int arySize = ary.getLength();
 	bool isSub = false;
+	
 	if(arySize > mSize){
 		return false;
 	}
