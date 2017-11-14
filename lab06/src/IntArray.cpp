@@ -18,6 +18,12 @@ int IntArray::get(int index) {
     return mArray[index];
 }
 
+void IntArray::print(){
+	for(int i = 0; i < mSize; i++){
+		std::cout << mArray[i] << " ,";
+	}
+}
+
 IntArray::~IntArray() {
     delete[] mArray;
 }
@@ -36,7 +42,7 @@ int IntArray::indexOf(int value){
 
 }
 bool IntArray::remove(int index){
-	if(index < 0 || index == NULL){
+	if(index < 0){
         	return false;
 	}
 	else if (index > mSize){
@@ -51,6 +57,7 @@ bool IntArray::remove(int index){
 
                 		}
                 		mArray[mSize - 1] = 0;
+				mSize--;
                 		return true;
         		}		
 		}
