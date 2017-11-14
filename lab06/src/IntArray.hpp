@@ -34,7 +34,7 @@ class IntArray {
 
         // Testing function
         int get(int index);
-
+	void print();
         /* Delete any used memory when this variable goes out of scope. */
         ~IntArray();
 };
