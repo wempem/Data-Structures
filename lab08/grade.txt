@@ -1,7 +1,7 @@
 ******************* Equal Test *********************
 g++ -o array-test -O2 -I src/ --std=c++14 src/array.cpp src/main.cpp
-Failures = 
-MAKE_ERROR = src/array.cpp:81:24: error: 'class Array<int>' has no member named 'get'
+Failures = 3
+MAKE_ERROR = 
 + 0 pts of 33.333
 Total grade so far: 0
 ******************* Index Of Test *********************
@@ -12,8 +12,7 @@ MAKE_ERROR =
 Total grade so far: 33.333
 ******************* Remove Test *********************
 g++ -o array-test -O2 -I src/ --std=c++14 src/array.cpp src/main.cpp
-Failures = 1
+Failures = 
 MAKE_ERROR = 
-+ 16.667 pts of 33.334
-Total grade so far: 50.000
-*****************Finished lab08****************
++ 33.334 pts of 33.334
+Total grade so far: 66.667
