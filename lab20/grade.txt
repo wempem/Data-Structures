@@ -2,3 +2,4 @@
 g++ -o ht-test -g -I src/ --std=c++14 src/priorityqueue.cpp src/main.cpp
 ******************* time test *********************
 g++ -o ht-test -g -I src/ --std=c++14 src/priorityqueue.cpp src/main.cpp
+*****************Finished lab20****************
