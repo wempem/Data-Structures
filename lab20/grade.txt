@@ -1,13 +1,12 @@
 ******************* push-pop Test *********************
 g++ -o ht-test -g -I src/ --std=c++14 src/priorityqueue.cpp src/main.cpp
-Failures = 
-MAKE_ERROR = collect2: error: ld returned 1 exit status
+Failures = 3
+MAKE_ERROR = 
 + 0 pts of 50.000
 Total grade so far: 0
 ******************* time test *********************
 g++ -o ht-test -g -I src/ --std=c++14 src/priorityqueue.cpp src/main.cpp
-Failures = 
-MAKE_ERROR = collect2: error: ld returned 1 exit status
+Failures = 1
+MAKE_ERROR = 
 + 0 pts of 50.000
 Total grade so far: 0
-*****************Finished lab20****************
