@@ -37,7 +37,7 @@ template<class T>
 bool PriorityQueue<T>::push(const T &val){
 	mVector.push_back(val);
 	push_heap(mVector.begin(), mVector.end());
-	sort_heap(mVector.begin(), mVector.end());
+	//sort_heap(mVector.begin(), mVector.end());
 	if(val == mVector.front()){
 		return true;	
 	}
