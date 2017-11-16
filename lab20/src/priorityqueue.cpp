@@ -28,14 +28,19 @@ bool PriorityQueue<T>::isEmpty() const{
 }
 template<class T>
 void PriorityQueue<T>::print() const{
-	for(std::vector<int>::iterator i = mVector.begin(); i != mVector.end(); i++){
-		std::cout << *i << " , ";
-	}
+//	typename std::vector<T>::iterator i;
+//	for(i = mVector.begin(); i != mVector.end(); i++){
+//		std::cout << *i << " , ";
+//	}
 }
 template<class T>
 bool PriorityQueue<T>::push(const T &val){
 	mVector.push_back(val);
 	push_heap(mVector.begin(), mVector.end());
+	if(val == mVector.front()){
+		return true;	
+	}
+	return false;
 }
 template<class T>
 T PriorityQueue<T>::pop() {
