@@ -37,7 +37,6 @@ template<class T>
 bool PriorityQueue<T>::push(const T &val){
 	mVector.push_back(val);
 	push_heap(mVector.begin(), mVector.end());
-//	make_heap(mVector.begin(), mVector.end());
 	if(val == mVector.front()){
 		return true;	
 	}
@@ -49,15 +48,18 @@ T PriorityQueue<T>::pop() {
 	temp = mVector.front();
 	pop_heap(mVector.begin(), mVector.end());
 	mVector.pop_back();
-	//std::cout << "\n";
 	return temp;
 }
 
 template<class T>
 bool PriorityQueue<T>::operator==(const PriorityQueue<T> &pq) const{
-//	for(std::vector<T>::iterator i = mVector.begin(); i != mVector.end(); i++){
-
-//	}
-//	pq.mVector(i);
+	for(std::vector<int>::iterator i = mVector.begin(); i != mVector.end(); i++){
+		if(mVector(i) != pq.mVector(i))
+		{
+			return false;
+		}
+	}
+	return true;
+	
 }
 #endif
