@@ -1,13 +1,14 @@
 #ifndef MAP_HPP
 #define MAP_HPP
-
+#include <vector>
+#include <string>
 class Map{
     private:
 	int mSize;
-	int *idArray;
-	char *strArray[];
+	std::vector<int> idArray;
+	std::vector<std::string> strArray;
     public:
-        Map(int size);
+        Map();
 
         /* Adds (inserts) val with the associated key.
          * Returns if successful or not. (It is not successful if we are out
@@ -22,7 +23,7 @@ class Map{
 
         /*returns the size (memory consumed) by this data structure.*/
         int size();
-	int length(const char *key);
+
         /* Removes the current value from the Map AND frees up any memory 
          * that it can.
          * Returns true if there was something to remove, false otherwise.
@@ -35,11 +36,7 @@ class Map{
          */
         int howMany(const char *prefix);
 
-	void decrementId(int val);
-
-	void increaseId();
-	
-	void increaseStr();
+	int strLength(std::string str);
         void print();
 
         /*Frees all memory*/

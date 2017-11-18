@@ -1,150 +1,126 @@
 #include "map.hpp"
 #include <iostream>
+#include <vector>
 
-// Sad to admit, my code does not work. For future projects, I will start right away. Sadness Occured today Dr.West. Sadness. Despair. Humility.  
+Map::Map(){
 
-Map::Map(int size){
-	mSize = size;
-	idArray = new int[mSize];
-	*strArray = new char[mSize];
-	for(int i = 0; i < mSize; i++){
-		idArray[i] = 0;
-		strArray[i] = '\0';
-		}
 }
-int Map::length(const char *key){
-	int length = 0;
-	for(int i = 0; *(key + i); i++){
-		if(key[i] == ' ')
-		{
-			i++;
-		}
-		length = i;
-	}
-	return length;
-}
+
+/* Adds (inserts) val with the assoc
+ * Returns if successful or not. (It
+ * of memory, or if the key already
+*/
 bool Map::add(const char *key, int val){
-	int kLength = length(key);
+//	std::cout << key;
+	std::string str = key;
+//	std::cout << str;
+	if(val < 0){
+		return false;
+	}
 	if(key == NULL || key == '\0'){
 		return false;
 	}
-	for(int i = 0; i < mSize; i++){
-		if(idArray[i] == val){
-			std::cout << "This ID has already been used: " << val << "\n";
+	for(std::vector<int>::iterator i = idArray.begin(); i != idArray.end(); i++){
+		if(val == *i){
+			std::cout << "ID already used";
 			return false;
 		}
-		if(idArray[i] == 0){
-			mSize++;
-			increaseId();
-//			increaseStr();
-			char *newArray = new char[kLength + i];
-			for(int j = 0; j < kLength + i; j++){
-				newArray[j] = key[j];
-			}
-			strArray[i] = newArray;
-			idArray[i] = val;
+	}	
+	
+	strArray.push_back(str);
+	idArray.push_back(val);
+	
+	return true;
+
+}
+/* Search for they key. If found it
+ * returns true. Otherwise this func
+ */
+bool Map::get(const char *key, int &ret){
+	int index = -1;
+	std::string str = key;
+	for(std::vector<std::string>::iterator i = strArray.begin(); i != strArray.end(); i++){
+		index++;
+		if(str == *i){
+			ret = idArray.at(index);
 			return true;
 		}
 	}
-
+	return false;
 }
 
-bool Map::get(const char *key, int &ret){
-   	for(int i = 0; i < mSize - 1; i++){
-		for(int j = 0; j < length(key + i); j++){
-			if(strArray[i][j] == key[j]){
-				ret = idArray[i];
-				return true;
-			}			
-		}
-	}
-	 return false;
-}
+//returns the size (memory consumed)
 
 int Map::size(){
-    return 0;
+
 }
 
+/* Removes the current value from th
+ * that it can.
+ * Returns true if there was somethi
+ */
 bool Map::remove(const char *key){
-	if(key == NULL || key == "\0"){
-		return false;
-	}
-	for(int i = 0; i < mSize; i++){
-		for(int j = 0; j < length(key + i); j++){
-			if(strArray[i][j] == key[j]){
-				strArray[i][j] = '\0';
-				decrementId(idArray[i]);
-			}
-			
+	int index = -1;
+	std::string str = key;
+	for(std::vector<std::string>::iterator i = strArray.begin(); i != strArray.end(); i++){
+		index++;
+		if(str == *i){
+			strArray.erase(i);
+			idArray.erase(idArray.begin() + index);
+			return true;
 		}
-		mSize--;
-		return true;
-	}
-    return false;
+	} 
+	return false;
 }
 
+/* Returns the number of names with
+ * EX: If we have {John, Jonathan, P
+ * howMany("Jo") == 3.
+ */
 int Map::howMany(const char *prefix){
-	int count = 0;
-	bool equals = false;
-	if(prefix == NULL || prefix == '\0'){
-		return false;
-	}
-	for(int i = 0; i < mSize; i++){
-		for(int j = 0; j < length(prefix); j++){
-			if(strArray[i][j] == prefix[j]){
-				equals = true;
-			} 
-			
+	std::string str = prefix;
+	std::string temp;
+	int length = strLength(str);
+	int amount = 0;
+	bool isTrue = false;
+	for(std::vector<std::string>::iterator i = strArray.begin(); i != strArray.end(); i++){
+		temp = *i;
+		for(int j = 0; j < length; j++){
+			if(temp[j] == str[j]){
+				isTrue = true;	
+			}
+			else{
+				isTrue = false;
+				break;
+			}
 		}
-		if(equals == true){
-			count++;
+		if(isTrue == true){
+			amount++;
 		}
+		temp = "";
 	}
-	return count;
+	return amount;
 }
-
-
+int Map::strLength(std::string str){
+	int index = 0;
+	while(str[index] != '\0'){
+		 index++;
+	}
+	return index;
+}
 void Map::print(){
-	for(int i = 0; i < mSize - 1; i++){
-		std::cout << idArray[i] << "\n";
-		std::cout << strArray[i] << "\n";
+	for(std::vector<std::string>::iterator i = strArray.begin(); i != strArray.end(); i++){
+		std::cout << *i << " , ";
+		//std::cout << idArray.at(i);
+		//std::cout << "\n";
 	}
-}
-void Map::decrementId(int val){
-	int *temp = new int[mSize - 1];
-	for(int i = 0; i < mSize; i++){
-		if(idArray[i] != val){
-		temp[i] = idArray[i];
-		}
+	for(std::vector<int>::iterator i = idArray.begin(); i != idArray.end(); i++){
+		std::cout << *i << " , ";
 	}
-	delete[] idArray;
-	idArray = temp;
-	
-}
-void Map::increaseId(){
-	mSize++;
-	int *temp = new int[mSize];
-	for(int i = 0; i < mSize - 1; i++){
-		temp[i] = idArray[i];
-	}
-	delete[] idArray;
-	idArray = temp;
 }
 
-void Map::increaseStr(){
-	//Tried doing this different ways, but could not go anywhere with it without a compiler error or
-	// a seg fault.
-	//delete[] *strArray;
-	//strArray = temp;
-//	char *temp = new char[(mSize*2)];
-//	for(int i = 0; i < mSize*2; i++){
-//		strArray[i] = temp[i];
-//}
-	//delete[] *strArray;
-	//strArray = temp;	
-}
-
+/*Frees all memory*/
 Map::~Map(){
-	delete[] *strArray;
-	delete[] idArray;
+	strArray.clear();
+	idArray.clear();
 }
