@@ -11,3 +11,4 @@ MAKE_ERROR = src/hashtable.cpp:44:60: error: '__gnu_cxx::__alloc_traits<std::all
 src/hashtable.cpp:44:60: error: '__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair, std::allocator<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair> > > >::value_type {aka class std::__cxx11::list<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair, std::allocator<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair> >}' has no member named 'being'; did you mean 'begin'?
 + 0 pts of 50.000
 Total grade so far: 50.000
+*****************Finished lab18****************
