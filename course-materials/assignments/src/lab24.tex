@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage{listings}
+\usepackage{color}
+\textwidth=7in
+\textheight=9.5in
+\topmargin=-1in
+\headheight=0in
+\headsep=.5in
+\hoffset  -.85in
+
+\definecolor{mygray}{rgb}{0.4,0.4,0.4}
+\definecolor{mygreen}{rgb}{0,0.8,0.6}
+\definecolor{myorange}{rgb}{1.0,0.4,0}
+
+\lstset{
+basicstyle = \ttfamily,columns=fullflexible,
+commentstyle=\color{mygray},
+frame=single,
+numbers=left,
+numbersep=5pt,
+numberstyle=\tiny\color{mygray},
+keywordstyle=\color{mygreen},
+showspaces=false,
+showstringspaces=false,
+stringstyle=\color{myorange},
+tabsize=2
+}
+
+\pagestyle{empty}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{document}
+
+\begin{center}
+{\bf lab 24 Bash}
+
+\end{center}
+
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{6pt} % General space between cols (6pt standard)
+\renewcommand{\arraystretch}{.5} % General space between rows (1 standard)
+
+\vskip.15in
+\noindent\textbf{Instructions:} In this lab we explore the basics of writing Bash scripts.  Bash scripts can be very useful for many miscellaneous tasks in a CLI environment. \\
+
+\vskip.15in
+\noindent\textbf{Count to Square:}
+Write a script countToSquare.sh that takes 1 numeric parameter (no error checking, assume the user gives you a valid integer). It counts by 1's from that number up to and including its square printing each number 1 per line. So if the user typed: \\
+\$ ./countToSquare.sh 3 \\
+your code should output 7 lines: \\
+3 \\
+ 4 \\
+5 \\
+6 \\
+7 \\
+8 \\
+9
+
+\vskip.15in
+\noindent\textbf{Which Year:}
+Write a script whichYear.sh that takes 0 parameters, asks user for number of credits. Then prints one of Senior, Junior, Sophomore, Freshman, Invalid. 91 is the minimum for Senior, 61 for Junior, 31 for Sophomore, and negatives are Invalid.
+
+\vskip.15in
+\noindent\textbf{Longest Shortest Username:}
+Write a script longestShortestUsername.sh that takes no parameters and displays the longest and shortest usernames on your system.  To get the list of usernames do a ``cut -d: -f1 /etc/passwd''.
+
+\vskip.15in
+\noindent\textbf{How to turn in:} \\
+Turn in via GitHub.  Ensure the file(s) are in your directory and then:
+\begin{itemize}
+\item \$ git add $<$files$>$
+\item \$ git commit 
+\item \$ git push
+\end{itemize}
+
+\vskip.15in
+\noindent\textbf{Due Date:}
+April 19, 2016 2359
+
+\vskip.15in
+\noindent\textbf{Teamwork:} No teamwork, your work must be your own.
+
+\end{document}
