@@ -39,6 +39,9 @@ V& HashTable<K, V>::operator[](const K &key) {
 
 template <class K, class V>
 bool HashTable<K, V>::remove(const K &key){
+	if(mTable.capacity() == 0){
+		return false;
+	}
 	int size = mTable.capacity();
 	int index = hashcode(key);
 	index %= size;
