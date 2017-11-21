@@ -10,3 +10,4 @@ Failures = 1
 MAKE_ERROR = 
 + 25.000 pts of 50.000
 Total grade so far: 75.000
+*****************Finished lab18****************
