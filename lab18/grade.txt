@@ -6,8 +6,7 @@ MAKE_ERROR =
 Total grade so far: 50.000
 ******************* remove test *********************
 g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
-Failures = 
-MAKE_ERROR = src/hashtable.cpp:44:60: error: '__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<HashTable<int, int>::Pair, std::allocator<HashTable<int, int>::Pair> > > >::value_type {aka class std::__cxx11::list<HashTable<int, int>::Pair, std::allocator<HashTable<int, int>::Pair> >}' has no member named 'being'; did you mean 'begin'?
-src/hashtable.cpp:44:60: error: '__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair, std::allocator<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair> > > >::value_type {aka class std::__cxx11::list<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair, std::allocator<HashTable<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Pair> >}' has no member named 'being'; did you mean 'begin'?
-+ 0 pts of 50.000
-Total grade so far: 50.000
+Failures = 1
+MAKE_ERROR = 
++ 25.000 pts of 50.000
+Total grade so far: 75.000
