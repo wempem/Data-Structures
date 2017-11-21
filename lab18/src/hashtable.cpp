@@ -24,13 +24,31 @@ V& HashTable<K, V>::operator[](const K &key) {
     int size = mTable.capacity(); // Gets how many elements can be stored in the array/vector.
     int index = hashcode(key); // convert the key to an integer.
     index %= size; // Size down the 'size' variable so it index into the array/vector.
-	int i = 0;	
-	while(mTable[index][i].mKey != key){
-		i++;		
-	}
     // First get the list at mTable[index]
     // Search the list for the key
     // return the value associated with the key.
+	for(typename std::list<Pair>::iterator it = mTable[index].begin(); 
+		it != mTable[index].end(); it++){
+	if(it->mKey == key){
+		return it->mVal;
+	}
+	}
+		
+}
+
+template <class K, class V>
+bool HashTable<K, V>::remove(const K &key){
+	int size = mTable.capacity();
+	int index = hashcode(key);
+	index %= size;
+	for(typename std::list<Pair>::iterator it = mTable[index].being();
+		it != mTable[index].end(); it++){
+		if(it->mKey == key){
+			mTable[index].erase(it);
+			return true;
+		}
+	}
+	return false;
 }
 
 int hashcode(int key) {
@@ -39,7 +57,17 @@ int hashcode(int key) {
 
 int hashcode(const std::string &key) {
     // You need to do something else.
-    return 0;
+//	int hash = std::stoi(key, 0);
+	int i = 0;
+	int hash = 0;
+	while(key[i] != '\0'){
+		int integer = key[i];
+		hash += integer;
+		integer = 0;
+		i++;
+	}	
+    return hash;
 }
+
 
 #endif
