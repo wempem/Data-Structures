@@ -2,6 +2,7 @@
 
 template<class K, class V>
 HashTable<K, V>::HashTable(const int size):mTable(size) {
+	mTable.reserve(size);
 }
 
 template<class K, class V>
@@ -41,12 +42,12 @@ bool HashTable<K, V>::remove(const K &key){
 	int size = mTable.capacity();
 	int index = hashcode(key);
 	index %= size;
-	for(typename std::list<Pair>::iterator it = mTable[index].being();
+	for(typename std::list<Pair>::iterator it = mTable[index].begin();
 		it != mTable[index].end(); it++){
-		if(it->mKey == key){
-			mTable[index].erase(it);
-			return true;
-		}
+	if(it->mKey == key){
+		mTable[index].erase(it);
+		return true;
+	}
 	}
 	return false;
 }
