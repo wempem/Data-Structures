@@ -46,16 +46,17 @@ bool HashTable<K, V>::remove(const K &key){
 	int size = mTable.capacity();
 	int index = hashcode(key);
 	index %= size;
-	for(typename std::vector<std::list<Pair> >::iterator i = mTable.begin(); i != mTable.end(); i++){
+//	for(typename std::vector<std::list<Pair> >::iterator i = mTable.begin(); i != mTable.end(); i++)	{
+	for(int i = 0; i < mTable.size(); i++){
 	for(typename std::list<Pair>::iterator it = mTable[i].begin();
-		it != mTable[i].end(); it++){
-	if(it->mKey == key){
-		mTable[i].erase(it);
+			it != mTable[i].end(); it++){
+		if(it->mKey == key){
+			mTable[i].erase(it);
 		return true;
-	}
-	}
+		}
+		}
 	return false;
-}
+	}
 }
 
 int hashcode(int key) {
