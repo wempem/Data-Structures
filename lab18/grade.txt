@@ -6,8 +6,7 @@ MAKE_ERROR =
 Total grade so far: 50.000
 ******************* remove test *********************
 g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
-Failures = 2
+Failures = 1
 MAKE_ERROR = 
-+ 0 pts of 50.000
-Total grade so far: 50.000
-*****************Finished lab18****************
++ 25.000 pts of 50.000
+Total grade so far: 75.000
