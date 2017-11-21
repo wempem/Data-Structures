@@ -28,6 +28,7 @@ V& HashTable<K, V>::operator[](const K &key) {
     // First get the list at mTable[index]
     // Search the list for the key
     // return the value associated with the key.
+	
 	for(typename std::list<Pair>::iterator it = mTable[index].begin(); 
 		it != mTable[index].end(); it++){
 	if(it->mKey == key){
@@ -45,14 +46,16 @@ bool HashTable<K, V>::remove(const K &key){
 	int size = mTable.capacity();
 	int index = hashcode(key);
 	index %= size;
-	for(typename std::list<Pair>::iterator it = mTable[index].begin();
-		it != mTable[index].end(); it++){
+	for(typename std::vector<std::list<Pair> >::iterator i = mTable.begin(); i != mTable.end(); i++){
+	for(typename std::list<Pair>::iterator it = mTable[i].begin();
+		it != mTable[i].end(); it++){
 	if(it->mKey == key){
-		mTable[index].erase(it);
+		mTable[i].erase(it);
 		return true;
 	}
 	}
 	return false;
+}
 }
 
 int hashcode(int key) {
