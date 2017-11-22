@@ -1,19 +1,2 @@
-I am run number 001551.
+I am run number 001552.
 Pulling source code...
-------------------------------------------------
-Changes found in lab12
-------------------------------------------------
-*****************Examining lab12****************
-******************* Selection Sort PART *********************
-g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
-******************* Insertion Sort PART *********************
-g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
-******************* Sort PART *********************
-g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
-******************* SLList Sort PART *********************
-g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
-Failures = 
-MAKE_ERROR = collect2: error: ld returned 1 exit status
-+ 0 pts of 30.000
-Total grade so far: 0
-*****************Finished lab12****************
