@@ -13,3 +13,4 @@ src/sllist.cpp:152:29: error: 'class SLList<int>::Node' has no member named 'mVa
 src/sllist.cpp:131:16: error: 'class SLList<int>::Node' has no member named 'mVal'
 + 0 pts of 30.000
 Total grade so far: 0
+*****************Finished lab12****************
