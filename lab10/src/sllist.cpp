@@ -138,7 +138,13 @@ SLList<T>::~SLList() {
 template<class T>
 bool SLList<T>::removeFirst() {
     // You fill in for lab10.
-    return false;
+   	if(mHead == NULL){
+ 		return false;
+	}
+ 	SLLNode *rover = mHead;
+	mHead = mHead->mNext;
+ 	delete rover;
+     	return true;
 }
 
 #endif
