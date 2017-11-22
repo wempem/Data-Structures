@@ -76,11 +76,11 @@ template <class T>
 bool Array<T>::operator==(Array<T> &list) const{
 	bool equals = false;
 	if((list.getLength() != mSize) || (list.mSize == NULL)){
-		return equals;
+		return false;
 	}
 	for(int i = 0; i < mSize; i++){
 		if(mArray[i] == list[i]){
-			equals == true;
+			equals = true;
 		}
 		else{
 			equals = false;
