@@ -35,7 +35,7 @@ T& Stack<T>::top() {
 
 template <class T>
 void Stack<T>::pop() {
-    mLinkedStack->removeFirst();
+    mLinkedStack->removeLast();
 }
 
 template <class T>

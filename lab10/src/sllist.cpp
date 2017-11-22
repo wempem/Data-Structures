@@ -147,5 +147,18 @@ bool SLList<T>::removeFirst() {
 	mSize--;
      	return true;
 }
-
+template<class T>
+bool SLList<T>::removeLast(){
+	if(mHead == NULL){
+		return false;
+	}
+	SLLNode *rover = mHead;
+	
+	while (rover->mNext != mTail){
+		rover = rover->mNext;
+	}
+	delete mTail;
+	mTail = rover;
+	return true;
+}
 #endif

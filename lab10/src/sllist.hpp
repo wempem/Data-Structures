@@ -48,7 +48,7 @@ class SLList {
         bool remove(const T &val);
 
         bool removeFirst();
-
+	bool removeLast();
         /* Retrieves the element at position pos */
         T& operator[](const int pos) const;
 
