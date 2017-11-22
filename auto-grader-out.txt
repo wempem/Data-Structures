@@ -1,19 +1,2 @@
-I am run number 001533.
+I am run number 001534.
 Pulling source code...
-------------------------------------------------
-Changes found in lab10
-------------------------------------------------
-*****************Examining lab10****************
-******************* Stack PART *********************
-g++ -o bt-test -g -I src/ --std=c++14 src/stack.cpp src/queue.cpp src/sllist.cpp src/main.cpp
-Failures = 
-MAKE_ERROR = collect2: error: ld returned 1 exit status
-+ 0 pts of 50.000
-Total grade so far: 0
-******************* Queue PART *********************
-g++ -o bt-test -g -I src/ --std=c++14 src/stack.cpp src/queue.cpp src/sllist.cpp src/main.cpp
-Failures = 2
-MAKE_ERROR = 
-+ 16.650 pts of 50.000
-Total grade so far: 16.650
-*****************Finished lab10****************
