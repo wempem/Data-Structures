@@ -1,0 +1,9 @@
+1.Appending is pretty fast for array, you can just resize the array and add a new element to size- 1.
+	SLL and DLL take some time. You have to rover to the end of the list to insert.
+2.Inserting is slower in an array. You have to index to the insertion point, increase the size, move all	of the elements to the right one, then insert element. SLL and DLL you just have to index to
+	the location then update pointers.
+3.Operator[] will be faster in an array since you can index to the value then return. SLL and DLL you
+	have to iterate through until you find pos.
+4. Removing in an array will be slower than SLL and DLL because you need to index to pos, then move all of the elements down 1. After that you have to decrement the size. In a SLL or DLL you iterate to pos,
+	then update pointers.
+5.Search will be about the same for both array and SLL or DLL. You have to iterate through both to find 	the value of an element.
