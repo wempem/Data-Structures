@@ -86,11 +86,10 @@ void Array<T>::selectionSort(){
 		for(int j = i + 1; j < mSize; j++){
 			if(mArray[j] < mArray[temp]){
 				temp = j;
-				//std::cout << temp << " , ";
+				std::swap(mArray[i], mArray[temp]);
 			}
-		}
-		if(temp != mArray[i]){
-			std::swap(mArray[i], mArray[temp]);
+		
+		
 		}
 		//std::cout << temp << "," << "\n";
 	}
