@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include "stack.hpp"
-
+//Everything seemes to be in order
 template <class T>
 Stack<T>::Stack() {
     mLinkedStack = new SLList<T>();
