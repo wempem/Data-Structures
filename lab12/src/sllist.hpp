@@ -8,7 +8,7 @@ class SLList {
         /* Class exercise to fill in. */
         class Node {
             public:
-                T mData;
+                T mVal;
                 Node *mNext;
         };
 
