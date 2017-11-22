@@ -1,5 +1,5 @@
 #ifdef SLLIST_HPP
-
+#include <iostream>
 template<class T>
 SLList<T>::SLList() {
     mSize = 0;
@@ -32,7 +32,7 @@ bool SLList<T>::operator==(const SLList<T> &list) const {
         rover = rover->mNext;
         dover = dover->mNext;
     }
-
+std::cout << "hi";
     return (rover == NULL && dover == NULL);
 }
 
@@ -141,9 +141,10 @@ bool SLList<T>::removeFirst() {
    	if(mHead == NULL){
  		return false;
 	}
- 	SLLNode *rover = mHead;
-	mHead = mHead->mNext;
- 	delete rover;
+ 	SLLNode *rover = mHead->mNext;
+ 	delete mHead;
+	mHead = rover;
+	mSize--;
      	return true;
 }
 
