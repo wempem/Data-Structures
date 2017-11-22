@@ -47,5 +47,10 @@ template <class T>
 bool Stack<T>::isEmpty() const {
     return mLinkedStack->getLength() == 0;
 }
+template <class T>
+bool Stack<T>::operator==(const Stack<T> &stack) const{
+        bool isEqual = mLinkedStack->operator==(*stack.mLinkedStack);
+        return isEqual;
+}
 
 #endif
