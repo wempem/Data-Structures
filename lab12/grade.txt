@@ -7,7 +7,9 @@ g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
 ******************* SLList Sort PART *********************
 g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
 Failures = 
-MAKE_ERROR = collect2: error: ld returned 1 exit status
+MAKE_ERROR = src/sllist.cpp:42:11: error: 'class SLList<int>::Node' has no member named 'mVal'
+src/sllist.cpp:152:14: error: 'class SLList<int>::Node' has no member named 'mVal'
+src/sllist.cpp:152:29: error: 'class SLList<int>::Node' has no member named 'mVal'
+src/sllist.cpp:131:16: error: 'class SLList<int>::Node' has no member named 'mVal'
 + 0 pts of 30.000
 Total grade so far: 0
-*****************Finished lab12****************
