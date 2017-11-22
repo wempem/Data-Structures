@@ -1,2 +1,19 @@
 I am run number 001539.
 Pulling source code...
+------------------------------------------------
+Changes found in lab10
+------------------------------------------------
+*****************Examining lab10****************
+******************* Stack PART *********************
+g++ -o bt-test -g -I src/ --std=c++14 src/stack.cpp src/queue.cpp src/sllist.cpp src/main.cpp
+Failures = 2
+MAKE_ERROR = 
++ 16.650 pts of 50.000
+Total grade so far: 16.650
+******************* Queue PART *********************
+g++ -o bt-test -g -I src/ --std=c++14 src/stack.cpp src/queue.cpp src/sllist.cpp src/main.cpp
+Failures = 1
+MAKE_ERROR = 
++ 33.300 pts of 50.000
+Total grade so far: 49.950
+*****************Finished lab10****************
