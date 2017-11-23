@@ -1,2 +1,35 @@
 I am run number 001579.
 Pulling source code...
+------------------------------------------------
+Changes found in lab15
+------------------------------------------------
+*****************Examining lab15****************
+******************* inRange Test *********************
+g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
+Failures = 1
+MAKE_ERROR = 
+Memory errors found: ==27217==    definitely lost: 120 bytes in 4 blocks
++ 16.875 pts of 25.000
+Total grade so far: 16.875
+******************* contains test *********************
+g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
+Memory errors found: ==27272==    definitely lost: 0 bytes in 0 blocks
++ 22.500 pts of 25.000
+Total grade so far: 39.375
+******************* count in range test *********************
+g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = 
+Memory errors found: ==27327==    definitely lost: 0 bytes in 0 blocks
++ 22.500 pts of 25.000
+Total grade so far: 61.875
+******************* traversal test *********************
+g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/binarytree.cpp:212:18: error: invalid use of void expression
+src/binarytree.cpp:212:18: error: invalid use of void expression
++ 0 pts of 25.000
+Total grade so far: 61.875
+*****************Finished lab15****************
