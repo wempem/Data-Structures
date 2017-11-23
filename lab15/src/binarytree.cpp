@@ -210,6 +210,7 @@ template <class T>
 void BinaryTree<T>::inorderTraversal(void (*visit) (T &item)) const{
 	T typeItem;
 	inorderTraversal((*visit)(typeItem),mRoot);	
+	return;
 }
 
 template <class T>
