@@ -146,9 +146,9 @@ void SLList<T>::sort(){
 	Node *rover = mHead;
 	Node *dover = mHead;
 	Node *temp;
-	while(rover != mTail->mNext){
+	while(rover != NULL){
 		rover = rover->mNext;
-		while(dover != mTail->mNext)
+		while(dover != NULL)
 			if(rover->mVal <= dover->mVal){
 				temp = dover; 	
 				dover = rover;
