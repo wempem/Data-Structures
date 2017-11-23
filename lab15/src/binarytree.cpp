@@ -62,6 +62,7 @@ void BinaryTree<T>::put(const T &val){
 	} else {
         	rover->mLeft = newNode;
 	}
+	
 }
 
 template <class T>
@@ -112,8 +113,8 @@ bool BinaryTree<T>::contain(const T &val, BinaryTreeNode<T> *node) const{
 }
 template <class T>
 bool BinaryTree<T>::remove(const T &val){
-	if(mRoot == val){
-		exchangeRemove(mRoot);
+	if(mRoot->mVal == val){
+		exchangeRemove(val, mRoot);
 		return true;
 	}
 	else
@@ -127,7 +128,7 @@ bool BinaryTree<T>::removed(const T &val, BinaryTreeNode<T> *node) {
 	Right = node->mRight;
 	
 	if(Left->mVal == val || Right->mVal == val){
-		exchangeRemove(node);
+		exchangeRemove(val, node);
 		
 	}
 	else if(node->mRight != NULL){
@@ -207,7 +208,8 @@ std::string BinaryTree<T>::postorderString(){
 
 template <class T>
 void BinaryTree<T>::inorderTraversal(void (*visit) (T &item)) const{
-	inorderTraversal((*visit)(mRoot));	
+	T typeItem;
+	inorderTraversal((*visit)(typeItem));	
 }
 
 template <class T>
