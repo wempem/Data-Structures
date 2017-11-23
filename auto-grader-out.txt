@@ -1,8 +1,11 @@
-I am run number 001555.
+I am run number 001557.
 Pulling source code...
 ------------------------------------------------
+Changes found in create
 Changes found in lab12
 ------------------------------------------------
+*****************Examining create****************
+*****************Finished create****************
 *****************Examining lab12****************
 ******************* Selection Sort PART *********************
 g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
