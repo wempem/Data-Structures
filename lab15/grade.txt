@@ -26,3 +26,4 @@ MAKE_ERROR = src/binarytree.cpp:212:32: error: void value not ignored as it ough
 src/binarytree.cpp:212:32: error: void value not ignored as it ought to be
 + 0 pts of 25.000
 Total grade so far: 61.875
+*****************Finished lab15****************
