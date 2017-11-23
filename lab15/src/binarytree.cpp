@@ -209,13 +209,13 @@ std::string BinaryTree<T>::postorderString(){
 template <class T>
 void BinaryTree<T>::inorderTraversal(void (*visit) (T &item)) const{
 	T typeItem;
-	inorderTraversal((*visit)(typeItem));	
+	inorderTraversal((*visit)(typeItem),mRoot);	
 }
 
 template <class T>
 void BinaryTree<T>::inorderTraversal(void (*visit) (T &item), BinaryTreeNode<T> *node) const{
 	if(node == NULL){
-		return;
+		return;	
 	}
 	(*visit)(node);
 	inorderTraversal((*visit)(node->mLeft));
