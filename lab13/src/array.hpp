@@ -5,7 +5,8 @@ template <class T>
 class Array {
     private:
         /* You fill this in*/
-
+	int *mArray;
+	int mSize;
     public:
     /* Do a deep copy of the array into the list.
      * Note: This one uses a pointer!
@@ -38,13 +39,15 @@ class Array {
     bool operator==(Array<T> &list) const;
 
     /* Perform a merge sort. */
+    void merge_sort(int *ary, int size);
     void msort();
-
+    void quickSort(int left, int right);
     /* Perform a quick sort. */
     void qsort();
 
     /* Perform the sort you believe is best. */
     void sort();
+    void print();
 
     /* Free any memory used! */
     ~Array();
