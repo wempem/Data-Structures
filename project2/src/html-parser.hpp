@@ -1,9 +1,12 @@
 #ifndef HTML_PARSER_HPP
 #define HTML_PARSER_HPP
-
+#include <fstream>
 #include <string>
-
+#include <vector>
 class HTMLParser {
+    private:
+    	std::vector<std::string> mParser;
+    	std::vector<std::string> mPages;
     public:
         HTMLParser();
         ~HTMLParser();
