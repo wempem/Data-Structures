@@ -44,7 +44,7 @@ bool HashTable<K, V>::insert(const K &key, const V &val) {
 template<class K, class V>
 void HashTable<K, V>::doubleCapacity() {
     // You implement.
-	mTable.resize(mTable.size() * 2);
+	mTable->resize(mTable->size() * 2);
 }
 
 template<class K, class V>
