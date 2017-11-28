@@ -21,3 +21,4 @@ MAKE_ERROR = src/hashtable.cpp:47:9: error: request for member 'resize' in '((Ha
 src/hashtable.cpp:47:23: error: request for member 'size' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
 + 0 pts of 40.000
 Total grade so far: 0
+*****************Finished lab19****************
