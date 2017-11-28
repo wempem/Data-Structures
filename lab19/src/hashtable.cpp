@@ -44,7 +44,13 @@ bool HashTable<K, V>::insert(const K &key, const V &val) {
 template<class K, class V>
 void HashTable<K, V>::doubleCapacity() {
     // You implement.
-	mTable->resize(mTable->size() * 2);
+	int newSize = mTable->size() *2;
+	HashTable temp = new std::vector<std::pair<K, V>* >(newSize);
+	for(typename std::vector<std::pair<K,V> >::iterator i = mTable->begin(); i != mTable->end(); i++)	{
+		temp->push_back(*i->first, *i->second);
+	}
+	mTable = temp;
+	delete temp;
 }
 
 template<class K, class V>
