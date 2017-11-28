@@ -1,2 +1,86 @@
 I am run number 001659.
 Pulling source code...
+------------------------------------------------
+Changes found in lab19
+------------------------------------------------
+*****************Examining lab19****************
+******************* lf Test *********************
+g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/hashtable.cpp:48:61: error: conversion from 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' to non-scalar type 'HashTable<int, int>' requested
+src/hashtable.cpp:49:72: error: conversion from 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >}' to non-scalar type 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' requested
+src/hashtable.cpp:49:77: error: no match for 'operator!=' (operand types are 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' and 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >}')
+/usr/include/c++/6/system_error:323:3: note: candidate: bool std::operator!=(const std::error_condition&, const std::error_condition&)
+/usr/include/c++/6/system_error:323:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_condition&'
+/usr/include/c++/6/system_error:319:3: note: candidate: bool std::operator!=(const std::error_condition&, const std::error_code&)
+/usr/include/c++/6/system_error:319:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_condition&'
+/usr/include/c++/6/system_error:315:3: note: candidate: bool std::operator!=(const std::error_code&, const std::error_condition&)
+/usr/include/c++/6/system_error:315:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_code&'
+/usr/include/c++/6/system_error:311:3: note: candidate: bool std::operator!=(const std::error_code&, const std::error_code&)
+/usr/include/c++/6/system_error:311:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_code&'
+src/hashtable.cpp:50:3: error: base operand of '->' has non-pointer type 'HashTable<int, int>'
+src/hashtable.cpp:50:19: error: invalid type argument of unary '*' (have 'int')
+src/hashtable.cpp:50:30: error: invalid type argument of unary '*' (have 'int')
+src/hashtable.cpp:52:9: error: cannot convert 'HashTable<int, int>' to 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' in assignment
+src/hashtable.cpp:53:2: error: type 'class HashTable<int, int>' argument given to 'delete', expected pointer
++ 0 pts of 25.000
+Total grade so far: 0
+******************* insert Test *********************
+g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/hashtable.cpp:48:61: error: conversion from 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' to non-scalar type 'HashTable<int, int>' requested
+src/hashtable.cpp:49:72: error: conversion from 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >}' to non-scalar type 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' requested
+src/hashtable.cpp:49:77: error: no match for 'operator!=' (operand types are 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' and 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >}')
+/usr/include/c++/6/system_error:323:3: note: candidate: bool std::operator!=(const std::error_condition&, const std::error_condition&)
+/usr/include/c++/6/system_error:323:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_condition&'
+/usr/include/c++/6/system_error:319:3: note: candidate: bool std::operator!=(const std::error_condition&, const std::error_code&)
+/usr/include/c++/6/system_error:319:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_condition&'
+/usr/include/c++/6/system_error:315:3: note: candidate: bool std::operator!=(const std::error_code&, const std::error_condition&)
+/usr/include/c++/6/system_error:315:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_code&'
+/usr/include/c++/6/system_error:311:3: note: candidate: bool std::operator!=(const std::error_code&, const std::error_code&)
+/usr/include/c++/6/system_error:311:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_code&'
+src/hashtable.cpp:50:3: error: base operand of '->' has non-pointer type 'HashTable<int, int>'
+src/hashtable.cpp:50:19: error: invalid type argument of unary '*' (have 'int')
+src/hashtable.cpp:50:30: error: invalid type argument of unary '*' (have 'int')
+src/hashtable.cpp:52:9: error: cannot convert 'HashTable<int, int>' to 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' in assignment
+src/hashtable.cpp:53:2: error: type 'class HashTable<int, int>' argument given to 'delete', expected pointer
+src/hashtable.cpp:48:61: error: conversion from 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> >*' to non-scalar type 'HashTable<std::__cxx11::basic_string<char>, int>' requested
+src/hashtable.cpp:49:72: error: conversion from 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<std::__cxx11::basic_string<char>, int>**, std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> > >}' to non-scalar type 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<std::__cxx11::basic_string<char>, int>*, std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > > >}' requested
+src/hashtable.cpp:49:77: error: no match for 'operator!=' (operand types are 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<std::__cxx11::basic_string<char>, int>*, std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > > >}' and 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<std::__cxx11::basic_string<char>, int>**, std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> > >}')
+/usr/include/c++/6/system_error:323:3: note: candidate: bool std::operator!=(const std::error_condition&, const std::error_condition&)
+/usr/include/c++/6/system_error:323:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<std::__cxx11::basic_string<char>, int>*, std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > > >}' to 'const std::error_condition&'
+/usr/include/c++/6/system_error:319:3: note: candidate: bool std::operator!=(const std::error_condition&, const std::error_code&)
+/usr/include/c++/6/system_error:319:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<std::__cxx11::basic_string<char>, int>*, std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > > >}' to 'const std::error_condition&'
+/usr/include/c++/6/system_error:315:3: note: candidate: bool std::operator!=(const std::error_code&, const std::error_condition&)
+/usr/include/c++/6/system_error:315:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<std::__cxx11::basic_string<char>, int>*, std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > > >}' to 'const std::error_code&'
+/usr/include/c++/6/system_error:311:3: note: candidate: bool std::operator!=(const std::error_code&, const std::error_code&)
+/usr/include/c++/6/system_error:311:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<std::__cxx11::basic_string<char>, int>*, std::vector<std::pair<std::__cxx11::basic_string<char>, int>, std::allocator<std::pair<std::__cxx11::basic_string<char>, int> > > >}' to 'const std::error_code&'
+src/hashtable.cpp:50:3: error: base operand of '->' has non-pointer type 'HashTable<std::__cxx11::basic_string<char>, int>'
+src/hashtable.cpp:50:19: error: no match for 'operator*' (operand type is 'std::__cxx11::basic_string<char>')
+src/hashtable.cpp:50:30: error: invalid type argument of unary '*' (have 'int')
+src/hashtable.cpp:52:9: error: cannot convert 'HashTable<std::__cxx11::basic_string<char>, int>' to 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> >*' in assignment
+src/hashtable.cpp:53:2: error: type 'class HashTable<std::__cxx11::basic_string<char>, int>' argument given to 'delete', expected pointer
++ 0 pts of 35.000
+Total grade so far: 0
+******************* remove test *********************
+g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/hashtable.cpp:48:61: error: conversion from 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' to non-scalar type 'HashTable<int, int>' requested
+src/hashtable.cpp:49:72: error: conversion from 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >}' to non-scalar type 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' requested
+src/hashtable.cpp:49:77: error: no match for 'operator!=' (operand types are 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' and 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >}')
+/usr/include/c++/6/system_error:323:3: note: candidate: bool std::operator!=(const std::error_condition&, const std::error_condition&)
+/usr/include/c++/6/system_error:323:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_condition&'
+/usr/include/c++/6/system_error:319:3: note: candidate: bool std::operator!=(const std::error_condition&, const std::error_code&)
+/usr/include/c++/6/system_error:319:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_condition&'
+/usr/include/c++/6/system_error:315:3: note: candidate: bool std::operator!=(const std::error_code&, const std::error_condition&)
+/usr/include/c++/6/system_error:315:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_code&'
+/usr/include/c++/6/system_error:311:3: note: candidate: bool std::operator!=(const std::error_code&, const std::error_code&)
+/usr/include/c++/6/system_error:311:3: note:   no known conversion for argument 1 from 'std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator {aka __gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >}' to 'const std::error_code&'
+src/hashtable.cpp:50:3: error: base operand of '->' has non-pointer type 'HashTable<int, int>'
+src/hashtable.cpp:50:19: error: invalid type argument of unary '*' (have 'int')
+src/hashtable.cpp:50:30: error: invalid type argument of unary '*' (have 'int')
+src/hashtable.cpp:52:9: error: cannot convert 'HashTable<int, int>' to 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' in assignment
+src/hashtable.cpp:53:2: error: type 'class HashTable<int, int>' argument given to 'delete', expected pointer
++ 0 pts of 40.000
+Total grade so far: 0
+*****************Finished lab19****************
