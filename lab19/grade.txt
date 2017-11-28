@@ -1,20 +1,23 @@
 ******************* lf Test *********************
 g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
-Failures = 2
-MAKE_ERROR = 
-Memory errors found: ==20788==    definitely lost: 72 bytes in 3 blocks
-+ 7.492 pts of 25.000
-Total grade so far: 7.492
+Failures = 
+MAKE_ERROR = src/hashtable.cpp:47:9: error: request for member 'resize' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:47:23: error: request for member 'size' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
++ 0 pts of 25.000
+Total grade so far: 0
 ******************* insert Test *********************
 g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
 Failures = 
-MAKE_ERROR = collect2: error: ld returned 1 exit status
+MAKE_ERROR = src/hashtable.cpp:47:9: error: request for member 'resize' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:47:23: error: request for member 'size' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:47:9: error: request for member 'resize' in '((HashTable<std::__cxx11::basic_string<char>, int>*)this)->HashTable<std::__cxx11::basic_string<char>, int>::mTable', which is of pointer type 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> >*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:47:23: error: request for member 'size' in '((HashTable<std::__cxx11::basic_string<char>, int>*)this)->HashTable<std::__cxx11::basic_string<char>, int>::mTable', which is of pointer type 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> >*' (maybe you meant to use '->' ?)
 + 0 pts of 35.000
-Total grade so far: 7.492
+Total grade so far: 0
 ******************* remove test *********************
 g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
 Failures = 
-MAKE_ERROR = collect2: error: ld returned 1 exit status
+MAKE_ERROR = src/hashtable.cpp:47:9: error: request for member 'resize' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:47:23: error: request for member 'size' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
 + 0 pts of 40.000
-Total grade so far: 7.492
-*****************Finished lab19****************
+Total grade so far: 0

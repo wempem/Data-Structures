@@ -1,35 +1,30 @@
-I am run number 001579.
+I am run number 001655.
 Pulling source code...
 ------------------------------------------------
-Changes found in lab15
+Changes found in lab19
 ------------------------------------------------
-*****************Examining lab15****************
-******************* inRange Test *********************
-g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
-Failures = 1
-MAKE_ERROR = 
-Memory errors found: ==27217==    definitely lost: 120 bytes in 4 blocks
-+ 16.875 pts of 25.000
-Total grade so far: 16.875
-******************* contains test *********************
-g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
+*****************Examining lab19****************
+******************* lf Test *********************
+g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
 Failures = 
-MAKE_ERROR = 
-Memory errors found: ==27272==    definitely lost: 0 bytes in 0 blocks
-+ 22.500 pts of 25.000
-Total grade so far: 39.375
-******************* count in range test *********************
-g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
-Failures = 
-MAKE_ERROR = 
-Memory errors found: ==27327==    definitely lost: 0 bytes in 0 blocks
-+ 22.500 pts of 25.000
-Total grade so far: 61.875
-******************* traversal test *********************
-g++ -o bt-test -g -I src/ --std=c++14 src/binarytree.cpp src/main.cpp
-Failures = 
-MAKE_ERROR = src/binarytree.cpp:212:18: error: invalid use of void expression
-src/binarytree.cpp:212:18: error: invalid use of void expression
+MAKE_ERROR = src/hashtable.cpp:47:9: error: request for member 'resize' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:47:23: error: request for member 'size' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
 + 0 pts of 25.000
-Total grade so far: 61.875
-*****************Finished lab15****************
+Total grade so far: 0
+******************* insert Test *********************
+g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/hashtable.cpp:47:9: error: request for member 'resize' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:47:23: error: request for member 'size' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:47:9: error: request for member 'resize' in '((HashTable<std::__cxx11::basic_string<char>, int>*)this)->HashTable<std::__cxx11::basic_string<char>, int>::mTable', which is of pointer type 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> >*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:47:23: error: request for member 'size' in '((HashTable<std::__cxx11::basic_string<char>, int>*)this)->HashTable<std::__cxx11::basic_string<char>, int>::mTable', which is of pointer type 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> >*' (maybe you meant to use '->' ?)
++ 0 pts of 35.000
+Total grade so far: 0
+******************* remove test *********************
+g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/hashtable.cpp:47:9: error: request for member 'resize' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:47:23: error: request for member 'size' in '((HashTable<int, int>*)this)->HashTable<int, int>::mTable', which is of pointer type 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' (maybe you meant to use '->' ?)
++ 0 pts of 40.000
+Total grade so far: 0
+*****************Finished lab19****************
