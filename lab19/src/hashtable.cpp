@@ -46,7 +46,8 @@ void HashTable<K, V>::doubleCapacity() {
     // You implement.
 	int newSize = mTable->size() *2;
 	HashTable<int, int> temp(newSize, mLoadFactor); 
-	temp.mTable = new std::vector<std::pair<K, V>* >(newSize);
+	std::vector<std::pair<K, V>* > tempTable = new std::vector<std::pair<K, V>* >(newSize);
+	temp.mTable = tempTable;
 //	temp->resize(mTable->size() *2);
 	
 	for(typename std::vector<std::pair<K, V>* >::iterator i = mTable->begin(); i != mTable->end(); i++)	{
