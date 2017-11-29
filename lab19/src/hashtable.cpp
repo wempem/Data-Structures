@@ -49,8 +49,8 @@ void HashTable<K, V>::doubleCapacity() {
 	temp.mTable = new std::vector<std::pair<K, V>* >(newSize);
 //	temp->resize(mTable->size() *2);
 	
-	for(typename std::vector<std::pair<K, V> >::iterator i = mTable->begin(); i != mTable->end(); i++)	{
-		temp.mTable->push_back(i->mKey, i->mVal);
+	for(typename std::vector<std::pair<K, V>* >::iterator i = mTable->begin(); i != mTable->end(); i++)	{
+		temp.mTable->push_back(i->mKey->mKey, i->mVal->mVal);
 	}
 	mTable = temp;
 	delete temp;
