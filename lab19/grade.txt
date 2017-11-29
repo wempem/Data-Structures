@@ -21,3 +21,4 @@ MAKE_ERROR = src/hashtable.cpp:52:21: error: 'struct std::pair<int, int>' has no
 src/hashtable.cpp:52:33: error: 'struct std::pair<int, int>' has no member named 'mVal'
 + 0 pts of 40.000
 Total grade so far: 0
+*****************Finished lab19****************
