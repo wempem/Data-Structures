@@ -1,2 +1,30 @@
 I am run number 001711.
 Pulling source code...
+------------------------------------------------
+Changes found in lab19
+------------------------------------------------
+*****************Examining lab19****************
+******************* lf Test *********************
+g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/hashtable.cpp:52:21: error: 'struct std::pair<int, int>' has no member named 'mKey'
+src/hashtable.cpp:52:33: error: 'struct std::pair<int, int>' has no member named 'mVal'
++ 0 pts of 25.000
+Total grade so far: 0
+******************* insert Test *********************
+g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/hashtable.cpp:52:21: error: 'struct std::pair<int, int>' has no member named 'mKey'
+src/hashtable.cpp:52:33: error: 'struct std::pair<int, int>' has no member named 'mVal'
+src/hashtable.cpp:52:21: error: 'struct std::pair<std::__cxx11::basic_string<char>, int>' has no member named 'mKey'
+src/hashtable.cpp:52:33: error: 'struct std::pair<std::__cxx11::basic_string<char>, int>' has no member named 'mVal'
++ 0 pts of 35.000
+Total grade so far: 0
+******************* remove test *********************
+g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
+Failures = 
+MAKE_ERROR = src/hashtable.cpp:52:21: error: 'struct std::pair<int, int>' has no member named 'mKey'
+src/hashtable.cpp:52:33: error: 'struct std::pair<int, int>' has no member named 'mVal'
++ 0 pts of 40.000
+Total grade so far: 0
+*****************Finished lab19****************
