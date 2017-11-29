@@ -21,3 +21,4 @@ Failures =
 MAKE_ERROR = collect2: error: ld returned 1 exit status
 + 0 pts of 40.000
 Total grade so far: 7.492
+*****************Finished lab19****************
