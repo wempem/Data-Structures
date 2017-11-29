@@ -20,3 +20,4 @@ Failures =
 MAKE_ERROR = src/hashtable.cpp:55:7: error: lvalue required as left operand of assignment
 + 0 pts of 40.000
 Total grade so far: 0
+*****************Finished lab19****************
