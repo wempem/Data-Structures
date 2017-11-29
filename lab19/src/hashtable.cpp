@@ -45,7 +45,9 @@ template<class K, class V>
 void HashTable<K, V>::doubleCapacity() {
     // You implement.
 	int newSize = mTable->size() *2;
-	HashTable temp = new std::vector<std::pair<K, V>* >(newSize);
+	HashTable* temp = new std::vector<std::pair<K, V>* >(newSize);
+//	temp->resize(mTable->size() *2);
+	
 	for(typename std::vector<std::pair<K,V> >::iterator i = mTable->begin(); i != mTable->end(); i++)	{
 		temp->push_back(*i->first, *i->second);
 	}
