@@ -69,3 +69,4 @@ src/hashtable.cpp:53:30: error: invalid type argument of unary '*' (have 'int')
 src/hashtable.cpp:55:9: error: cannot convert 'HashTable<int, int>*' to 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' in assignment
 + 0 pts of 40.000
 Total grade so far: 0
+*****************Finished lab19****************
