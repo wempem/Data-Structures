@@ -25,3 +25,4 @@ MAKE_ERROR = src/hashtable.cpp:49:87: error: conversion from 'std::vector<std::p
 src/hashtable.cpp:50:14: error: cannot convert 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >' to 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' in assignment
 + 0 pts of 40.000
 Total grade so far: 0
+*****************Finished lab19****************
