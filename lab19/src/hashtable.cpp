@@ -1,5 +1,5 @@
 #ifdef HASH_TABLE_H
-
+#include <iostream>
 template<class K, class V>
 HashTable<K, V>::HashTable(const int size, const float loadFactor) {
     mTable = new std::vector<std::pair<K, V>* >(size);
@@ -27,15 +27,17 @@ bool HashTable<K, V>::insert(const K &key, const V &val) {
             index = 0;
         }
     }
-
     // Now index is pointing to an empty location
     // If it is empty put it there.
     (*mTable)[index] = toInsert;
-
+	std::cout << "made it";
     // Check the load factor
     float pFull = percentFull();
+std::cout << pFull;
     if (pFull >= mLoadFactor) {
-        doubleCapacity();
+        std::cout << "here";
+	doubleCapacity();
+	
     }
 
     return true;
@@ -44,12 +46,12 @@ bool HashTable<K, V>::insert(const K &key, const V &val) {
 template<class K, class V>
 void HashTable<K, V>::doubleCapacity() {
     // You implement.
-	int newSize = mTable->size() *2;
+	int newSize = mTable->capacity() *2;
 	HashTable<K, V> temp(newSize, mLoadFactor); 
-//	temp->resize(mTable->size() *2);
 	
 	for(typename std::vector<std::pair<K, V>* >::iterator i = mTable->begin(); i != mTable->end(); i++)	{
 		temp.insert((*i)->first, (*i)->second);
+		std::cout << (*i)->first <<  " " << (*i)->second << "\n";
 	}
 	mTable = temp.mTable;
 	delete temp.mTable;
@@ -65,8 +67,23 @@ float HashTable<K, V>::percentFull() {
     return pFull;
 }
 
+template <class K, class V>
+bool HashTable<K,V>::remove(const K &key){
+	if(mTable->capacity() == 0){
+		return false;
+	}
+	for(typename std::vector<std::pair<K, V>* >::iterator i = mTable->begin(); i != mTable->end(); 	i++){
+        if((*i)->first == key){
+		mTable->erase(i);
+		return true;
+	}
+	
+	}
+	return false;
+}
 template<class K, class V>
 HashTable<K, V>::~HashTable() {
+	mTable->clear();
 }
 
 int hashcode(int key) {
@@ -75,7 +92,15 @@ int hashcode(int key) {
 
 int hashcode(const std::string &key) {
     // You need to do something else.
-    return 0;
+        int i = 0;
+        int hash = 0;
+        while(key[i] != '\0'){
+                int integer = key[i];
+                hash += integer;
+                integer = 0;
+                i++;
+        }
+    return hash;
 }
 
 #endif
