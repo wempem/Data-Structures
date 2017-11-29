@@ -2,34 +2,30 @@
 g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
 Failures = 
 MAKE_ERROR = src/hashtable.cpp:53:29: error: request for member 'mKey' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >()', which is of pointer type 'std::pair<int, int>*' (maybe you meant to use '->' ?)
-src/hashtable.cpp:53:44: error: request for member 'mVal' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >()', which is of pointer type 'std::pair<int, int>*' (maybe you meant to use '->' ?)
-src/hashtable.cpp:55:9: error: cannot convert 'HashTable<int, int>' to 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' in assignment
-src/hashtable.cpp:56:2: error: type 'class HashTable<int, int>' argument given to 'delete', expected pointer
+src/hashtable.cpp:53:38: error: request for member 'mVal' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >()', which is of pointer type 'std::pair<int, int>*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:55:7: error: lvalue required as left operand of assignment
 + 0 pts of 25.000
 Total grade so far: 0
 ******************* insert Test *********************
 g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
 Failures = 
 MAKE_ERROR = src/hashtable.cpp:53:29: error: request for member 'mKey' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >()', which is of pointer type 'std::pair<int, int>*' (maybe you meant to use '->' ?)
-src/hashtable.cpp:53:44: error: request for member 'mVal' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >()', which is of pointer type 'std::pair<int, int>*' (maybe you meant to use '->' ?)
-src/hashtable.cpp:55:9: error: cannot convert 'HashTable<int, int>' to 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' in assignment
-src/hashtable.cpp:56:2: error: type 'class HashTable<int, int>' argument given to 'delete', expected pointer
+src/hashtable.cpp:53:38: error: request for member 'mVal' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >()', which is of pointer type 'std::pair<int, int>*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:55:7: error: lvalue required as left operand of assignment
 src/hashtable.cpp:49:7: error: 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >* HashTable<int, int>::mTable' is private within this context
 src/hashtable.cpp:49:14: error: cannot convert 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> >*' to 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' in assignment
 src/hashtable.cpp:53:8: error: 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >* HashTable<int, int>::mTable' is private within this context
 src/hashtable.cpp:53:29: error: request for member 'mKey' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<std::__cxx11::basic_string<char>, int>**, std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> > >()', which is of pointer type 'std::pair<std::__cxx11::basic_string<char>, int>*' (maybe you meant to use '->' ?)
-src/hashtable.cpp:53:44: error: request for member 'mVal' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<std::__cxx11::basic_string<char>, int>**, std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> > >()', which is of pointer type 'std::pair<std::__cxx11::basic_string<char>, int>*' (maybe you meant to use '->' ?)
-src/hashtable.cpp:55:9: error: cannot convert 'HashTable<int, int>' to 'std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> >*' in assignment
-src/hashtable.cpp:56:2: error: type 'class HashTable<int, int>' argument given to 'delete', expected pointer
+src/hashtable.cpp:53:38: error: request for member 'mVal' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<std::__cxx11::basic_string<char>, int>**, std::vector<std::pair<std::__cxx11::basic_string<char>, int>*, std::allocator<std::pair<std::__cxx11::basic_string<char>, int>*> > >()', which is of pointer type 'std::pair<std::__cxx11::basic_string<char>, int>*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:55:7: error: lvalue required as left operand of assignment
+src/hashtable.cpp:56:14: error: 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >* HashTable<int, int>::mTable' is private within this context
 + 0 pts of 35.000
 Total grade so far: 0
 ******************* remove test *********************
 g++ -o ht-test -g -I src/ --std=c++14 src/hashtable.cpp src/main.cpp
 Failures = 
 MAKE_ERROR = src/hashtable.cpp:53:29: error: request for member 'mKey' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >()', which is of pointer type 'std::pair<int, int>*' (maybe you meant to use '->' ?)
-src/hashtable.cpp:53:44: error: request for member 'mVal' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >()', which is of pointer type 'std::pair<int, int>*' (maybe you meant to use '->' ?)
-src/hashtable.cpp:55:9: error: cannot convert 'HashTable<int, int>' to 'std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> >*' in assignment
-src/hashtable.cpp:56:2: error: type 'class HashTable<int, int>' argument given to 'delete', expected pointer
+src/hashtable.cpp:53:38: error: request for member 'mVal' in '* i.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><std::pair<int, int>**, std::vector<std::pair<int, int>*, std::allocator<std::pair<int, int>*> > >()', which is of pointer type 'std::pair<int, int>*' (maybe you meant to use '->' ?)
+src/hashtable.cpp:55:7: error: lvalue required as left operand of assignment
 + 0 pts of 40.000
 Total grade so far: 0
-*****************Finished lab19****************
