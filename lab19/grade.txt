@@ -29,3 +29,4 @@ src/hashtable.cpp:53:38: error: request for member 'mVal' in '* i.__gnu_cxx::__n
 src/hashtable.cpp:55:7: error: lvalue required as left operand of assignment
 + 0 pts of 40.000
 Total grade so far: 0
+*****************Finished lab19****************
