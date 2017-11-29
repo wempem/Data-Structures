@@ -49,7 +49,7 @@ void HashTable<K, V>::doubleCapacity() {
 //	temp->resize(mTable->size() *2);
 	
 	for(typename std::vector<std::pair<K, V>* >::iterator i = mTable->begin(); i != mTable->end(); i++)	{
-		temp.insert(i->mKey, i->mVal);
+		temp.insert(*i->mKey, *i->mVal);
 	}
 	mTable = temp.mTable;
 	delete temp.mTable;
