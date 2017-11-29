@@ -72,3 +72,4 @@ src/hashtable.cpp:55:9: error: cannot convert 'HashTable<int, int>' to 'std::vec
 src/hashtable.cpp:56:2: error: type 'class HashTable<int, int>' argument given to 'delete', expected pointer
 + 0 pts of 40.000
 Total grade so far: 0
+*****************Finished lab19****************
