@@ -1,13 +1,12 @@
 ******************* add-remove Test *********************
 g++ -o gam-test -g -I src/ --std=c++14 src/grapham.cpp src/main.cpp
 Failures = 
-MAKE_ERROR = src/grapham.cpp:48:3: error: no matching function for call to 'std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::push_back(int&)'
-+ 0 pts of 50.000
-Total grade so far: 0
+MAKE_ERROR = 
++ 50.000 pts of 50.000
+Total grade so far: 50.000
 ******************* shortest path Test *********************
 g++ -o gam-test -g -I src/ --std=c++14 src/grapham.cpp src/main.cpp
 Failures = 
 MAKE_ERROR = collect2: error: ld returned 1 exit status
 + 0 pts of 50.000
-Total grade so far: 0
-*****************Finished lab22****************
+Total grade so far: 50.000
