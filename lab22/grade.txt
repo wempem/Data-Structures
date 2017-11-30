@@ -2,6 +2,7 @@
 g++ -o gam-test -g -I src/ --std=c++14 src/grapham.cpp src/main.cpp
 Failures = 
 MAKE_ERROR = src/grapham.cpp:48:3: error: no matching function for call to 'std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::push_back(int&)'
+src/grapham.cpp:49:12: error: invalid use of member function 'std::vector<_Tp, _Alloc>::const_reference std::vector<_Tp, _Alloc>::at(std::vector<_Tp, _Alloc>::size_type) const [with _Tp = std::vector<int, std::allocator<int> >; _Alloc = std::allocator<std::vector<int, std::allocator<int> > >; std::vector<_Tp, _Alloc>::const_reference = const std::vector<int, std::allocator<int> >&; std::vector<_Tp, _Alloc>::size_type = long unsigned int]' (did you forget the '()' ?)
 + 0 pts of 50.000
 Total grade so far: 0
 ******************* shortest path Test *********************
@@ -10,4 +11,3 @@ Failures =
 MAKE_ERROR = collect2: error: ld returned 1 exit status
 + 0 pts of 50.000
 Total grade so far: 0
-*****************Finished lab22****************
