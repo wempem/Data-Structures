@@ -1,5 +1,5 @@
 #ifdef GRAPHAM_H
-
+#include <vector>
 #include <iostream>
 #include <queue>
 #include <set>
