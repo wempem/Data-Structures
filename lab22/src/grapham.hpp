@@ -6,10 +6,11 @@
  * Class W : W represent the weight that can be associated with an edge.
  * We will not weight the vertices.
  */
-
+#include <vector>
 template<class W>
 class GraphAM {
     private:
+	std::vector<std::vector<W> > mGraph;
         void depthFirstTraversal(void (*visit)(const int node),
                 int *visited, const int cVertex);
     public:
@@ -41,7 +42,7 @@ class GraphAM {
         void depthFirstTraversal(void (*visit)(const int node));
         void breadthFirstTraversal(void (*visit)(const int node));
 
-        /*
+	void clearEdges();        /*
          * Return adjacent weight from start to end (or -1 if they are
          * not adjacent.
          */
