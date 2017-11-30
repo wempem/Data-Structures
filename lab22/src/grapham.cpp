@@ -46,7 +46,7 @@ int GraphAM<W>::addVertices(const int vertices) {
 	
 	while(index != (newSize - 1)){
 		mGraph.push_back(index);
-		mGraph.at[index].push_back(index);
+		mGraph.at(index).push_back(index);
 		
 		for (int i = 0; i < mGraph.size(); i++) {
 			mGraph[i][index] = -1;
