@@ -44,24 +44,25 @@ int GraphAM<W>::addVertices(const int vertices) {
 	int newSize = vertices + mGraph.size();
 	int index = mGraph.size();
 	
-	while(index != (newSize - 1)){
-		mGraph.push_back(index);
-		mGraph.at(index).push_back(index);
-		
-		for (int i = 0; i < mGraph.size(); i++) {
-			mGraph[i][index] = -1;
-			if(i == index){
-				mGraph[i][index] = 0;
-			}
-     		}
-		for(int i = 0; i < mGraph.size(); i++){	
-			mGraph[index][i] = -1;
-			if(i == index){
-				mGraph[index][i] = 0;
-			}		
-			
+	mGraph.resize(newSize);
+	for(int i = 0; i <newSize; i++){
+		mGraph[i].resize(newSize);
+	}
+	for(int i = index; i < mGraph.size(); i++){
+		for(int j = 0; j <mGraph.size(); j++){
+			mGraph[i][j] = -1;
+			if(i == j){
+				mGraph[i][j] = 0;
+			} 	
 		}
-		index++;
+	}
+	for(int i = 0; i <mGraph.size(); i++){
+		for(int j = index; j < mGraph.size(); j++){
+			mGraph[i][j] = -1;
+			if(i ==j){
+				mGraph[i][j] = 0;
+			}
+		}
 	}
 
 }
