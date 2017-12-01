@@ -21,7 +21,7 @@ void GraphAL<W>::clearEdges() {
 /* Adds an edge with weight W to the graph. */
 template<class W>
 bool GraphAL<W>::addEdge(const int start, const int end, const W &weight) {
-	 std::pair<int, W> toAdd(end, weight);
+	std::pair<int, W> toAdd(end, weight);
 	mGraph[start].push_back(toAdd);
 }
 
@@ -82,7 +82,7 @@ bool GraphAL<W>::removeVertex(int idx) {
     // go through each edge of the AL and remove all with destination to idx. 
     //     Or: use removeEdge to remove all edges ending with idx.
 	for(int i = 0; i < mGraph.size(); i++){
-		mGraph.removeEdge(i,idx);
+		this->removeEdge(i,idx);
 	}
 	mGraph[idx] = mGraph[mGraph.size() - 1];
 	for(typename std::vector<std::list<std::pair<int, W> > >::iterator i = mGraph.begin(); i
