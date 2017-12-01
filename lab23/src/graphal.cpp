@@ -33,7 +33,7 @@ bool GraphAL<W>::removeEdge(const int start, const int end) {
 	for(typename std::list<std::pair<int,W> >::iterator it = mGraph[start].begin();
 		it != mGraph[start].end(); ++it){
 		if(it->first == end){
-			mGraph[start]->erase(it);
+			mGraph[start].erase(it);
 			return true;
 		}	
 	}
