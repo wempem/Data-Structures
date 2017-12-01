@@ -43,7 +43,8 @@ bool GraphAL<W>::removeEdge(const int start, const int end) {
 /* Adds amt vertices to the graph. */
 template<class W>
 void GraphAL<W>::addVertices(int amt) {
-	mGraph.resize(mGraph.size() + amt);		
+	int newSize = mGraph.size() + amt;
+	mGraph.resize(newSize);		
 }
 
 template<class W>
