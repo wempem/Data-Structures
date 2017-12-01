@@ -7,12 +7,15 @@
  * We will not weight the vertices.
  */
 #include <vector>
+#include <set>
 template<class W>
 class GraphAM {
     private:
 	std::vector<std::vector<W> > mGraph;
         void depthFirstTraversal(void (*visit)(const int node),
                 int *visited, const int cVertex);
+    	void depthFirstTraversal(void (*visit)(const int node), int node, 
+				const int std::set<int> &visited);
     public:
         /* Initialize an empty graph. */
         GraphAM();
