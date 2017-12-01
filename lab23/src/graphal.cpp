@@ -87,8 +87,8 @@ bool GraphAL<W>::removeVertex(int idx) {
 	mGraph[idx] = mGraph[mGraph.size() - 1];
 	for(typename std::vector<std::list<std::pair<int, W> > >::iterator i = mGraph.begin(); i
 		!= mGraph.end(); ++i){ 
-		for(typename std::list<std::pair<int,W> >::iterator it = mGraph[i].begin();
-			it != mGraph[i].end(); ++it){
+		for(typename std::list<std::pair<int,W> >::iterator it = mGraph[*i].begin();
+			it != mGraph[*i].end(); ++it){
 			if(it->first == mGraph[idx]){
 				mGraph[idx].splice(mGraph[idx].end(),it);
 			}		
