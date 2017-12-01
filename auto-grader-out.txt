@@ -1,2 +1,11 @@
-I am run number 001726.
-Pulling source code...
+I am run number 001735.
+*****************Examining lab12****************
+******************* Selection Sort PART *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
+******************* Insertion Sort PART *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
+******************* Sort PART *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
+******************* SLList Sort PART *********************
+g++ -o sll-test -g -I src/ --std=c++14 src/array.cpp src/sllist.cpp src/main.cpp
+*****************Finished lab12****************
