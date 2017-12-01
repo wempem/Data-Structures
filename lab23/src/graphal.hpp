@@ -9,11 +9,14 @@
 
 #include <vector>
 #include <list>
-
+#include <set>
 template<class W>
 class GraphAL {
     private:
         /* You fill out*/
+	std::vector<std::list<std::pair<int , W> > > mGraph;
+    	void depthFirstTraversal(void (*visit)(const int node), int node,
+        std::set<int> &visited);
     public:
         /* Initialize an empty graph. */
         GraphAL();
@@ -42,7 +45,7 @@ class GraphAL {
 
         void depthFirstTraversal(void (*visit)(const int node));
         void breadthFirstTraversal(void (*visit)(const int node));
-
+	void clearEdges();
         /*
          * Return adjacent weight from start to end (or -1 if they are
          * not adjacent.
