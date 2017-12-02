@@ -25,16 +25,7 @@ Total grade so far: 40.000
 ******************* remove vertices Test *********************
 g++ -o gam-test -g -I src/ --std=c++14 src/graphal.cpp src/main.cpp
 Failures = 
-MAKE_ERROR = src/graphal.cpp:93:17: error: no match for 'operator==' (operand types are 'int' and '__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<std::pair<int, int>, std::allocator<std::pair<int, int> > > > >::value_type {aka std::__cxx11::list<std::pair<int, int>, std::allocator<std::pair<int, int> > >}')
-/usr/include/c++/6/system_error:303:3: note: candidate: bool std::operator==(const std::error_condition&, const std::error_condition&)
-/usr/include/c++/6/system_error:303:3: note:   no known conversion for argument 1 from 'int' to 'const std::error_condition&'
-/usr/include/c++/6/system_error:296:3: note: candidate: bool std::operator==(const std::error_condition&, const std::error_code&)
-/usr/include/c++/6/system_error:296:3: note:   no known conversion for argument 1 from 'int' to 'const std::error_condition&'
-/usr/include/c++/6/system_error:289:3: note: candidate: bool std::operator==(const std::error_code&, const std::error_condition&)
-/usr/include/c++/6/system_error:289:3: note:   no known conversion for argument 1 from 'int' to 'const std::error_code&'
-/usr/include/c++/6/system_error:284:3: note: candidate: bool std::operator==(const std::error_code&, const std::error_code&)
-/usr/include/c++/6/system_error:284:3: note:   no known conversion for argument 1 from 'int' to 'const std::error_code&'
-src/graphal.cpp:95:5: error: no matching function for call to 'std::__cxx11::list<std::pair<int, int>, std::allocator<std::pair<int, int> > >::splice(std::pair<int, int>&, std::__cxx11::list<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator&)'
+MAKE_ERROR = src/graphal.cpp:95:5: error: no matching function for call to 'std::__cxx11::list<std::pair<int, int>, std::allocator<std::pair<int, int> > >::splice(std::pair<int, int>&, std::__cxx11::list<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator&)'
 + 0 pts of 10.000
 Total grade so far: 40.000
 ******************* depth first Test *********************
@@ -55,4 +46,3 @@ Failures =
 MAKE_ERROR = collect2: error: ld returned 1 exit status
 + 0 pts of 20.000
 Total grade so far: 40.000
-*****************Finished lab23****************
