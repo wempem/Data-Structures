@@ -80,7 +80,7 @@ bool GraphAL<W>::removeVertex(int idx) {
     // Set that index to NULL
     // go through each edge of the AL and remove all with destination to idx. 
     //     Or: use removeEdge to remove all edges ending with idx.
-	mGraph[idx].erase(mGraph[idx].start(), mGraph[idx].end());
+	mGraph[idx].erase(mGraph[idx].begin(), mGraph[idx].end());
 	for(int i = 0; i <mGraph.size(); i++){
 		for(typename std::list<std::pair<int, W> >::iterator it = mGraph[i].begin(); 
 		it != mGraph[i].end(); ++it){
