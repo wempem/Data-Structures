@@ -110,7 +110,6 @@ bool GraphAL<W>::removeVertex(int idx) {
 template<class W>
 void GraphAL<W>::depthFirstTraversal(void (*visit)(const int node), int node,
         std::set<int> &visited) {
-    //1) Base case If node has been visited, return;
     if (visited.find(node) != visited.end()) {
         return;
     }
