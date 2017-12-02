@@ -81,6 +81,15 @@ bool GraphAL<W>::removeVertex(int idx) {
 
     // go through each edge of the AL and remove all with destination to idx. 
     //     Or: use removeEdge to remove all edges ending with idx.
+	for(int i = 0; i <mGraph.size(); i++){
+		for(typename std::list<std::pair<int, W> >::iterator it = mGraph[i].begin(); 
+		it != mGraph[i].end(); ++it){
+			if(it->first == idx){
+				mGraph[i].erase(it);
+
+			}
+		}	
+	}
 	for(int i = 0; i < mGraph.size(); i++){
 		this->removeEdge(i,idx);
 	}
@@ -141,6 +150,15 @@ void GraphAL<W>::depthFirstTraversal(void (*visit)(const int node)) {
 
 template <class W>
 void GraphAL<W>::print() {
+	std::cout << "\n";
+for (int i = 0; i < mGraph.size(); i++) {
+    std::cout << i << " = { ";
+    for (typename std::list<std::pair<int, W> >::iterator it = mGraph[i].begin();
+            it != mGraph[i].end(); ++it) {
+        std::cout << "(->" << it->first << ", W=" << it->second << ") ";
+    }
+    std::cout << "}\n";
+}
 }
 
 template<class W>
