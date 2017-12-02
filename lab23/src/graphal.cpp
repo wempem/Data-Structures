@@ -92,7 +92,7 @@ bool GraphAL<W>::removeVertex(int idx) {
 		for(typename std::list<std::pair<int,W> >::iterator it = mGraph[i].begin();
 			it != mGraph[i].end(); ++it){
 			if(it->first == compare){		
-				mGraph[idx].splice(*(mGraph[idx].end()),it);
+				mGraph[idx].splice((mGraph[idx].end()),it);
 			}		
 		}
 	}
