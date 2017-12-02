@@ -93,7 +93,7 @@ bool GraphAL<W>::removeVertex(int idx) {
 	for(int i = 0; i < mGraph.size(); i++){
 		this->removeEdge(i,idx);
 	}
-	int newIdx = mGraph[idx + 1]
+	int newIdx = mGraph[idx + 1];
 	int compare = mGraph.size() - 1;
 	mGraph[idx] = mGraph[newIdx];
 //	for(typename std::vector<std::list<std::pair<int, W> > >::iterator i = mGraph.begin(); i
