@@ -93,19 +93,20 @@ bool GraphAL<W>::removeVertex(int idx) {
 	for(int i = 0; i < mGraph.size(); i++){
 		this->removeEdge(i,idx);
 	}
+	int newIdx = mGraph[idx + 1]
 	int compare = mGraph.size() - 1;
-	mGraph[idx] = mGraph[mGraph.size() - 1];
+	mGraph[idx] = mGraph[newIdx];
 //	for(typename std::vector<std::list<std::pair<int, W> > >::iterator i = mGraph.begin(); i
 //		!= mGraph.end(); ++i){ 
 		for(int i = 0; i <mGraph.size(); i++){
 		for(typename std::list<std::pair<int,W> >::iterator it = mGraph[i].begin();
 			it != mGraph[i].end(); ++it){
-			if(it->first == compare){		
-				it->first = compare;
+			if(it->first == newIdx){		
+				it->first = newIdx;
 			}		
 		}
 	}
-	mGraph.resize(mGraph.size() - 1);
+	mGraph.resize(newIdx);
 	return true;
     // set mAList[idx] = mAList[mAList.size()-1]
 	
