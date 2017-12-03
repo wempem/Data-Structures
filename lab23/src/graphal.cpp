@@ -81,11 +81,11 @@ bool GraphAL<W>::removeVertex(int idx) {
     // go through each edge of the AL and remove all with destination to idx. 
     //     Or: use removeEdge to remove all edges ending with idx.
 	mGraph.erase(mGraph.begin() + idx);
-	for(int i = 0; i <mGraph.size(); i++){
-		for(typename std::list<std::pair<int, W> >::iterator it = mGraph[i].begin(); 
-		it != mGraph[i].end(); it++){
-			if(it->first == idx){
-				mGraph[i].erase(it);
+	for(int i = 0; i < mGraph.size(); i++){
+		for(typename std::list<std::pair<int, W> >::iterator j = mGraph[i].begin(); 
+		j != mGraph[i].end(); j++){
+			if(j->first == idx){
+				mGraph[i].erase(j);
 
 			}
 		}	
