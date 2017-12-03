@@ -1,6 +1,7 @@
 #ifdef GRAPHAL_H
 #include <iostream>
 #include <set>
+#include <queue>
 template<class W>
 GraphAL<W>::GraphAL() {
 }
@@ -137,4 +138,46 @@ template<class W>
 GraphAL<W>::~GraphAL() {
 }
 
+template<class W>
+void GraphAL<W>::breadthFirstTraversal(void (*visit)(const int node)) {
+            std::queue<int> queue;
+    std::set<int> isVisited;
+
+    queue.push(0);
+
+    while (!queue.empty()) {
+        int node = queue.front();
+        queue.pop();
+
+        if (isVisited.find(node) != isVisited.end()) {
+            // oop we already visited it, continue
+            continue;
+        }
+
+        // 1) visit the node
+        visit(node);
+
+        // 2) add node to the set of visited nodes
+        isVisited.insert(node);
+
+        // 3) add all nodes to the queue that have not been visite
+        // Find the edges that have weights and add then to the qu
+        for (int i = 0; i < mGraph[node].size(); i++) {
+            if (i != node  // Don't add self
+                    && mGraph[node].first > -1 // Must have a wieght
+                    && isVisited.find(i) == isVisited.end()) // Mu
+            {
+                queue.push(i);
+            }
+        }
+
+
+        // Now if the queue is empty check if there are other node
+        for (int i = 0; i < mGraph.size() && queue.empty(); i++) {
+            if (isVisited.find(i) == isVisited.end()) {
+                queue.push(i);
+            }
+        }
+    }
+}
 #endif
