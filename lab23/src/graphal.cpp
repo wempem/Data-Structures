@@ -74,16 +74,16 @@ W GraphAL<W>::adjacent(const int start, const int end) {
 template<class W>
 bool GraphAL<W>::removeVertex(int idx) {
     // VALIDATE idx!!!!!!!!!!
-	if(idx > mGraph.size() || idx < 0){
+	if(idx >= mGraph.size() || idx < 0){
 		return false;
 	}
     // Set that index to NULL
     // go through each edge of the AL and remove all with destination to idx. 
     //     Or: use removeEdge to remove all edges ending with idx.
-	mGraph[idx].erase(mGraph[idx].begin(), mGraph[idx].end());
+	mGraph.erase(mGraph.begin(), mGraph.end());
 	for(int i = 0; i <mGraph.size(); i++){
 		for(typename std::list<std::pair<int, W> >::iterator it = mGraph[i].begin(); 
-		it != mGraph[i].end(); ++it){
+		it != mGraph[i].end(); it++){
 			if(it->first == idx){
 				mGraph[i].erase(it);
 
@@ -92,20 +92,10 @@ bool GraphAL<W>::removeVertex(int idx) {
 	}
 //	for(int i = 0; i < mGraph.size(); i++){
 //		this->removeEdge(i,idx);
-//	}
-	int compare = mGraph.size() - 1;
-	mGraph[idx] = mGraph[mGraph.size() - 1];
+//	
 //	for(typename std::vector<std::list<std::pair<int, W> > >::iterator i = mGraph.begin(); i
 //		!= mGraph.end(); ++i){ 
-		for(int i = 0; i <mGraph.size(); i++){
-		for(typename std::list<std::pair<int,W> >::iterator it = mGraph[i].begin();
-			it != mGraph[i].end(); ++it){
-			if(it->first == compare){		
-				it->first = compare;
-			}		
-		}
-	}
-	mGraph.resize(mGraph.size() - 1);
+	
 	return true;
     // set mAList[idx] = mAList[mAList.size()-1]
 	
